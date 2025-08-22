@@ -26,142 +26,139 @@
 ### **Semana 3** - Condicionais
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 02/09/25 | Segunda | Revisão e dúvidas: Variáveis, Tipos, Operadores |
-| 04/09/25 | Quarta | **Lançamento:** Condicionais |
-| 06/09/25 | Sexta | Revisão e dúvidas: Condicionais |
+| 01/09/25 | Segunda | Revisão e dúvidas: Variáveis, Tipos, Operadores |
+| 03/09/25 | Quarta | **Lançamento:** Condicionais |
+| 05/09/25 | Sexta | Revisão e dúvidas: Condicionais |
 
 ---
 
 ### **Semana 4** - Estruturas de Repetição
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 09/09/25 | Segunda | Revisão e dúvidas: Condicionais |
-| 11/09/25 | Quarta | **Lançamento:** Estruturas de Repetição |
-| 13/09/25 | Sexta | Revisão e dúvidas: Estruturas de Repetição |
+| 08/09/25 | Segunda | Revisão e dúvidas: Condicionais |
+| 10/09/25 | Quarta | **Lançamento:** Estruturas de Repetição |
+| 12/09/25 | Sexta | Revisão e dúvidas: Estruturas de Repetição |
 
 ---
 
 ### **Semana 5** - Funções 1
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 16/09/25 | Segunda | Revisão e dúvidas: Estruturas de Repetição |
-| 18/09/25 | Quarta | **Lançamento:** Funções 1 |
-| 20/09/25 | Sexta | Revisão e dúvidas: Funções 1 |
+| 15/09/25 | Segunda | Revisão e dúvidas: Estruturas de Repetição |
+| 17/09/25 | Quarta | **Lançamento:** Funções 1 |
+| 19/09/25 | Sexta | Revisão e dúvidas: Funções 1 |
 
 ---
 
 ### **Semana 6** - Vetores
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 23/09/25 | Segunda | Revisão e dúvidas: Funções 1 |
-| 25/09/25 | Quarta | **Lançamento:** Vetores |
-| 27/09/25 | Sexta | Revisão e dúvidas: Vetores |
+| 22/09/25 | Segunda | Revisão e dúvidas: Funções 1 |
+| 24/09/25 | Quarta | **Lançamento:** Vetores |
+| 26/09/25 | Sexta | Revisão e dúvidas: Vetores |
 
 ---
 
 ### **Semana 7** - Strings
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 30/09/25 | Segunda | Revisão e dúvidas: Vetores |
-| 02/10/25 | Quarta | **Lançamento:** Strings |
-| 04/10/25 | Sexta | Revisão e dúvidas: Strings |
+| 29/09/25 | Segunda | Revisão e dúvidas: Vetores |
+| 01/10/25 | Quarta | **Lançamento:** Strings |
+| 03/10/25 | Sexta | **NÃO HAVERÁ AULA** - Feriado Estadual (Dia dos Mártires de Cunhaú e Uruaçu) |
 
 ---
 
 ### **Semana 8** - **UNIDADE 2** - Estruturas de Repetição Aninhadas
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 07/10/25 | Segunda | Revisão e dúvidas: Strings |
-| 09/10/25 | Quarta | **Lançamento:** Estruturas de Repetição Aninhadas |
-| 11/10/25 | Sexta | Revisão e dúvidas: Estruturas de Repetição Aninhadas |
+| 06/10/25 | Segunda | Revisão e dúvidas: Strings |
+| 08/10/25 | Quarta | **Lançamento:** Estruturas de Repetição Aninhadas |
+| 10/10/25 | Sexta | Revisão e dúvidas: Estruturas de Repetição Aninhadas |
 
 ---
 
 ### **Semana 9** - Matrizes
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 14/10/25 | Segunda | Revisão e dúvidas: Estruturas de Repetição Aninhadas |
-| 16/10/25 | Quarta | **Lançamento:** Matrizes |
-| 18/10/25 | Sexta | Revisão e dúvidas: Matrizes |
+| 13/10/25 | Segunda | Revisão e dúvidas: Estruturas de Repetição Aninhadas |
+| 15/10/25 | Quarta | **Lançamento:** Matrizes |
+| 17/10/25 | Sexta | Revisão e dúvidas: Matrizes |
 
 ---
 
 ### **Semana 10** - Ponteiros/Alocação Dinâmica 1
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 21/10/25 | Segunda | Revisão e dúvidas: Matrizes |
-| 23/10/25 | Quarta | **Lançamento:** Ponteiros/Alocação Dinâmica 1 |
-| 25/10/25 | Sexta | Revisão e dúvidas: Ponteiros/Alocação Dinâmica 1 |
+| 20/10/25 | Segunda | Revisão e dúvidas: Matrizes |
+| 22/10/25 | Quarta | **Lançamento:** Ponteiros/Alocação Dinâmica 1 |
+| 24/10/25 | Sexta | Revisão e dúvidas: Ponteiros/Alocação Dinâmica 1 |
 
 ---
 
 ### **Semana 11** - Ponteiros/Alocação Dinâmica 2
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 28/10/25 | Segunda | Revisão e dúvidas: Ponteiros/Alocação Dinâmica 1 |
-| 30/10/25 | Quarta | **Lançamento:** Ponteiros/Alocação Dinâmica 2 |
-| 01/11/25 | Sexta | Revisão e dúvidas: Ponteiros/Alocação Dinâmica 2 |
+| 27/10/25 | Segunda | A confirmar |
+| 29/10/25 | Quarta | **Lançamento:** Ponteiros/Alocação Dinâmica 2 |
+| 31/10/25 | Sexta | Revisão e dúvidas: Ponteiros/Alocação Dinâmica 2 |
 
 ---
 
 ### **Semana 12** - **UNIDADE 3** - Funções 2
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 04/11/25 | Segunda | Revisão e dúvidas: Ponteiros/Alocação Dinâmica 2 |
-| 06/11/25 | Quarta | **Lançamento:** Funções 2 |
-| 08/11/25 | Sexta | Revisão e dúvidas: Funções 2 |
+| 03/11/25 | Segunda | Revisão e dúvidas: Ponteiros/Alocação Dinâmica 2 |
+| 05/11/25 | Quarta | **Lançamento:** Funções 2 |
+| 07/11/25 | Sexta | Revisão e dúvidas: Funções 2 |
 
 ---
 
 ### **Semana 13** - Arquivos
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 11/11/25 | Segunda | Revisão e dúvidas: Funções 2 |
-| 13/11/25 | Quarta | **Lançamento:** Arquivos |
-| 15/11/25 | Sexta | Revisão e dúvidas: Arquivos |
+| 10/11/25 | Segunda | Revisão e dúvidas: Funções 2 |
+| 12/11/25 | Quarta | **Lançamento:** Arquivos |
+| 14/11/25 | Sexta | Revisão e dúvidas: Arquivos |
 
 ---
 
 ### **Semana 14** - Registros e Enumerações
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 18/11/25 | Segunda | Revisão e dúvidas: Arquivos |
-| 20/11/25 | Quarta | **Lançamento:** Registros e Enumerações |
-| 22/11/25 | Sexta | Revisão e dúvidas: Registros e Enumerações |
+| 17/11/25 | Segunda | Revisão e dúvidas: Arquivos |
+| 19/11/25 | Quarta | **Lançamento:** Registros e Enumerações |
+| 21/11/25 | Sexta | Revisão e dúvidas: Registros e Enumerações |
 
 ---
 
 ### **Semana 15** - Modularização e Compilação
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 25/11/25 | Segunda | Revisão e dúvidas: Registros e Enumerações |
-| 27/11/25 | Quarta | **Lançamento:** Modularização e Compilação |
-| 29/11/25 | Sexta | Revisão e dúvidas: Modularização e Compilação |
+| 24/11/25 | Segunda | Revisão e dúvidas: Registros e Enumerações |
+| 26/11/25 | Quarta | **Lançamento:** Modularização e Compilação |
+| 28/11/25 | Sexta | Revisão e dúvidas: Modularização e Compilação |
 
 ---
 
 ### **Semana 16** - Consolidação e Avaliação
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 02/12/25 | Segunda | Revisão geral e consolidação |
-| 04/12/25 | Quarta | Preparação para avaliação final |
-| 06/12/25 | Sexta | Revisão final |
+| 01/12/25 | Segunda | Revisão geral e consolidação |
+| 03/12/25 | Quarta | Preparação para avaliação final |
+| 05/12/25 | Sexta | Revisão final |
 
 ---
 
 ### **Semana 17** - Avaliação Final
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 09/12/25 | Segunda | **Avaliação Final** |
-| 11/12/25 | Quarta | Apresentação de trabalhos/projetos |
-| 13/12/25 | Sexta | **Encerramento do curso** |
+| 08/12/25 | Segunda | **Avaliação Final** |
+| 10/12/25 | Quarta | Apresentação de trabalhos/projetos |
+| 12/12/25 | Sexta | **Encerramento do curso** |
 
-## Feriados e Datas Importantes Considerados
-- **03/10/25** - Dia dos Mártires de Cunhaú e Uruaçu (Feriado Estadual)
-- **12/10/25** - Dia de Nossa Senhora Aparecida (Feriado Nacional)
-- **15/11/25** - Dia da Proclamação da República (Feriado Nacional)
-- **20/11/25** - Dia Nacional da Consciência Negra (Feriado Nacional)
-- **28/10/25** - Dia do Servidor Público (Suspensão de atividades)
+## Feriados e Suspensões que Afetam o Curso
+- **03/10/25** - Dia dos Mártires de Cunhaú e Uruaçu (Feriado Estadual) - **SEXTA-FEIRA** - Não haverá aula
+- **28/10/25** - Dia do Servidor Público (Suspensão de atividades na terça-feira). Eu vou ainda confirmar qual será a recomendação para segunda-feira, dia 27/8, devido ao feriado na terça.
 
 ## Observações
 - Note que os conteúdos novos serão passados nas aulas que ocorrem às quartas-feiras, enquanto que os encontros às segundas e sextas serão prioritariamente dedicados à revisão e solução de dúvidas sobre o conteúdo passado.
