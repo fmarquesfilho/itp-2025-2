@@ -26,6 +26,26 @@ Cada entrega deverá ser acompanhada de três elementos:
 2. **Vídeo de 5-8min** demonstrando o código em funcionamento
 3. **Relatório técnico** em PDF (3-5 páginas)
 
+### Estrutura do Repositório
+
+Sugerimos a seguinte organização para o repositório:
+
+```
+nome-do-aluno-itp-2025-2/
+├── projeto/          # Pasta do projeto principal
+│   ├── src/          # Código-fonte
+│   ├── include/      # Cabeçalhos (se houver)
+│   ├── Makefile      # Script de compilação (opcional mas recomendado)
+│   └── README.md     # Instruções de compilação e execução
+├── listas/           # Soluções das listas de exercícios
+│   ├── lista1/       # Lista 1
+│   ├── lista2/       # Lista 2
+│   └── ...
+└── README.md         # Descrição geral do repositório
+```
+
+**Importante:** Apenas o commit mais recente até **23:59 do dia da entrega** será considerado para correção.
+
 ### Estrutura do Relatório Técnico
 
 Cada relatório deve conter:
@@ -54,6 +74,55 @@ Cada relatório deve conter:
 **Unidade 3:**
 - Como a modularização contribuiu para a qualidade do código?
 - Quais técnicas de manipulação de arquivos foram utilizadas?
+
+### Critérios de Avaliação
+
+#### Código (Repositório Git) - 40% da nota do projeto
+- **Qualidade e organização (10%)**: Estrutura de pastas, nomenclatura, indentação, comentários
+- **Funcionalidade (15%)**: O programa executa conforme esperado e resolve o problema proposto
+- **Aplicação dos conceitos da unidade (10%)**: Uso adequado dos tópicos estudados
+- **Histórico de commits (5%)**: Commits frequentes e descritivos ao longo do desenvolvimento
+
+#### Relatório Técnico (PDF) - 30% da nota do projeto
+- **Clareza e coerência (10%)**
+- **Profundidade técnica (10%)**
+- **Resposta às perguntas orientadoras (10%)**
+
+#### Vídeo (5-8 minutos) - 30% da nota do projeto
+- **Demonstração do projeto (15%)**: Mostra o funcionamento do código
+- **Qualidade da explicação (10%)**: Clareza, objetividade e domínio do conteúdo
+- **Tempo (5%)**: Dentro do limite de 5 a 8 minutos
+
+### Sugestões de Projetos
+
+#### Requisitos Mínimos para Projetos Externos
+- Deve usar pelo menos 70% dos tópicos da unidade
+- Ser desenvolvido em C
+- Ter interface de linha de comando (CLI)
+- Ser original (não copiado de repositórios públicos)
+- Ter complexidade média ou alta
+
+#### Ideias de Projetos
+1. **Sistema de Gerenciamento de Biblioteca**
+2. **Jogo da Velha com IA Básica**
+3. **Calculadora Científica com Histórico**
+4. **Gerenciador de Tarefas com Persistência em Arquivo**
+5. **Simulador de Banco com Múltiplas Contas**
+6. **Conversor de Unidades com Interface Textual**
+7. **Jogo de Campo Minado**
+8. **Sistema de Cadastro de Alunos com Relatórios**
+9. **Agenda de Contatos com Busca e Ordenação**
+10. **Interpretador de Comandos Simples (Shell Básico)**
+11. **Compressão de Texto com Algoritmo RLE**
+12. **Quebra-Cabeça de 8 Peças (8-Puzzle)**
+13. **Sistema de Vendas com Registro em Arquivo**
+14. **Simulador de Autômatos Celulares (ex: Jogo da Vida)**
+15. **Calculadora de Matrizes com Operações Avançadas**
+16. **Sistema de Reserva de Passagens Aéreas**
+17. **Jogo de Xadrez em Texto**
+18. **Analisador Léxico para uma Linguagem Simples**
+19. **Sistema de Logs com Filtros e Estatísticas**
+20. **Gerenciador de Finanças Pessoais**
 
 ## Cronograma
 
