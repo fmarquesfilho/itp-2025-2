@@ -3,7 +3,57 @@
 ## Informações Gerais
 - **Período:** 22/08/2025 a 15/12/2025
 - **Encontros síncronos:** Segundas, Quartas e Sextas (T56)
-- O link de acesso aos encontros síncronos que ocorrem no Google Meet está na turma virtual do curso (SIGAA) e foi divulgado aos alunos por e-mail.
+- **Modalidade:** Remota
+- **Link de acesso:** Google Meet (disponível no SIGAA e enviado por e-mail)
+
+## Avaliação
+
+As avaliações ocorrerão ao final de cada unidade e serão baseadas na solução das **listas** de exercícios (20% de cada unidade) e em um **projeto individual** que vale 80% da nota de cada unidade.
+
+### Mapeamento de Conteúdos por Unidade
+
+| Unidade | Período | Conteúdos que devem estar presentes no projeto |
+|---------|---------|------------------------------------------------|
+| **U1** | 22/08 a 30/09 | Variáveis com tipos bem-definidos, operações, vetores, comandos condicionais e de repetição, funções |
+| **U2** | 1/10 a 27/10 | Todos os tópicos da U1 + strings, estruturas de repetição aninhadas, matrizes, ponteiros e alocação dinâmica básica |
+| **U3** | 29/10 a 28/11 | Todos os tópicos das U1 e U2 + ponteiros avançados, funções complexas, arquivos, registros, enumerações, modularização |
+
+### O que deve ser entregue e como?
+
+Cada entrega deverá ser acompanhada de três elementos:
+
+1. **Link para repositório público** (GitHub, GitLab ou BitBucket) com o código desenvolvido
+2. **Vídeo de 5-8min** demonstrando o código em funcionamento
+3. **Relatório técnico** em PDF (3-5 páginas)
+
+### Estrutura do Relatório Técnico
+
+Cada relatório deve conter:
+
+1. **Introdução** (contexto do projeto e objetivos)
+2. **Metodologia** (ferramentas utilizadas e abordagem de desenvolvimento)
+3. **Análise do Código** (explicação das principais estruturas implementadas)
+4. **Dificuldades e Soluções** (desafios encontrados e como foram superados)
+5. **Conclusão** (aprendizados e possíveis melhorias)
+
+### Perguntas Orientadoras para o Relatório
+
+**Para todas as unidades:**
+- Quais conceitos da unidade foram aplicados no projeto?
+- Como a organização do código facilita a manutenção?
+- Quais foram os principais desafios técnicos enfrentados?
+
+**Unidade 1:**
+- Como foram utilizadas as estruturas condicionais e de repetição?
+- Qual a lógica por trás da organização das funções?
+
+**Unidade 2:**
+- Como foram implementadas as estruturas de dados complexas?
+- Qual a estratégia para gerenciamento de memória?
+
+**Unidade 3:**
+- Como a modularização contribuiu para a qualidade do código?
+- Quais técnicas de manipulação de arquivos foram utilizadas?
 
 ## Cronograma
 
@@ -50,7 +100,7 @@
 
 ---
 
-### **Semana 6** - Vetores
+### **Semana 6** - Vetores (último conteúdo da U1)
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 22/09/25 | Segunda | Revisão e dúvidas: Funções 1 |
@@ -59,16 +109,17 @@
 
 ---
 
-### **Semana 7** - Strings
+### **Semana 7** - **UNIDADE 2** - Strings
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 29/09/25 | Segunda | Revisão e dúvidas: Vetores |
+| 30/09/25 | Terça | **Entrega da U1 até 23:59** - Projeto + Relatório + Listas (até Vetores) |
 | 01/10/25 | Quarta | **Lançamento:** Strings |
 | 03/10/25 | Sexta | **NÃO HAVERÁ AULA** - Feriado Estadual (Dia dos Mártires de Cunhaú e Uruaçu) |
 
 ---
 
-### **Semana 8** - **UNIDADE 2** - Estruturas de Repetição Aninhadas
+### **Semana 8** - Estruturas de Repetição Aninhadas
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 06/10/25 | Segunda | Revisão e dúvidas: Strings |
@@ -86,7 +137,7 @@
 
 ---
 
-### **Semana 10** - Ponteiros/Alocação Dinâmica 1
+### **Semana 10** - Ponteiros/Alocação Dinâmica 1 (último conteúdo da U2)
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 20/10/25 | Segunda | Revisão e dúvidas: Matrizes |
@@ -95,16 +146,16 @@
 
 ---
 
-### **Semana 11** - Ponteiros/Alocação Dinâmica 2
+### **Semana 11** - **UNIDADE 3** - Ponteiros/Alocação Dinâmica 2 
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 27/10/25 | Segunda | A confirmar |
+| 27/10/25 | Segunda | **Entrega da U2 até 23:59** - Projeto + Relatório + Listas (até Ponteiros/Alocação Dinâmica 1) |
 | 29/10/25 | Quarta | **Lançamento:** Ponteiros/Alocação Dinâmica 2 |
 | 31/10/25 | Sexta | Revisão e dúvidas: Ponteiros/Alocação Dinâmica 2 |
 
 ---
 
-### **Semana 12** - **UNIDADE 3** - Funções 2
+### **Semana 12** - Funções 2
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 03/11/25 | Segunda | Revisão e dúvidas: Ponteiros/Alocação Dinâmica 2 |
@@ -131,7 +182,7 @@
 
 ---
 
-### **Semana 15** - Modularização e Compilação
+### **Semana 15** - Modularização e Compilação (último conteúdo da U3)
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 24/11/25 | Segunda | Revisão e dúvidas: Registros e Enumerações |
@@ -140,26 +191,29 @@
 
 ---
 
-### **Semana 16** - Consolidação e Avaliação
+### **Semana 16** - Entrega final do projeto
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 01/12/25 | Segunda | Revisão geral e consolidação |
-| 03/12/25 | Quarta | Preparação para avaliação final |
-| 05/12/25 | Sexta | Revisão final |
+| 01/12/25 | Segunda | Acompanhamento de projeto |
+| 03/12/25 | Quarta | Acompanhamento de projeto |
+| 05/12/25 | Sexta | **Entrega final do projeto até 23:59** - Projeto + Relatório + Listas (até o tópico Modularização e Compilação) |
 
 ---
 
-### **Semana 17** - Avaliação Final
+### **Semana 17** - Divulgação das notas
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 08/12/25 | Segunda | **Avaliação Final** |
-| 10/12/25 | Quarta | Apresentação de trabalhos/projetos |
+| 08/12/25 | Segunda | Não haverá aula |
+| 10/12/25 | Quarta | Recuperação |
 | 12/12/25 | Sexta | **Encerramento do curso** |
 
 ## Feriados e Suspensões que Afetam o Curso
 - **03/10/25** - Dia dos Mártires de Cunhaú e Uruaçu (Feriado Estadual) - **SEXTA-FEIRA** - Não haverá aula
-- **28/10/25** - Dia do Servidor Público (Suspensão de atividades na terça-feira). Eu vou ainda confirmar qual será a recomendação para segunda-feira, dia 27/8, devido ao feriado na terça.
+- **28/10/25** - Dia do Servidor Público (Suspensão de atividades na terça-feira). A confirmar possível suspensão na segunda-feira, dia 27/10.
 
 ## Observações
-- Note que os conteúdos novos serão passados nas aulas que ocorrem às quartas-feiras, enquanto que os encontros às segundas e sextas serão prioritariamente dedicados à revisão e solução de dúvidas sobre o conteúdo passado.
-- O calendário pode sofrer ajustes conforme a necessidade e a dinâmica de lançamento e revisão pode ser flexibilizada conforme o andamento da turma.
+- As entregas devem ser realizadas até **23:59** das datas indicadas
+- Os conteúdos novos serão passados nas aulas de quarta-feira (aulas serão gravadas e o vídeo disponibilizado até o dia seguinte)
+- As segundas e sextas serão dedicadas à revisão e solução de dúvidas
+- O calendário pode sofrer ajustes conforme a necessidade da turma
+- Todas as entregas devem ser feitas via SIGAA conforme instruções específicas
