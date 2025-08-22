@@ -1,1 +1,34 @@
 material-original
+
+# beamer - latex
+*.aux
+*.glo
+*.idx
+*.log
+*.toc
+*.ist
+*.acn
+*.acr
+*.alg
+*.bbl
+*.blg
+*.dvi
+*.glg
+*.gls
+*.ilg
+*.ind
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.out
+*.snm
+*.nav
+*.vrb
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# MacOSX
+.DS_Store
