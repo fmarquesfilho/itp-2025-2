@@ -1,0 +1,408 @@
+\documentclass[10pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\usetheme{Madrid}
+\title{Introdução a Técnicas de Programação (2025.2)}
+\subtitle{Plano de Curso e Orientações para o Projeto}
+\author{Prof. Fernando Figueira}
+\institute{DIMAp - UFRN}
+\date{22 de Agosto de 2025}
+
+% Configuração do listings para evitar problemas de codificação
+\lstset{
+    basicstyle=\small\ttfamily,
+    breaklines=true,
+    frame=single,
+    inputencoding=utf8,
+    extendedchars=true
+}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Agenda da Aula}
+	\tableofcontents[pausesections]
+\end{frame}
+
+\section{Informações Gerais do Curso}
+
+\begin{frame}{Informações Gerais}
+	\begin{block}{Período Letivo}
+		\begin{itemize}
+			\item \textbf{Duração:} 22/08/2025 a 15/12/2025
+			\item \textbf{Encontros síncronos:} Segundas, Quartas e Sextas
+			\item \textbf{Horário:} T56 (16:40 às 18:20)
+			\item \textbf{Modalidade:} Remota
+			\item \textbf{Acesso:} Google Meet via SIGAA
+		\end{itemize}
+	\end{block}
+	
+	\begin{alertblock}{Importante}
+		Aulas de conteúdo novo às quartas-feira (gravadas)\\
+		Segundas e sextas para revisão e dúvidas
+	\end{alertblock}
+\end{frame}
+
+\section{Metodologia e Avaliação}
+
+\begin{frame}{Como Funciona a Avaliação?}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			\textbf{Composição da Nota:}
+			\begin{itemize}
+				\item \textcolor{blue}{\textbf{Listas de exercícios: 20\%}}
+				\item \textcolor{red}{\textbf{Projeto individual: 80\%}}
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{center}
+				\textbf{3 Unidades}\\
+				\bigskip
+				U1: 22/08 - 30/09\\
+				U2: 01/10 - 27/10\\
+				U3: 29/10 - 28/11\\
+				\bigskip
+				\textcolor{red}{Entrega Final: 05/12}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{O que Você Precisa Entregar?}
+	\begin{block}{Para cada unidade, você entrega:}
+		\begin{enumerate}
+			\item \textbf{Link do repositório Git público} (GitHub/GitLab/BitBucket)
+			\item \textbf{Vídeo de 5-8 minutos} demonstrando o projeto
+			\item \textbf{Relatório técnico} em PDF (3-5 páginas)
+		\end{enumerate}
+	\end{block}
+	
+	\begin{alertblock}{Atenção!}
+		Apenas o commit mais recente até \textbf{23:59} será corrigido.\\
+		Commits frequentes e descritivos são valorizados!
+	\end{alertblock}
+\end{frame}
+
+\section{Estrutura do Projeto}
+
+\begin{frame}{Evolução do Projeto por Unidade}
+	\begin{block}{Unidade 1 (22/8 até 30/09)}
+		Variáveis, operadores, vetores, condicionais, repetição, funções básicas
+	\end{block}
+	
+	\begin{block}{Unidade 2 (1/10 até 27/10)}
+		Tudo da U1 + strings, estruturas aninhadas, matrizes, ponteiros básicos
+	\end{block}
+	
+	\begin{block}{Unidade 3 (29/10 até 28/11)}
+		Tudo anterior + ponteiros avançados, arquivos, registros, modularização
+	\end{block}
+	
+	\begin{exampleblock}{Projeto Final (até 05/12)}
+		Versão completa com todos os conceitos integrados
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Estrutura do Repositório}
+	\begin{exampleblock}{Sugestão de organização}
+		\begin{lstlisting}
+nome-do-aluno-itp-2025-2/
+|-- projeto/
+|   |-- src/             # Codigo-fonte
+|   |-- include/         # Cabecalhos
+|   |-- Makefile         # Compilacao
+|   `-- README.md        # Instrucoes
+|-- listas/
+|   |-- lista1/
+|   |-- lista2/
+|   `-- ...
+`-- README.md            # Descricao geral
+		\end{lstlisting}
+	\end{exampleblock}
+\end{frame}
+
+\section{Critérios de Avaliação}
+
+\begin{frame}{Como Seu Projeto Será Avaliado?}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\textbf{Código (40\%):}
+			\begin{itemize}
+				\item Qualidade e organização (10\%)
+				\item Funcionalidade (15\%)
+				\item Aplicação dos conceitos (10\%)
+				\item Histórico de commits (5\%)
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\textbf{Relatório (30\%):}
+			\begin{itemize}
+				\item Clareza e coerência (10\%)
+				\item Profundidade técnica (10\%)
+				\item Respostas orientadoras (10\%)
+			\end{itemize}
+			
+			\bigskip
+			\textbf{Vídeo (30\%):}
+			\begin{itemize}
+				\item Demonstração (15\%)
+				\item Qualidade da explicação (10\%)
+				\item Tempo adequado (5\%)
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Estrutura do Relatório Técnico}
+	\begin{enumerate}
+		\item \textbf{Introdução} - Contexto e objetivos
+		\item \textbf{Metodologia} - Ferramentas e abordagem
+		\item \textbf{Análise do Código} - Principais estruturas
+		\item \textbf{Dificuldades e Soluções} - Desafios enfrentados
+		\item \textbf{Conclusão} - Aprendizados e melhorias
+	\end{enumerate}
+	
+	\begin{block}{Perguntas que você deve responder:}
+		\begin{itemize}
+			\item Quais conceitos da unidade foram aplicados?
+			\item Como a organização facilita a manutenção?
+			\item Quais foram os principais desafios técnicos?
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section{Sugestões de Projetos}
+
+\begin{frame}{20 Ideias de Projetos}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{enumerate}
+				\item Sistema de Biblioteca
+				\item Jogo da Velha com IA
+				\item Calculadora Científica
+				\item Gerenciador de Tarefas
+				\item Simulador de Banco
+				\item Conversor de Unidades
+				\item Jogo de Campo Minado
+				\item Sistema de Cadastro
+				\item Agenda de Contatos
+				\item Shell Básico
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{enumerate}
+				\setcounter{enumi}{10}
+				\item Compressão de Texto
+				\item Quebra-Cabeça 8 Peças
+				\item Sistema de Vendas
+				\item Jogo da Vida
+				\item Calculadora de Matrizes
+				\item Reserva de Passagens
+				\item Jogo de Xadrez
+				\item Analisador Léxico
+				\item Sistema de Logs
+				\item Gerenciador Financeiro
+			\end{enumerate}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Requisitos para Projetos Próprios}
+	\begin{alertblock}{Se você quiser fazer um projeto diferente:}
+		\begin{itemize}
+			\item Deve usar $\geq$70\% dos tópicos da unidade
+			\item Ser desenvolvido em \textbf{linguagem C}
+			\item Ter interface de \textbf{linha de comando (CLI)}
+			\item Ser \textbf{original} (não copiado)
+			\item Ter \textbf{complexidade média/alta}
+		\end{itemize}
+	\end{alertblock}
+	
+	\begin{block}{Dica}
+		Escolha algo que te motive! Você vai trabalhar nele por 4 meses.
+	\end{block}
+\end{frame}
+
+\section{Cronograma e Datas}
+
+\begin{frame}{Cronograma Resumido}
+	\begin{block}{Semanas 1-6: Unidade 1}
+		Variáveis $\rightarrow$ Condicionais $\rightarrow$ Loops $\rightarrow$ Funções $\rightarrow$ Vetores
+	\end{block}
+	
+	\begin{block}{Semanas 7-10: Unidade 2}  
+		Strings $\rightarrow$ Loops Aninhados $\rightarrow$ Matrizes $\rightarrow$ Ponteiros Básicos
+	\end{block}
+	
+	\begin{block}{Semanas 11-15: Unidade 3}
+		Ponteiros Avançados $\rightarrow$ Funções Complexas $\rightarrow$ Arquivos $\rightarrow$ Registros $\rightarrow$ Modularização
+	\end{block}
+	
+	\begin{exampleblock}{Semana 16: Projeto Final}
+		Entrega final e encerramento
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Entregas Importantes - Não Esqueça!}
+	\begin{center}
+		\Large
+		\textcolor{red}{\textbf{U1: 30/09 até 23:59}}\\[0.5cm]
+		\textcolor{red}{\textbf{U2: 27/10 até 23:59}}\\[0.5cm]
+		\textcolor{red}{\textbf{U3: 05/12 até 23:59}}\\[0.5cm]
+	\end{center}
+	
+	\bigskip
+	\begin{block}{Feriado que afeta o curso}
+		03/10/25 - Dia dos Mártires (sexta-feira) - Não haverá aula
+	\end{block}
+\end{frame}
+
+\section{Motivação e Expectativas}
+
+\begin{frame}{Por Que Este Curso É Importante?}
+	\begin{block}{Você vai aprender:}
+		\begin{itemize}
+			\item \textbf{Fundamentos sólidos} da programação
+			\item \textbf{Pensamento lógico} e resolução de problemas
+			\item \textbf{Boas práticas} de desenvolvimento
+			\item \textbf{Trabalho com projetos reais}
+		\end{itemize}
+	\end{block}
+	
+	\begin{exampleblock}{Ao final do curso você será capaz de:}
+		\begin{itemize}
+			\item Desenvolver programas completos em C
+			\item Organizar código de forma profissional
+			\item Documentar e apresentar seus projetos
+			\item Trabalhar com controle de versão (Git)
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Dicas para o Sucesso}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\textbf{Estudos:}
+			\begin{itemize}
+				\item Pratique regularmente
+				\item Não deixe acumular
+				\item Participe das aulas
+				\item Faça as listas
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\textbf{Projeto:}
+			\begin{itemize}
+				\item Comece cedo
+				\item Commits frequentes
+				\item Documente bem
+				\item Teste sempre
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	
+	\bigskip
+	\begin{center}
+		\textcolor{blue}{\textbf{Lembre-se: A programação é uma habilidade prática!}}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Recursos de Apoio}
+	\begin{block}{Como tirar dúvidas?}
+		\begin{itemize}
+			\item \textbf{Aulas síncronas} (segundas e sextas (quarta será conteúdo novo))
+			\item \textbf{Discord} - mensagens e fóruns
+			\item \textbf{E-mail:} fernando@dimap.ufrn.br
+		\end{itemize}
+	\end{block}
+	
+	\begin{exampleblock}{Materiais disponíveis:}
+		\begin{itemize}
+			\item Gravações das aulas teóricas
+			\item Listas de exercícios
+			\item Material de apoio no SIGAA
+			\item Exemplos de código no repositório do curso: \url{https://github.com/fmarquesfilho/itp-2025-2}
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
+\section{Próximos Passos}
+
+\begin{frame}{O Que Fazer Agora?}
+	\begin{enumerate}
+		\item \textbf{Preparar o ambiente de desenvolvimento}
+		\begin{itemize}
+			\item Instalar compilador C (GCC)
+			\item Escolher um editor (VS Code, Dev-C++, etc.)
+			\item Criar conta no GitHub/GitLab (se já não a tiver)
+		\end{itemize}
+		
+		\item \textbf{Começar a pensar no projeto}
+		\begin{itemize}
+			\item Revisar as sugestões
+			\item Escolher algo que te interesse
+			\item Começar simples, evoluir gradualmente
+		\end{itemize}
+		
+		\item \textbf{Acompanhar o cronograma}
+		\begin{itemize}
+			\item Próxima aula: Preparação do ambiente
+			\item Primeira lista em breve
+		\end{itemize}
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Expectativas Realistas}
+	\begin{alertblock}{É normal...}
+		\begin{itemize}
+			\item Sentir dificuldade no início
+			\item Cometer erros de sintaxe
+			\item Precisar de várias tentativas
+			\item Ter bugs no código
+		\end{itemize}
+	\end{alertblock}
+	
+	\begin{block}{O importante é...}
+		\begin{itemize}
+			\item \textbf{Persistir} e praticar
+			\item \textbf{Aprender} com os erros
+			\item \textbf{Buscar ajuda} quando necessário
+			\item \textbf{Celebrar} os pequenos sucessos
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Dúvidas?}
+	\begin{center}
+		{\Large Alguma pergunta sobre:}\\
+		\bigskip
+		• Metodologia do curso?\\
+		• Avaliação?\\
+		• Projetos?\\
+		• Cronograma?\\
+		\bigskip
+		\bigskip
+		{\Large \textcolor{blue}{Vamos esclarecer tudo agora!}}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		{\Huge Obrigado!}\\
+		\bigskip
+		{\Large Nos vemos na próxima aula!}\\
+		\bigskip
+		\bigskip
+		{\large fernando@dimap.ufrn.br}\\
+		{\large DIMAp - UFRN}
+	\end{center}
+\end{frame}
+
+\end{document}
