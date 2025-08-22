@@ -2,7 +2,7 @@
 
 ## Informações Gerais
 - **Período:** 22/08/2025 a 15/12/2025
-- **Encontros síncronos:** Segundas, Quartas e Sextas (T56)
+- **Encontros síncronos:** Segundas, Quartas e Sextas (T56 - das 16:40 às 18:20)
 - **Modalidade:** Remota
 - **Link de acesso:** Google Meet (disponível no SIGAA e enviado por e-mail)
 
