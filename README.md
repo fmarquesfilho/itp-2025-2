@@ -46,7 +46,7 @@ Onde:
 - Se uma unidade tem 15 encontros (T = 15)
 - Nota das listas = 8,5 e nota do projeto = 6,0
 - N = min(8,5; 6,0) = 6,0
-- F = 15 - ⌊(6,0 / 10) × 15⌋ = ⌊6⌋ = 6 faltas na unidade
+- F = 15 - ⌊(6,0 / 10) × 15⌋ = 15 - ⌊9⌋ = 6 faltas na unidade
 
 ### Mapeamento de Conteúdos por Unidade
 
