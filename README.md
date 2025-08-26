@@ -33,7 +33,7 @@ Onde:
 Quando pelo menos uma das notas (listas ou projeto) for inferior a 7,0:
 
 ```
-F = ⌊(N / 10) × T⌋
+F = T - ⌊(N / 10) × T⌋
 
 Onde:
 - F = Número de faltas atribuídas
@@ -46,7 +46,7 @@ Onde:
 - Se uma unidade tem 15 encontros (T = 15)
 - Nota das listas = 8,5 e nota do projeto = 6,0
 - N = min(8,5; 6,0) = 6,0
-- F = ⌊(6,0 / 10) × 15⌋ = ⌊9⌋ = 9 faltas
+- F = 15 - ⌊(6,0 / 10) × 15⌋ = ⌊6⌋ = 6 faltas na unidade
 
 ### Mapeamento de Conteúdos por Unidade
 
