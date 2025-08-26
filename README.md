@@ -6,9 +6,47 @@
 - **Modalidade:** Remota
 - **Link de acesso:** Google Meet (disponível no SIGAA e enviado por e-mail)
 
-## Avaliação
+## Sistema de Avaliação e Frequência
+
+### Composição das Notas
 
 As avaliações ocorrerão ao final de cada unidade e serão baseadas na solução das **listas** de exercícios (20% de cada unidade) e em um **projeto individual** que vale 80% da nota de cada unidade.
+
+**Fórmula da nota final de cada unidade:**
+```
+Nota da Unidade = (Projeto × 0,8) + (Média das Listas × 0,2)
+```
+
+### Controle de Frequência
+
+A frequência será calculada com base nas entregas de cada unidade, seguindo os critérios abaixo:
+
+#### Critério Principal
+- **Se L ≥ 7,0 E P ≥ 7,0**: Nenhuma falta será atribuída na unidade
+- **Se L < 7,0 OU P < 7,0**: Será calculado um número de faltas proporcional
+
+Onde:
+- **L** = Nota média das listas da unidade
+- **P** = Nota do projeto da unidade
+
+#### Cálculo das Faltas (quando aplicável)
+Quando pelo menos uma das notas (listas ou projeto) for inferior a 7,0:
+
+```
+F = ⌊(N / 10) × T⌋
+
+Onde:
+- F = Número de faltas atribuídas
+- N = min(L, P) (menor nota entre listas e projeto)
+- T = Número total de encontros da unidade
+- ⌊ ⌋ = Função piso (arredondamento para baixo)
+```
+
+**Exemplo prático:**
+- Se uma unidade tem 15 encontros (T = 15)
+- Nota das listas = 8,5 e nota do projeto = 6,0
+- N = min(8,5; 6,0) = 6,0
+- F = ⌊(6,0 / 10) × 15⌋ = ⌊9⌋ = 9 faltas
 
 ### Mapeamento de Conteúdos por Unidade
 
@@ -18,7 +56,9 @@ As avaliações ocorrerão ao final de cada unidade e serão baseadas na soluç�
 | **U2** | 1/10 a 27/10 | Todos os tópicos da U1 + strings, estruturas de repetição aninhadas, matrizes, ponteiros e alocação dinâmica básica |
 | **U3** | 29/10 a 28/11 | Todos os tópicos das U1 e U2 + ponteiros avançados, funções complexas, arquivos, registros, enumerações, modularização |
 
-### O que deve ser entregue e como?
+## Entregas e Documentação
+
+### O que deve ser entregue
 
 Cada entrega deverá ser acompanhada de três elementos:
 
@@ -28,7 +68,7 @@ Cada entrega deverá ser acompanhada de três elementos:
 
 ### Estrutura do Repositório
 
-Sugerimos a seguinte organização para o repositório:
+Organize seu repositório da seguinte forma:
 
 ```
 nome-do-aluno-itp-2025-2/
@@ -44,17 +84,17 @@ nome-do-aluno-itp-2025-2/
 └── README.md         # Descrição geral do repositório
 ```
 
-**Importante:** Apenas o commit mais recente até **23:59 do dia da entrega** será considerado para correção.
+**⚠️ Importante:** Apenas o commit mais recente até **23:59 do dia da entrega** será considerado para correção.
 
 ### Estrutura do Relatório Técnico
 
 Cada relatório deve conter:
 
-1. **Introdução** (contexto do projeto e objetivos)
-2. **Metodologia** (ferramentas utilizadas e abordagem de desenvolvimento)
-3. **Análise do Código** (explicação das principais estruturas implementadas)
-4. **Dificuldades e Soluções** (desafios encontrados e como foram superados)
-5. **Conclusão** (aprendizados e possíveis melhorias)
+1. **Introdução** - Contexto do projeto e objetivos
+2. **Metodologia** - Ferramentas utilizadas e abordagem de desenvolvimento
+3. **Análise do Código** - Explicação das principais estruturas implementadas
+4. **Dificuldades e Soluções** - Desafios encontrados e como foram superados
+5. **Conclusão** - Aprendizados e possíveis melhorias
 
 ### Perguntas Orientadoras para o Relatório
 
@@ -93,16 +133,17 @@ Cada relatório deve conter:
 - **Qualidade da explicação (10%)**: Clareza, objetividade e domínio do conteúdo
 - **Tempo (5%)**: Dentro do limite de 5 a 8 minutos
 
-### Sugestões de Projetos
+## Sugestões de Projetos
 
-#### Requisitos Mínimos para Projetos Externos
+### Requisitos Mínimos para Projetos Diferentes dos Sugeridos
 - Deve usar pelo menos 70% dos tópicos da unidade
 - Ser desenvolvido em C
 - Ter interface de linha de comando (CLI)
 - Ser original (não copiado de repositórios públicos)
 - Ter complexidade média ou alta
 
-#### Ideias de Projetos
+### Ideias de Projetos
+
 1. **Sistema de Gerenciamento de Biblioteca**
 2. **Jogo da Velha com IA Básica**
 3. **Calculadora Científica com Histórico**
@@ -124,7 +165,7 @@ Cada relatório deve conter:
 19. **Sistema de Logs com Filtros e Estatísticas**
 20. **Gerenciador de Finanças Pessoais**
 
-## Cronograma
+## Cronograma Detalhado
 
 ### **Semana 1** - Apresentação e Introdução
 | Data | Dia | Atividade |
@@ -182,9 +223,9 @@ Cada relatório deve conter:
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 29/09/25 | Segunda | Revisão e dúvidas: Vetores |
-| 30/09/25 | Terça | **Entrega da U1 até 23:59** - Projeto + Relatório + Listas (até Vetores) |
+| 30/09/25 | Terça | **📅 Entrega da U1 até 23:59** - Projeto + Relatório + Listas (até Vetores) |
 | 01/10/25 | Quarta | **Lançamento:** Strings |
-| 03/10/25 | Sexta | **NÃO HAVERÁ AULA** - Feriado Estadual (Dia dos Mártires de Cunhaú e Uruaçu) |
+| 03/10/25 | Sexta | **⚠️ NÃO HAVERÁ AULA** - Feriado Estadual (Dia dos Mártires de Cunhaú e Uruaçu) |
 
 ---
 
@@ -218,7 +259,7 @@ Cada relatório deve conter:
 ### **Semana 11** - **UNIDADE 3** - Ponteiros/Alocação Dinâmica 2 
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 27/10/25 | Segunda | **Entrega da U2 até 23:59** - Projeto + Relatório + Listas (até Ponteiros/Alocação Dinâmica 1) |
+| 27/10/25 | Segunda | **📅 Entrega da U2 até 23:59** - Projeto + Relatório + Listas (até Ponteiros/Alocação Dinâmica 1) |
 | 29/10/25 | Quarta | **Lançamento:** Ponteiros/Alocação Dinâmica 2 |
 | 31/10/25 | Sexta | Revisão e dúvidas: Ponteiros/Alocação Dinâmica 2 |
 
@@ -265,7 +306,7 @@ Cada relatório deve conter:
 |------|-----|-----------|
 | 01/12/25 | Segunda | Acompanhamento de projeto |
 | 03/12/25 | Quarta | Acompanhamento de projeto |
-| 05/12/25 | Sexta | **Entrega final do projeto até 23:59** - Projeto + Relatório + Listas (até o tópico Modularização e Compilação) |
+| 05/12/25 | Sexta | **📅 Entrega final do projeto até 23:59** - Projeto + Relatório + Listas (até Modularização e Compilação) |
 
 ---
 
@@ -276,13 +317,17 @@ Cada relatório deve conter:
 | 10/12/25 | Quarta | Recuperação |
 | 12/12/25 | Sexta | **Encerramento do curso** |
 
-## Feriados e Suspensões que Afetam o Curso
+## Feriados e Suspensões
+
+### Feriados que Afetam o Curso
 - **03/10/25** - Dia dos Mártires de Cunhaú e Uruaçu (Feriado Estadual) - **SEXTA-FEIRA** - Não haverá aula
 - **28/10/25** - Dia do Servidor Público (Suspensão de atividades na terça-feira). A confirmar possível suspensão na segunda-feira, dia 27/10.
 
-## Observações
-- As entregas devem ser realizadas até **23:59** das datas indicadas
-- Os conteúdos novos serão passados nas aulas de quarta-feira (aulas serão gravadas e o vídeo disponibilizado até o dia seguinte)
-- As segundas e sextas serão dedicadas à revisão e solução de dúvidas
-- O calendário pode sofrer ajustes conforme a necessidade da turma
-- Todas as entregas devem ser feitas via SIGAA conforme instruções específicas
+## Observações Importantes
+
+- ✅ As entregas devem ser realizadas até **23:59** das datas indicadas
+- 🎥 Os conteúdos novos serão passados nas aulas de quarta-feira (aulas serão gravadas e o vídeo disponibilizado até o dia seguinte)
+- 📚 As segundas e sextas serão dedicadas à revisão e solução de dúvidas
+- 🔄 O calendário pode sofrer ajustes conforme a necessidade da turma
+- 📤 Todas as entregas devem ser feitas via SIGAA conforme instruções específicas
+- 📋 Listas de exercícios serão divulgadas semanalmente às quartas-feiras junto com as aulas gravadas
