@@ -1,4 +1,4 @@
-# Calendário do Curso - Introdução a Técnicas de Programação (2025.2)
+# Introdução a Técnicas de Programação (2025.2)
 
 ## Informações Gerais
 - **Período:** 22/08/2025 a 15/12/2025
