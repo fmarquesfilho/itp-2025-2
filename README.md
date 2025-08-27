@@ -178,7 +178,7 @@ Cada relatório deve conter:
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 25/08/25 | Segunda | Instalação e configuração do ambiente |
-| 27/08/25 | Quarta | **Lançamento:** Variáveis, Tipos, Operadores |
+| 27/08/25 | Quarta | **Lançamento:** Introdução, Variáveis, Tipos, Operadores |
 | 29/08/25 | Sexta | Revisão e dúvidas: Variáveis, Tipos, Operadores |
 
 ---
