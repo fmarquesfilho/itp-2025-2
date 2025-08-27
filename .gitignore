@@ -29,6 +29,8 @@ material-original
 *.synctex.gz
 *.fls
 *.fdb_latexmk
+*.swp
+*.xdv
 
 # MacOSX
 .DS_Store

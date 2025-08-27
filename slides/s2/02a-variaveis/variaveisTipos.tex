@@ -1,0 +1,453 @@
+
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\documentclass[portuguese,10pt,xcolor=table]{beamer}
+\setbeameroption{show notes}
+%\setbeamertemplate{note page}{Notas:\\\pagecolor{yellow!5}\insertnote}
+%\usepackage{beamerthemeshadow}
+%\usetheme{Berlin}
+%\usecolortheme{lily}
+%\usecolortheme{beaver}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{varwidth}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage[tikz]{bclogo}
+\usetikzlibrary{arrows,shapes}
+
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\lstset{
+	language=C,
+	basicstyle=\footnotesize\ttfamily,
+	%basicstyle=\scriptsize\ttfamily,
+	keywordstyle=\footnotesize\bfseries\sffamily,
+	%keywordstyle=\scriptsize\bfseries\sffamily,
+	showstringspaces=false,
+	numbers=left,
+	numberstyle=\footnotesize,
+	stepnumber=1,
+	numbersep=5pt,
+	tabsize=4,
+	%backgroundcolor=\color{blue!05},
+	backgroundcolor=\color{gray!35},
+	showspaces=false,
+	showtabs=false,
+	stringstyle=\ttfamily\color{red!80!brown},
+	commentstyle=\ttfamily\color{blue!80},
+	keywordstyle=\bfseries\color{deepgreen},
+	escapeinside={\%*}{*)}
+}
+\renewcommand{\lstlistingname}{Código}
+
+\usetikzlibrary{calc,decorations.pathmorphing,patterns}
+\pgfdeclaredecoration{penciline}{initial}{
+	\state{initial}[width=+\pgfdecoratedinputsegmentremainingdistance,
+		auto corner on length=1mm,]{
+			\pgfpathcurveto%
+			{% From
+				\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}
+				{\pgfdecorationsegmentamplitude}
+			}
+			{%  Control 1
+				\pgfmathrand
+					\pgfpointadd{\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}{0pt}}
+				{\pgfqpoint{-\pgfdecorationsegmentaspect
+							   \pgfdecoratedinputsegmentremainingdistance}%
+							   {\pgfmathresult\pgfdecorationsegmentamplitude}
+				}
+			}
+			{%TO 
+				\pgfpointadd{\pgfpointdecoratedinputsegmentlast}{\pgfpoint{1pt}{1pt}}
+			}
+		}
+	\state{final}{}
+}
+
+
+
+\everymath{\displaystyle}
+\tikzstyle{every picture}+=[remember picture,decoration=penciline]
+\DeclareTextFontCommand{\textdf}{\bfseries\color{blue!80}}
+%\tikzstyle{every node}+=[decorate]
+%\tikzstyle{every path}+=[decorate]
+%\tikzstyle{na} = [baseline=-.5ex]
+
+\usepackage[T1]{fontenc}
+\usepackage{helvet} % ou outro pacote de fonte compatível
+\renewcommand{\familydefault}{\sfdefault}
+
+\def\lecturename{IMD0012 - Introdução às técnicas de programação}
+
+\title{\insertlecture}
+
+\author{Prof. Fernando Figueira\\(adaptado do material do Prof. Rafael Beserra Gomes)}
+
+\institute{UFRN}
+
+\subject{Introdução a programação em C}
+
+\lecture[]{Programação em C, variáveis, tipos, operadores, E/S}{}
+
+%\subtitle{Introdução}
+
+\date{}
+
+\def\exe[#1]{\color{gray}#1\color{black}}
+\def\exp[#1]{\color{gray}<\textit{#1}>\color{black}}
+\def\espaco{\color{gray}\hspace{0.2cm}\color{black}}
+
+\begin{document}
+
+\usebackgroundtemplate{%
+	\includegraphics[width=\paperwidth,height=\paperheight]{background2}
+}
+\begin{frame}
+  \maketitle
+ \begin{center}
+ \tiny
+Material compilado em \today.\\
+  Licença desta apresentação:\\
+		\includegraphics[height=1.0cm]{by-nc-nd.png}\\
+http://creativecommons.org/licenses/
+	\end{center}
+\end{frame}
+
+
+\section{Programação em C}
+
+\subsection{Programando em C}
+	\begin{frame}
+	  \begin{itemize}
+		  \item Desenvolvimento inicial por Dennis Ritchie por volta de 1970
+		  \item Qual a \textdf{sintaxe} da linguagem C?
+		  \item Em 1983, ANSI (American National Standards Institute) padronizou C (\textdf{ANSI C})
+		  \item Padrões seguintes pelo ISO: \textdf{C90, C99, C11}
+		  \item O \textdf{gnu/gcc} (5.1.0 ou superior) usa por padrão o padrão \textdf{gnu11} (C11 com extensões)
+		  \item Cada compilador pode incluir extensões (pode estar fora do padrão e não funcionar em outro compilador!)
+	  \end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		Estrutura \textdf{inicial} de um programa escrito em C:
+	        \lstinputlisting{modelo.c}
+	  \begin{itemize}
+		  \item \textdf{Cabeçalho}
+		  \item Definição de uma função principal chamada \textdf{main}: instruções e retorno
+	  \end{itemize}
+	\end{frame}
+
+	\begin{frame}
+	        \lstinputlisting{modelo.c}
+	  \begin{itemize}
+		  \item Instruções encerradas com \textdf{;}
+		  \item Quebras de linha e \textdf{indentação} (espaçamento em relação à margem) facilitam a \textbf{legibilidade} do código-fonte
+		  \item Comentários podem ser feitos com:
+			  \begin{itemize}
+				  \item \textdf{//} para uma única linha
+				  \item \textdf{/* ... */} para múltiplas linhas
+			  \end{itemize}
+	  \end{itemize}
+	\end{frame}
+
+
+	\subsection{Compilando o código-fonte}
+	\begin{frame}
+		Forma mais simples (gera executável a.out)\\
+		gcc
+		\colorbox{gray!30}{nomeCodigo.c}
+
+		\vspace{0.5cm}
+		gcc
+		\colorbox{gray!30}{nomeCodigo.c}
+		\colorbox{orange!30}{-o nomeExecutavel}
+		\colorbox{yellow!30}{-std=padrao}
+		\colorbox{red!30}{-O3}\\
+			Há centenas de opções para o compilador gcc, algumas:
+	  \begin{itemize}
+		  \item -o: especifica o nome do executável (se omitir: a.out)
+		  \item -std: padrão a ser utilizado na compilação (se omitir: gnu11)
+		  \item -pedantic: alerta se há algo fora do padrão especificado
+		  \item -O3: habilita algumas otimizações de código
+	  \end{itemize}
+		Para esse caso, a ordem das caixas coloridas não importa.\\
+	\end{frame}
+
+\subsection{IDE}
+	\begin{frame}
+		\textdf{IDE}: \textit{integrated development environment} auxiliam a programação de computadores
+		\begin{itemize}
+			\item Texto colorido para melhorar a legibilidade do código
+			\item Atalhos para compilação, acesso fácil para configurações
+			\item Recursos para refatoração, debug, etc
+		\end{itemize}
+
+		\vspace{0.5cm}
+		Exemplo de editores/IDE:
+		\begin{itemize}
+			\item gedit (mais básico)
+			\item Geany
+			\item Code::Blocks
+			\item Sublime
+			\item Vi/Vim (mais avançado)
+		\end{itemize}
+
+	\end{frame}
+
+
+
+\section{Variáveis e tipos}
+
+	\def\GN[#1]{\colorbox{gray!40}{#1}}
+	\def\RN[#1]{\colorbox{red!40}{#1}}
+	\def\BN[#1]{\colorbox{blue!40}{#1}}
+	\def\ON[#1]{\colorbox{orange!40}{#1}}
+	\def\WN[#1]{\colorbox{white!40}{#1}}
+
+	\begin{frame}
+		\begin{center}
+			\structure{\large Variáveis e tipos}
+		\end{center}
+	\end{frame} 
+
+\subsection{Representação dos dados na memória}
+	\begin{frame}
+	Exemplo de dados na memória:
+		\tiny
+		 \setlength{\tabcolsep}{0pt}	
+		\begin{table}
+				  \begin{tabular}{|@{\hskip 0.2cm}c@{\hskip 0.2cm}|c|c|c|c|c|c|c|c|@{\hskip 0.2cm}c@{\hskip 0.2cm}|}
+					\hline
+		0xbffff22c & \GN[0]&\GN[0]&\GN[0]&\GN[0]&\GN[0]&\GN[1]&\GN[0]&\GN[1]& 5 \textbf{inteiro curto}\\\hline
+		0xbffff22d & \BN[0]&\BN[1]&\BN[0]&\BN[0]&\BN[0]&\BN[0]&\BN[1]&\BN[0]& B \textbf{caractere}\\\hline
+		0xbffff22e & \BN[0]&\BN[1]&\BN[0]&\BN[0]&\BN[0]&\BN[0]&\BN[1]&\BN[1]& C \textbf{caractere}\\\hline
+		0xbffff22f & \RN[1]&\RN[1]&\RN[0]&\RN[1]&\RN[1]&\RN[1]&\RN[0]&\RN[1]& 3.2 \textbf{real}\\\hline
+		\tikz[overlay] \node[fill=blue!20,shape=rectangle,minimum width=1cm,minimum height=0.4cm,opacity=1.0](e4){0xbffff230}; & \RN[1]&\RN[1]&\RN[0]&\RN[0]&\RN[1]&\RN[1]&\RN[0]&\RN[0]& \\\hline
+		0xbffff231 & \RN[0]&\RN[1]&\RN[0]&\RN[0]&\RN[1]&\RN[1]&\RN[0]&\RN[0]& \\\hline
+		0xbffff232 & \RN[0]&\RN[1]&\RN[0]&\RN[0]&\RN[0]&\RN[0]&\RN[0]&\RN[0]& \\\hline
+		0xbffff233 & \BN[0]&\BN[1]&\BN[0]&\BN[0]&\BN[0]&\BN[0]&\BN[0]&\BN[1]& A \textbf{caractere}\\\hline
+		0xbffff234 & \BN[0]&\BN[1]&\BN[0]&\BN[0]&\BN[0]&\BN[0]&\BN[1]&\BN[0]& B \textbf{caractere}\\\hline
+		0xbffff235 & \BN[0]&\BN[1]&\BN[0]&\BN[0]&\BN[0]&\BN[0]&\BN[1]&\BN[1]& C \textbf{caractere}\\\hline
+		0xbffff236 & \BN[0]&\BN[1]&\BN[0]&\BN[0]&\BN[0]&\BN[0]&\BN[1]&\BN[1]& A \textbf{caractere}\\\hline
+		0xbffff237 & \GN[1]&\GN[1]&\GN[1]&\GN[1]&\GN[1]&\GN[0]&\GN[1]&\GN[1]& -5 \textbf{inteiro curto}\\\hline
+		0xbffff238 & \ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[0]& 1 \textbf{inteiro}\\\hline
+		0xbffff239 & \ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[0]& \\\hline
+		0xbffff23a & \ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[0]& \\\hline
+		0xbffff23b & \ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[0]&\ON[1]& \\\hline
+				\end{tabular}
+		\end{table}
+		\tikz[overlay] \node[align=left,anchor=west,inner sep=4pt,fill=blue!20,opacity=0.8,rounded corners,scale=0.82,align=left](e9){\footnotesize Endereço na memória (em hexadecimal)};
+		\tikz[overlay] \path[->,bend left] (e9.north) edge (e4.west);
+		\normalsize
+	\end{frame}
+
+\subsection{Variáveis}
+
+	\begin{frame}
+		\begin{itemize}
+			\item A variável representa um dado variável (pode ser alterado) na memória
+			\item Cada variável possui:
+				\begin{itemize}
+			\item \textbf{tipo} (ex.: int, float, string, boolean)
+			\item \textbf{endereço}: posição do dado na memória, na qual há uma sequência de \textit{bits}\footnote{a quantidade de bits depende do tipo da variável} representando um \textbf{valor}
+			\item \textbf{identificador}, evitando que tenhamos que saber o endereço dos dados
+				\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+
+	\begin{frame}
+		Em relação a C:
+		\begin{itemize}
+			\item é necessário \textdf{declarar} variáveis
+	        \lstinputlisting{declaracao.c}
+			\item somente pode usar uma variável depois de declará-la
+			\item pode atribuir um valor inicial para cada variável (\textdf{inicialização})\footnote{Uma boa regra é procurar sempre inicializar as variáveis. Apesar de que em testes você poderá constatar um valor zero inicial para as variáveis, nem sempre será o caso.}
+			\item pode declarar mais de uma variável na mesma linha, desde que sejam do mesmo tipo
+		\end{itemize}
+	\end{frame}
+
+	
+	\begin{frame}
+	  \begin{itemize}
+	      \item Experimente o seguinte código:
+	        \lstinputlisting{atribuicao1.c}
+	  \end{itemize}
+	\end{frame}
+
+\subsection{Tipos}
+	\begin{frame}
+		Em relação a C:
+		\begin{itemize}
+			\item tipos primitivos principais: char, int, long long, float, double
+				\begin{table}[]
+					\centering
+					\begin{tabular}{lll}
+						\textbf{Tipo} & \textbf{Exemplo de valor}\\
+						char\footnote{um caractere tem valor inteiro de acordo com a tabela ascii} & 'a', 'z', 'A', 'T' (tabela ascii)\\
+							int  & 1232, 502, -39328\\
+							   long long int   & 2395828482, -2392542832\\
+							   float & 3.242, 52002.1 \\
+							   double & 3.242, 52002.1
+					\end{tabular}
+				\end{table}
+			\item as versões unsigned utilizam a variável somente para valores não negativos
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\textdf{Strings} são sequências de caracteres
+		\begin{itemize}
+			\item uma string é representa entre aspas duplas
+	        \lstinputlisting{string.c}
+			\item é possível armazenar uma string em C, mas veremos mais adiante na disciplina
+		\end{itemize}
+	\end{frame}
+	
+	
+\subsection{Identificadores}
+
+	\begin{frame}
+		\small
+		\textbf{Identificadores em C:}
+		\begin{itemize}
+			\item \textdf{NÃO} comece com dígitos
+			\item \textdf{NÃO} use espaços, acentos, ç, ou caracteres diferentes de a..z A..Z
+			\item \textdf{NÃO} use palavras-chave da linguagem (ex.: int, return, float, if, for)
+			\item são \textit{case-sensitive}, exemplo: variavel é diferente de VaRiAVel
+		\end{itemize}
+
+		\textbf{Recomendações:}
+		\begin{itemize}
+			\item iniciar com letra minúscula para variáveis
+			\item utilize um identificador que represente bem o significado da variável
+			\item se for composto por vários nomes, comece cada nome (exceto o primeiro) com letra maiúscula (ex.: anguloTeste)
+			\item \textdf{NÃO} use identificadores longos demais (ex.: valorInteiroASerDigitadoPeloUsuario)
+		\end{itemize}
+	\end{frame}
+	
+
+	\section{Entrada e saída de dados}
+
+    \begin{frame}
+		\begin{center}
+			\structure{\large Entrada e saída de dados}
+		\end{center}
+	\end{frame}
+
+\subsection{Saída de dados}
+    \begin{frame}
+        \begin{itemize}
+			\item Através da função \textdf{printf} (stdio.h):
+            \lstinputlisting{output1.c}
+            \item É comum dizer que o programa \textdf{escreve na tela}
+            \item Você pode inserir valores na string a ser escrita:
+            \lstinputlisting{output2.c}
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}
+        \begin{itemize}
+			\item haverá tantos \textdf{argumentos} quantos \textdf{especificadores de formato} na string (\%), atribuídos na mesma ordem
+            \lstinputlisting{output3.c}
+				\vspace{1cm}
+		\item o tipo do dado determina que \textdf{especificador de formato} utilizar
+            \lstinputlisting{output4.c}
+				\vspace{1cm}
+			\href{https://en.wikipedia.org/wiki/C\_data\_types\#Basic\_types}{\color{blue}Clique aqui} para conhecer os especificadores de formato da linguagem C.
+			\item para escrever na tela números com tantas casas de precisão:
+            \lstinputlisting{output5.c}
+
+        \end{itemize}
+    \end{frame}
+
+	\begin{frame}
+	\begin{alertblock}{Exercício em sala}
+	Escreva um programa em C que declara as seguintes variáveis:
+	\begin{itemize}
+		\item um \textbf{caractere} com valor 'g' (identificador simboloGravidade)
+		\item um número \textbf{real} com valor 9.8196 (identificador gravidade)
+	\end{itemize}
+	
+	Em seguida, o programa deve, utilizando o caractere e o número real declarados, escrever na tela a seguinte mensagem:\\
+	\textbf{O valor da gravidade g é: 9.8196 m/s2}
+	
+	\end{alertblock}
+
+
+	\end{frame}
+
+\subsection{Entrada de dados}
+    \begin{frame}
+        \begin{itemize}
+			\item A entrada é realizada através da função \textdf{scanf} (stdio.h):
+            \lstinputlisting{input1.c}
+            \item É comum dizer que o programa \textdf{lê do usuário}
+        \end{itemize}    
+    \end{frame}
+
+    \begin{frame}
+        \begin{itemize}
+			\item haverá tantos \textdf{argumentos} quantos \textdf{especificadores de formato} na string (\%), atribuídos na mesma ordem
+			\item o \textdf{argumento} é um endereço de memória (usamos o operador \& para obter o endereço de uma variável)
+            \lstinputlisting{input1.c}
+		\item o tipo do dado determina que \textdf{especificador de formato} utilizar
+            \lstinputlisting{input2.c}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \begin{itemize}
+			\item você pode utilizar o mesmo scanf para ler mais de um dado
+            \lstinputlisting{input3.c}
+        \end{itemize}
+    \end{frame}
+	
+    \begin{frame}
+        \begin{itemize}
+		\item a mensagem que precede o scanf \textbf{não é obrigatório}, serve apenas para orientar o usuário
+            \lstinputlisting{input4.c}
+			\item o scanf detecta o final de uma entrada para o começo da seguinte a partir de qualquer combinação de espaços, quebras de linha ('$\backslash$n') ou tabs ('$\backslash$t')
+        \end{itemize}
+    \end{frame}
+
+\begin{frame}
+Nas listas de exercícios e nas provas, a não ser que expresso o contrário, você pode assumir que o usuário digita as informações conforme esperado. Por exemplo, para um programa que determina se um número inteiro é primo ou não, você pode assumir que ele digitará um número inteiro e maior que 0.
+\end{frame}
+
+	\begin{frame}
+	\begin{alertblock}{Exercício em sala}
+	Escreva um programa em C que declara as seguintes variáveis:
+	\begin{itemize}
+		\item um \textbf{caractere} com valor 'g' (identificador simboloGravidade)
+		\item um número \textbf{real} com valor 9.8196 (identificador gravidade)
+		\item um número \textbf{inteiro} com o tempo (identificador tempo)
+	\end{itemize}
+	
+	O programa deve escrever na tela a mensagem \textbf{"Digite o tempo de queda: "} e ler do usuário o tempo. Em seguida, deve escrever na tela a seguinte mensagem:\\
+	\textbf{O valor da gravidade g é: 9.8196 m/s2}\\
+	\textbf{O espaço percorrido pelo objeto em queda livre foi: ... metros}
+
+	Utilize o seguinte para calcular o espaço percorrido:
+	$$ \frac{gt^2}{2}$$
+	
+	\end{alertblock}
+
+
+	\end{frame}
+
+
+	
+
+\end{document}
+
+
