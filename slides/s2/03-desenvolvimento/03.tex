@@ -1,0 +1,209 @@
+\documentclass[10pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+\usepackage{amssymb}
+\usetheme{Madrid}
+
+\title{Introdução a Técnicas de Programação (2025.2)}
+\subtitle{Planejamento Incremental para Projetos em C}
+\author{Prof. Fernando Figueira}
+\institute{DIMAp - UFRN}
+\date{29 de Agosto de 2025}
+
+\tikzstyle{process} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!20]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{document}
+
+\frame{\titlepage}
+
+% Slide 1 - Introdução
+\begin{frame}{Objetivo da Aula}
+\begin{itemize}
+    \item Entender desenvolvimento incremental para projetos em C
+    \item Aprender a organizar backlog para aplicações CLI
+    \item Planejar sprints adaptados ao curso de técnicas de programação
+    \item Durante o mês de setembro vocês vão preparar o projeto para entrega da Unidade 1
+\end{itemize}
+\end{frame}
+
+% Slide 2 - Desenvolvimento Incremental para Projetos em C
+\begin{frame}{Desenvolvimento Incremental em C}
+\begin{itemize}
+    \item Dividir o projeto em funcionalidades menores
+    \item Desenvolver por camadas: entrada → processamento → saída
+    \item Testar cada função individualmente antes de integrar
+    \item Exemplo: Calculadora com histórico
+    \begin{itemize}
+        \item Sprint 1: Operações básicas (+, -, *, /)
+        \item Sprint 2: Histórico em vetor
+        \item Sprint 3: Persistência em arquivo
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+% Slide 3 - Exemplo: Calculadora com Histórico (U1)
+\begin{frame}{Exemplo: Calculadora com Histórico - Unidade 1}
+\centering
+\begin{tikzpicture}
+    \node[draw, fill=green!20, minimum width=8cm, minimum height=0.8cm, align=center] (item1) 
+        {Função: soma(float a, float b)};
+    \node[draw, fill=green!20, minimum width=8cm, minimum height=0.8cm, below=0.1cm of item1, align=center] (item2) 
+        {Função: subtracao(float a, float b)};
+    \node[draw, fill=yellow!20, minimum width=8cm, minimum height=0.8cm, below=0.1cm of item2, align=center] (item3) 
+        {Vetor: historico[100] para armazenar resultados};
+    \node[draw, fill=orange!20, minimum width=8cm, minimum height=0.8cm, below=0.1cm of item3, align=center] (item4) 
+        {Menu interativo com switch-case};
+\end{tikzpicture}
+\end{frame}
+
+% Slide 4 - Vantagens para Projetos em C
+\begin{frame}{Vantagens para Projetos em C}
+\begin{itemize}
+    \item Detecção precoce de erros de compilação
+    \item Teste incremental de funções
+    \item Facilita debugging de programas complexos
+    \item Adaptação aos conceitos aprendidos em aula
+\end{itemize}
+\end{frame}
+
+% Slide 5 - Product Backlog para Aplicações CLI
+\begin{frame}{Product Backlog para Projetos em C}
+\begin{itemize}
+    \item Funcionalidades core do programa
+    \item Tratamento de erros e validações
+    \item Melhorias de interface de usuário
+    \item Otimizações de performance
+    \item \textbf{Prioridade baseada nos conceitos da unidade}
+\end{itemize}
+\end{frame}
+
+% Slide 6 - Exemplo de Backlog para Projeto U1
+\begin{frame}{Exemplo: Backlog para Sistema de Biblioteca (U1)}
+\centering
+\begin{tikzpicture}[scale=0.9]
+    \node[draw, fill=green!20, minimum width=9cm, minimum height=0.8cm, align=left] (item1) 
+        {\textbf{Alta}: Cadastrar livro (struct Livro + vetor)};
+    \node[draw, fill=green!20, minimum width=9cm, minimum height=0.8cm, below=0.5cm, align=left] (item2) 
+        {\textbf{Alta}: Listar livros (for + printf)};
+    \node[draw, fill=yellow!20, minimum width=9cm, minimum height=0.8cm, below=2.1cm, align=left] (item3) 
+        {\textbf{Média}: Buscar livro por título (strcmp + repetição)};
+    \node[draw, fill=orange!20, minimum width=9cm, minimum height=0.8cm, below=3.1cm, align=left] (item4) 
+        {\textbf{Baixa}: Estatísticas};
+\end{tikzpicture}
+\end{frame}
+
+% Slide 8 - Sprints para Projetos Acadêmicos
+\begin{frame}{Sprints Adaptados para o Curso}
+\begin{itemize}
+    \item \textbf{Duração}: 1-2 semanas (alinhado com conteúdo das aulas)
+    \item \textbf{Objetivo}: Entrega de funcionalidades que usem os tópicos recentes
+    \item \textbf{Exemplo Sprint 1}: Variáveis, operadores, E/S básica
+    \item \textbf{Exemplo Sprint 2}: Condicionais, repetições simples
+    \item \textbf{Exemplo Sprint 3}: Funções, vetores
+\end{itemize}
+\end{frame}
+
+% Slide 9 - Timeboxing para Projeto de Curso (CORRIGIDO)
+\begin{frame}{Planejamento: Projeto Unidade 1 (Setembro)}
+\centering
+\scriptsize % Reduzindo o tamanho da fonte
+\begin{tikzpicture}[scale=0.8] % Reduzindo a escala do tikzpicture
+    \draw[fill=blue!10] (0,0) rectangle (3.2,0.8) node[midway] {\tiny Sprint 1 (1-7/09)};
+    \draw[fill=blue!10] (3.4,0) rectangle (6.6,0.8) node[midway] {\tiny Sprint 2 (8-14/09)};
+    \draw[fill=blue!10] (6.8,0) rectangle (10,0.8) node[midway] {\tiny Sprint 3 (15-21/09)};
+    \draw[fill=green!20] (10.2,0) rectangle (13.4,0.8) node[midway] {\tiny Revisão (22-28/09)};
+    
+    \node[below, font=\tiny] at (1.6,0) {Variáveis, E/S};
+    \node[below, font=\tiny] at (5,0) {Condicionais};
+    \node[below, font=\tiny] at (8.4,0) {Funções, Vetores};
+    \node[below, font=\tiny] at (11.8,0) {Testes, Debug};
+\end{tikzpicture}
+
+\vspace{0.3cm}
+\normalsize % Voltando ao tamanho normal
+\textbf{Entrega: 30/09 até 23:59}
+
+\vspace{0.2cm}
+\footnotesize
+\begin{itemize}
+    \item Sprint 1: Entrada/saída básica, variáveis, operadores
+    \item Sprint 2: if/else, switch, repetições simples
+    \item Sprint 3: Modularização com funções, vetores
+    \item Revisão: Integração, testes finais, documentação
+\end{itemize}
+\end{frame}
+
+% Slide 10 - Definição de Pronto para C
+\begin{frame}{Definição de Pronto para Projetos em C}
+\begin{itemize}
+    \item Código compila sem warnings
+    \item Funções testadas individualmente
+    \item Documentação nos comentários
+    \item \textbf{Commit no repositório Git}
+\end{itemize}
+\end{frame}
+
+% Slide 11 - Exemplo Definição de Pronto
+\begin{frame}{Exemplo: Definição de Pronto para Função}
+\centering
+\begin{tikzpicture}
+    \node[draw, fill=blue!10, minimum width=10cm, minimum height=5cm, align=left, text width=9cm] {
+        \textbf{Função: calcular\_media(float notas[], int n)} \\
+        $\checkmark$ Compila sem warnings \\
+        $\checkmark$ Retorna -1 se n $\leq$ 0 \\
+        $\checkmark$ Calcula média corretamente \\
+        $\checkmark$ Testada com valores limite \\
+        $\checkmark$ Comentários explicativos \\
+        $\checkmark$ Commit no Git com mensagem descritiva
+    };
+\end{tikzpicture}
+\end{frame}
+
+% Slide 12 - Fluxo de Desenvolvimento em C
+\begin{frame}{Fluxo de Desenvolvimento para Projetos em C}
+\centering
+\begin{tikzpicture}[node distance=1.5cm]
+    \node (plan) [process, fill=blue!20] {Planejamento};
+    \node (code) [process, right of=plan, xshift=2.5cm, fill=green!20] {Codificação};
+    \node (compile) [process, below of=code, yshift=-1cm, fill=yellow!20] {Compilação};
+    \node (test) [process, left of=compile, xshift=-2.5cm, fill=orange!20] {Testes};
+    \node (commit) [process, below of=compile, yshift=-1cm, fill=red!20] {Commit};
+    
+    \draw [arrow] (plan) -- (code);
+    \draw [arrow] (code) -- (compile);
+    \draw [arrow] (compile) -- (test);
+    \draw [arrow] (test) -- (commit);
+    \draw [arrow, bend right=30] (test) to node[auto, swap] {erro} (code);
+    \draw [arrow, bend left=30] (compile) to node[auto] {erro} (code);
+\end{tikzpicture}
+\end{frame}
+
+% Slide 14 - Dicas para Projeto da Unidade 1
+\begin{frame}{Dicas para o Projeto - Unidade 1}
+\begin{itemize}
+    \item Comece com funcionalidades básicas
+    \item Teste cada função individualmente
+    \item Use nomes descritivos para variáveis e funções
+    \item Faça commits frequentes no Git
+    \item Documente com comentários
+    \item \textbf{Foco:} Variáveis, operadores, condicionais, repetições, funções, vetores
+\end{itemize}
+\end{frame}
+
+% Slide 15 - Próximos Passos
+\begin{frame}{Próximos Passos}
+\begin{itemize}
+    \item Escolher projeto até 05/09
+    \item Configurar ambiente de desenvolvimento
+    \item Criar repositório Git
+    \item Backlog até 08/09
+    \item Iniciar Sprint 1 na semana de 08/09
+    \item Buscar ajuda nas aulas de dúvidas (segundas e sextas)
+\end{itemize}
+\end{frame}
+
+\end{document}
