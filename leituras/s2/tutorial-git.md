@@ -11,11 +11,11 @@
 - [Testando a Instalação](#testando-a-instalação)
 - [Configuração Inicial](#configuração-inicial)
 - [Criando uma Conta no GitHub](#criando-uma-conta-no-github)
-- [Configurando SSH (Recomendado)](#configurando-ssh-recomendado)
 - [Comandos Básicos do Git](#comandos-básicos-do-git)
 - [Criando seu Primeiro Repositório](#criando-seu-primeiro-repositório)
 - [Cenários Típicos de Uso](#cenários-típicos-de-uso)
 - [Workflow Básico de Desenvolvimento](#workflow-básico-de-desenvolvimento)
+- [Configurando SSH (Método Alternativo)](#configurando-ssh-método-alternativo)
 - [Solução de Problemas Comuns](#solução-de-problemas-comuns)
 - [Referências](#referências)
 
@@ -32,7 +32,7 @@ O Git é um sistema de controle de versão distribuído que permite rastrear mud
 ### Opção 1: Instalador Oficial (Recomendado)
 
 **Passo 1:** Baixe o Git para Windows
-- Acesse https://git-scm.com/download/windows
+- Acesse https://git-scm.com/downloads/win
 - Baixe a versão mais recente (64-bit recomendado)
 - Execute o instalador como administrador
 
@@ -100,7 +100,7 @@ brew install git
 ### Opção 3: Instalador Oficial
 
 **Passo 1:** Baixe o Git para macOS
-- Acesse https://git-scm.com/download/mac
+- Acesse https://git-scm.com/downloads/mac
 - Baixe o instalador mais recente
 - Execute o instalador seguindo as instruções
 
@@ -264,63 +264,6 @@ git config user.email
 
 ---
 
-## Configurando SSH (Recomendado)
-
-### Gerando uma Chave SSH
-
-**Passo 1:** Gere uma nova chave SSH
-```bash
-ssh-keygen -t ed25519 -C "seuemail@exemplo.com"
-```
-
-**Passo 2:** Quando solicitado, pressione Enter para usar o local padrão
-```
-Enter file in which to save the key (/home/usuario/.ssh/id_ed25519): [Enter]
-```
-
-**Passo 3:** Digite uma senha para a chave (opcional, mas recomendado)
-```
-Enter passphrase (empty for no passphrase): [Digite sua senha]
-Enter same passphrase again: [Repita a senha]
-```
-
-### Adicionando a Chave SSH ao ssh-agent
-
-**Passo 1:** Inicie o ssh-agent
-```bash
-eval "$(ssh-agent -s)"
-```
-
-**Passo 2:** Adicione sua chave SSH privada ao ssh-agent
-```bash
-ssh-add ~/.ssh/id_ed25519
-```
-
-### Adicionando a Chave SSH ao GitHub
-
-**Passo 1:** Copie a chave SSH pública
-```bash
-# Linux/macOS
-cat ~/.ssh/id_ed25519.pub
-
-# Windows (Git Bash)
-clip < ~/.ssh/id_ed25519.pub
-```
-
-**Passo 2:** No GitHub
-1. Vá para Settings → SSH and GPG keys
-2. Clique em "New SSH key"
-3. Dê um título descritivo (ex: "Notebook Pessoal")
-4. Cole a chave no campo "Key"
-5. Clique em "Add SSH key"
-
-**Passo 3:** Teste a conexão
-```bash
-ssh -T git@github.com
-```
-
----
-
 ## Comandos Básicos do Git
 
 ### Comandos de Inicialização
@@ -329,11 +272,8 @@ ssh -T git@github.com
 # Inicializar um repositório Git
 git init
 
-# Clonar um repositório existente
+# Clonar um repositório existente (HTTPS - método padrão)
 git clone https://github.com/usuario/repositorio.git
-
-# Clonar usando SSH (após configurar a chave)
-git clone git@github.com:usuario/repositorio.git
 ```
 
 ### Comandos de Status e Informação
@@ -399,14 +339,17 @@ git remote add origin https://github.com/usuario/repositorio.git
 # Visualizar repositórios remotos configurados
 git remote -v
 
-# Enviar commits para o repositório remoto
-git push origin main
-
-# Configurar push padrão (primeira vez)
+# Enviar commits para o repositório remoto (primeira vez)
 git push -u origin main
 
-# Baixar mudanças do repositório remoto
+# Após a configuração inicial, usar apenas:
+git push
+
+# Baixar mudanças do repositório remoto (primeira vez ou especificando branch)
 git pull origin main
+
+# Após a configuração inicial, usar apenas:
+git pull
 
 # Baixar mudanças sem fazer merge automático
 git fetch origin
@@ -471,7 +414,7 @@ git commit -m "Primeiro commit: adiciona README"
 
 **Passo 6:** Conecte o repositório local ao GitHub
 ```bash
-git remote add origin git@github.com:seuusuario/meu-primeiro-projeto.git
+git remote add origin https://github.com/seuusuario/meu-primeiro-projeto.git
 git push -u origin main
 ```
 
@@ -479,7 +422,7 @@ git push -u origin main
 
 **Passo 1:** Clone o repositório
 ```bash
-git clone git@github.com:usuario/repositorio.git
+git clone https://github.com/usuario/repositorio.git
 ```
 
 **Passo 2:** Entre no diretório
@@ -492,7 +435,7 @@ cd repositorio
 # Edite arquivos...
 git add .
 git commit -m "Minhas modificações"
-git push origin main
+git push
 ```
 
 ---
@@ -517,7 +460,7 @@ git add arquivo.txt
 git commit -m "Adiciona nova funcionalidade"
 
 # 5. Enviar para o GitHub
-git push origin main
+git push
 ```
 
 ### 2. Trabalhando com Branches
@@ -532,15 +475,15 @@ git checkout -b nova-funcionalidade
 git add .
 git commit -m "Implementa nova funcionalidade"
 
-# 3. Enviar branch para o GitHub
-git push origin nova-funcionalidade
+# 3. Enviar branch para o GitHub (primeira vez)
+git push -u origin nova-funcionalidade
 
 # 4. Voltar para main e fazer merge
 git checkout main
 git merge nova-funcionalidade
 
 # 5. Enviar merge para o GitHub
-git push origin main
+git push
 
 # 6. Deletar branch local (opcional)
 git branch -d nova-funcionalidade
@@ -552,17 +495,17 @@ git branch -d nova-funcionalidade
 
 ```bash
 # 1. Sempre puxar mudanças antes de começar
-git pull origin main
+git pull
 
 # 2. Fazer suas modificações
 git add .
 git commit -m "Suas modificações"
 
 # 3. Puxar mudanças novamente (caso alguém tenha commitado)
-git pull origin main
+git pull
 
 # 4. Resolver conflitos se houver, então push
-git push origin main
+git push
 ```
 
 ---
@@ -573,7 +516,7 @@ git push origin main
 
 1. **Iniciar o dia:**
    ```bash
-   git pull origin main
+   git pull
    ```
 
 2. **Durante o desenvolvimento:**
@@ -585,8 +528,8 @@ git push origin main
 
 3. **Antes de enviar para o repositório:**
    ```bash
-   git pull origin main  # Pegar atualizações
-   git push origin main  # Enviar suas mudanças
+   git pull    # Pegar atualizações
+   git push    # Enviar suas mudanças
    ```
 
 ### Boas Práticas para Commits
@@ -611,14 +554,18 @@ git commit -m "Remove código comentado e variáveis não utilizadas"
 
 ### Problemas de Autenticação
 
-**Problema:** "Permission denied (publickey)"
+**Problema:** "Permission denied (publickey)" ou problemas de autenticação HTTPS
 **Solução:** 
-1. Verifique se a chave SSH foi adicionada corretamente
-2. Teste a conexão: `ssh -T git@github.com`
-3. Verifique se o ssh-agent está rodando
+1. Para HTTPS: Verifique suas credenciais ou configure um token de acesso pessoal
+2. Para SSH: Verifique se a chave SSH foi adicionada corretamente e teste: `ssh -T git@github.com`
 
 **Problema:** "Support for password authentication was removed"
-**Solução:** Configure chaves SSH ou use tokens de acesso pessoal
+**Solução:** 
+1. **Método recomendado (HTTPS):** Configure um Personal Access Token:
+   - Vá para GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)
+   - Clique em "Generate new token" e selecione os escopos necessários (repo, workflow, etc.)
+   - Use o token como senha quando solicitado
+2. **Método alternativo:** Configure chaves SSH (conforme explicado abaixo)
 
 ### Conflitos de Merge
 
@@ -668,8 +615,79 @@ git commit -m "Remove arquivo do controle de versão"
 ```bash
 # CUIDADO: Só use se você é o único trabalhando no repositório
 git reset --hard HEAD~1  # Volta um commit
-git push --force origin main  # Força o push (PERIGOSO)
+git push --force         # Força o push (PERIGOSO)
 ```
+---
+
+## Configurando SSH (Método Alternativo)
+
+**Nota:** SSH é um método alternativo que oferece maior segurança e conveniência após a configuração inicial, mas requer configuração adicional. Para usuários iniciantes, recomenda-se usar HTTPS.
+
+### Gerando uma Chave SSH
+
+**Passo 1:** Gere uma nova chave SSH
+```bash
+ssh-keygen -t ed25519 -C "seuemail@exemplo.com"
+```
+
+**Passo 2:** Quando solicitado, pressione Enter para usar o local padrão
+```
+Enter file in which to save the key (/home/usuario/.ssh/id_ed25519): [Enter]
+```
+
+**Passo 3:** Digite uma senha para a chave (opcional, mas recomendado)
+```
+Enter passphrase (empty for no passphrase): [Digite sua senha]
+Enter same passphrase again: [Repita a senha]
+```
+
+### Adicionando a Chave SSH ao ssh-agent
+
+**Passo 1:** Inicie o ssh-agent
+```bash
+eval "$(ssh-agent -s)"
+```
+
+**Passo 2:** Adicione sua chave SSH privada ao ssh-agent
+```bash
+ssh-add ~/.ssh/id_ed25519
+```
+
+### Adicionando a Chave SSH ao GitHub
+
+**Passo 1:** Copie a chave SSH pública
+```bash
+# Linux/macOS
+cat ~/.ssh/id_ed25519.pub
+
+# Windows (Git Bash)
+clip < ~/.ssh/id_ed25519.pub
+```
+
+**Passo 2:** No GitHub
+1. Vá para Settings → SSH and GPG keys
+2. Clique em "New SSH key"
+3. Dê um título descritivo (ex: "Notebook Pessoal")
+4. Cole a chave no campo "Key"
+5. Clique em "Add SSH key"
+
+**Passo 3:** Teste a conexão
+```bash
+ssh -T git@github.com
+```
+
+### Usando SSH em vez de HTTPS
+
+Após configurar SSH, você pode usar URLs SSH nos comandos:
+```bash
+# Clonar com SSH
+git clone git@github.com:usuario/repositorio.git
+
+# Alterar URL existente de HTTPS para SSH
+git remote set-url origin git@github.com:usuario/repositorio.git
+```
+
+**Para aprender mais sobre SSH:** Consulte o [guia oficial do GitHub sobre SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 
 ---
 
@@ -693,9 +711,9 @@ git push --force origin main  # Força o push (PERIGOSO)
 4. **Tutoriais e Guias Interativos**
    - Learn Git Branching: https://learngitbranching.js.org/
    - Atlassian Git Tutorials: https://www.atlassian.com/git/tutorials
+   - Pro Git Book (gratuito): https://git-scm.com/book
 
 5. **Material Complementar**
-   - Chacon, S., & Straub, B. (2014). *Pro Git*. 2nd Edition. Apress. (Disponível gratuitamente online): https://git-scm.com/book/en/v2
    - Git Magic: http://www-cs-students.stanford.edu/~blynn/gitmagic/
 
 6. **Ferramentas e Clientes Gráficos**
