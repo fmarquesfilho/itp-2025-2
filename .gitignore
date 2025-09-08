@@ -32,5 +32,7 @@ material-original
 *.swp
 *.xdv
 
+**/*dSYM
+
 # MacOSX
 .DS_Store
