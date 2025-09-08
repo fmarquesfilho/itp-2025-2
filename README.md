@@ -179,14 +179,14 @@ Cada relatório deve conter:
 |------|-----|-----------|
 | 25/08/25 | Segunda | Instalação e configuração do ambiente |
 | 27/08/25 | Quarta | **Lançamento:** Introdução, Variáveis, Tipos, Operadores |
-| 29/08/25 | Sexta | Revisão e dúvidas: Variáveis, Tipos, Operadores |
+| 29/08/25 | Sexta | Dicas para fase inicial do projeto |
 
 ---
 
 ### **Semana 3** - Condicionais
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 01/09/25 | Segunda | Revisão e dúvidas: Variáveis, Tipos, Operadores |
+| 01/09/25 | Segunda | Não houve encontro |
 | 03/09/25 | Quarta | **Lançamento:** Condicionais |
 | 05/09/25 | Sexta | Revisão e dúvidas: Condicionais |
 
@@ -195,7 +195,7 @@ Cada relatório deve conter:
 ### **Semana 4** - Estruturas de Repetição
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 08/09/25 | Segunda | Revisão e dúvidas: Condicionais |
+| 08/09/25 | Segunda | **Tutorial de compilação e depuração usando GCC/GDB e VS Code** |
 | 10/09/25 | Quarta | **Lançamento:** Estruturas de Repetição |
 | 12/09/25 | Sexta | Revisão e dúvidas: Estruturas de Repetição |
 
