@@ -4,7 +4,7 @@
         {
             "label": "C/C++: build active file",
             "type": "shell",
-            "command": "clang",   // or "gcc" if you installed it via Homebrew
+            "command": "gcc",   // or "gcc" if you installed it via Homebrew
             "args": [
                 "-g",                   // debug symbols
                 "${file}",              // input source file
