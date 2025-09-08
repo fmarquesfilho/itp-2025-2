@@ -1,0 +1,16 @@
+{
+    // See https://go.microsoft.com/fwlink/?linkid=830387 for more info
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Launch C Program",
+            "program": "${fileDirname}/${fileBasenameNoExtension}", // ✅ runs the compiled active file
+            "args": [],
+            "cwd": "${fileDirname}",
+            "preLaunchTask": "C/C++: build active file", // ✅ defined in tasks.json
+            "terminal": "integrated" // ✅ allows scanf/getchar/etc. in VS Code’s terminal
+        }
+    ]
+}
