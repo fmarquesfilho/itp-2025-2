@@ -1,0 +1,344 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+% Tema
+\usetheme{Madrid}
+\usecolortheme{default}
+
+% Configuração do listings para código C
+\lstset{
+    language=C,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color{lightgray!10},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    frame=single,
+    rulecolor=\color{black},
+    tabsize=2,
+    captionpos=b,
+    breaklines=true,
+    breakatwhitespace=false,
+    escapeinside={\%*}{*)},
+    morekeywords={scanf, printf}
+}
+
+% Definir linguagem JSON para o listings
+\lstdefinelanguage{json}{
+    basicstyle=\ttfamily\tiny,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=5pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{black},
+    morestring=[b]",
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    literate=
+     *{0}{{{\color{blue}0}}}{1}
+      {1}{{{\color{blue}1}}}{1}
+      {2}{{{\color{blue}2}}}{1}
+      {3}{{{\color{blue}3}}}{1}
+      {4}{{{\color{blue}4}}}{1}
+      {5}{{{\color{blue}5}}}{1}
+      {6}{{{\color{blue}6}}}{1}
+      {7}{{{\color{blue}7}}}{1}
+      {8}{{{\color{blue}8}}}{1}
+      {9}{{{\color{blue}9}}}{1}
+      {:}{{{\color{purple}{:}}}}{1}
+      {,}{{{\color{purple}{,}}}}{1}
+      {\{}{{{\color{orange}{\{}}}}{1}
+      {\}}{{{\color{orange}{\}}}}}{1}
+      {[}{{{\color{orange}{[}}}}{1}
+      {]}{{{\color{orange}{]}}}}{1},
+}
+
+\title{Compilação e Depuração com GCC/GDB e VS Code}
+\subtitle{Introdução às Técnicas de Programação}
+\author{Prof. Fernando Figueira}
+\date{Setembro 2025}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Agenda}
+\tableofcontents
+\end{frame}
+
+\section{Revisão: Processo de Compilação}
+
+\begin{frame}[fragile]
+\frametitle{O que é Compilação?}
+\begin{itemize}
+    \item \textbf{Compilação}: Processo de transformar código-fonte em código executável
+    \item \textbf{GCC}: GNU Compiler Collection - compilador gratuito e amplamente usado
+    \item \textbf{Etapas}:
+    \begin{enumerate}
+        \item Pré-processamento (diretivas \texttt{\#include}, \texttt{\#define})
+        \item Compilação (código C → assembly)
+        \item Montagem (assembly → código objeto)
+        \item Ligação (código objeto → executável)
+    \end{enumerate}
+\end{itemize}
+
+\begin{lstlisting}[caption=Comando básico de compilação]
+gcc arquivo.c -o programa
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Compilação Básica}
+\begin{block}{Comandos essenciais}
+\begin{lstlisting}[language=bash]
+# Compilacao simples
+gcc divide_outro.c -o divide_outro
+
+# Execucao
+./divide_outro
+
+# Compilacao com avisos (recomendado)
+gcc -Wall divide_outro.c -o divide_outro
+
+# Compilacao para debug
+gcc -g -Wall divide_outro.c -o divide_outro
+\end{lstlisting}
+\end{block}
+
+\begin{itemize}
+    \item \texttt{-Wall}: Habilita avisos do compilador
+    \item \texttt{-g}: Inclui informações de debug no executável
+    \item \texttt{-o}: Especifica o nome do arquivo de saída
+\end{itemize}
+\end{frame}
+
+\section{Depuração com GDB}
+
+\begin{frame}
+\frametitle{O que é Depuração?}
+\begin{itemize}
+    \item \textbf{Depuração}: Processo de encontrar e corrigir erros (bugs) no código
+    \item \textbf{GDB}: GNU Debugger - ferramenta de linha de comando para depuração
+    \item \textbf{Quando usar?}:
+    \begin{itemize}
+        \item Programa trava ou gera erro
+        \item Resultado incorreto
+        \item Entender fluxo de execução
+        \item Verificar valores de variáveis durante execução
+    \end{itemize}
+\end{itemize}
+
+\begin{block}{Pré-requisito}
+Compilar com flag \texttt{-g} para incluir informações de debug
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{GDB: Comandos Básicos}
+\begin{block}{Iniciando o GDB}
+\begin{lstlisting}[language=bash]
+# Compilar com debug
+gcc -g -Wall divide_outro.c -o divide_outro
+
+# Iniciar GDB
+gdb ./divide_outro
+\end{lstlisting}
+\end{block}
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\textbf{Comandos principais:}
+\begin{itemize}
+    \item \texttt{run} (r) - Executar
+    \item \texttt{break} (b) - Breakpoint
+    \item \texttt{step} (s) - Próxima linha
+    \item \texttt{next} (n) - Próxima linha (sem entrar em funções)
+    \item \texttt{continue} (c) - Continuar
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{Inspeção:}
+\begin{itemize}
+    \item \texttt{print} (p) - Valor de variável
+    \item \texttt{info locals} - Todas as variáveis locais
+    \item \texttt{list} (l) - Ver código
+    \item \texttt{quit} (q) - Sair
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{GDB: Exemplo Prático}
+\begin{block}{Sessão de debug paso-a-passo}
+\begin{lstlisting}[language=bash]
+$ gdb ./divide_outro
+(gdb) break main          # Breakpoint na funcao main
+(gdb) run                 # Executar programa
+(gdb) list                # Ver codigo atual
+(gdb) break 11            # Breakpoint na linha 11
+(gdb) continue            # Continuar ate breakpoint
+12 24                     # Entrada: digitar dois numeros
+(gdb) print a             # Ver valor de 'a'
+(gdb) print b             # Ver valor de 'b'
+(gdb) step               # Executar proxima linha
+(gdb) print resto        # Ver valor de 'resto'
+(gdb) continue           # Continuar execucao
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\section{Depuração no VS Code}
+
+\begin{frame}
+\frametitle{VS Code: Configuração Inicial}
+\begin{itemize}
+    \item \textbf{Extensões necessárias}:
+    \begin{itemize}
+        \item C/C++ (Microsoft)
+        \item C/C++ Extension Pack (opcional, mas recomendado)
+    \end{itemize}
+    \item \textbf{Arquivos de configuração}:
+    \begin{itemize}
+        \item \texttt{.vscode/tasks.json} - Tarefas de compilação
+        \item \texttt{.vscode/launch.json} - Configuração de debug
+    \end{itemize}
+\end{itemize}
+
+\begin{block}{Dica}
+VS Code pode gerar essas configurações automaticamente quando você tenta debugar pela primeira vez
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{VS Code: Usando o Debugger}
+\begin{enumerate}
+    \item \textbf{Definir breakpoints}: Clicar na margem esquerda do editor (números das linhas)
+    \item \textbf{Iniciar debug}: F5 ou menu Debug → Start Debugging
+    \item \textbf{Controles durante debug}:
+    \begin{itemize}
+        \item F10 - Step Over (próxima linha)
+        \item F11 - Step Into (entrar em função)
+        \item Shift+F11 - Step Out (sair de função)
+        \item F5 - Continue
+        \item Shift+F5 - Stop
+    \end{itemize}
+    \item \textbf{Painéis importantes}:
+    \begin{itemize}
+        \item \textbf{Variables} - Valores das variáveis
+        \item \textbf{Watch} - Expressões para monitorar
+        \item \textbf{Call Stack} - Pilha de chamadas
+        \item \textbf{Terminal} - Onde digitar entrada do programa
+    \end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{IMPORTANTE: Entrada de Dados no VS Code}
+\begin{alertblock}{Onde digitar quando o programa pede entrada?}
+\begin{itemize}
+    \item \textbf{Durante debug}: Digite no painel \textbf{TERMINAL} (não no Debug Console)
+    \item \textbf{Localização}: Parte inferior da tela, aba "TERMINAL"
+    \item \textbf{Exemplo}: Quando \texttt{scanf("\%d \%d", \&a, \&b)} aguarda entrada
+\end{itemize}
+\end{alertblock}
+
+\begin{block}{Fluxo típico}
+\begin{enumerate}
+    \item Programa executa até \texttt{scanf}
+    \item Execução pausa aguardando entrada
+    \item Clique na aba \texttt{TERMINAL}
+    \item Digite os valores (ex: \texttt{12 24})
+    \item Pressione Enter
+    \item Programa continua
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\section{Demonstração Prática}
+
+\begin{frame}
+\frametitle{Vamos Praticar!}
+\begin{block}{Cenário: Debugar divide\_outro.c}
+Vamos encontrar e entender o comportamento do programa:
+\begin{enumerate}
+    \item Compilar com GCC
+    \item Debugar via linha de comando (GDB)
+    \item Debugar no VS Code
+    \item Comparar as duas abordagens
+\end{enumerate}
+\end{block}
+
+\begin{block}{Casos de teste}
+\begin{itemize}
+    \item Entrada: 12 4 (4 divide 12)
+    \item Entrada: 7 3 (nenhum divide o outro)
+    \item Entrada: 15 15 (números iguais)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Exercício para Casa}
+\begin{block}{Prática individual}
+\begin{enumerate}
+    \item Crie um programa em C que calcule o fatorial de um número
+    \item Inclua pelo menos um erro intencional (ex: condição de parada incorreta)
+    \item Use GDB para encontrar e corrigir o erro
+    \item Repita o processo no VS Code
+    \item Documente as diferenças entre as duas abordagens
+\end{enumerate}
+\end{block}
+
+\begin{block}{Entrega}
+Não é necessário entregar - é para fixação do conteúdo
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Resumo}
+\begin{itemize}
+    \item \textbf{GCC}: Compilador essencial para C
+    \item \textbf{Flag -g}: Fundamental para debug
+    \item \textbf{GDB}: Poderoso debugger de linha de comando
+    \item \textbf{VS Code}: Interface visual amigável para debug
+    \item \textbf{Breakpoints}: Ferramenta essencial para inspeção
+    \item \textbf{Entrada no VS Code}: Use o painel TERMINAL durante debug
+\end{itemize}
+
+\begin{block}{Próxima aula}
+Estruturas de repetição (for, while, do-while)
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Perguntas?}
+\begin{center}
+{\Large Dúvidas sobre compilação e depuração?}
+
+\vspace{1cm}
+
+{\large Obrigado!}
+\end{center}
+\end{frame}
+
+\end{document}
