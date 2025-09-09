@@ -21,8 +21,8 @@
    - Lista da Semana 3 (Estruturas Condicionais)
    - Lista da Semana 4 - Parte A (Problemas com repetição)
    - Lista da Semana 4 - Parte B (Análise de código e padrões)
-   - **Lista da Semana 5 (Funções - Parte 1)**
-   - **Lista da Semana 6 (Vetores)**
+   - Lista da Semana 5 (Funções - Parte 1)
+   - Lista da Semana 6 (Vetores)
 
 3. **Vídeo de Demonstração** (5-8 minutos)
    - Link no README principal
