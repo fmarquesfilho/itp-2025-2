@@ -62,24 +62,24 @@ sobrenome-nome-itp-u1-2025-2.zip
     │   ├── problema8.c          # Validador de triângulos
     │   └── README.md            # Instruções de compilação
     ├── semana4-repeticoes-a/    # Lista 4A - Problemas práticos
-    │   ├── problema1.c
-    │   ├── problema2.c
-    │   ├── problema3.c
-    │   ├── problema4.c
-    │   └── README.md
+    │   ├── problema1.c          # Dobrando até não poder mais
+    │   ├── problema2.c          # Salve o homem aranha
+    │   ├── problema3.c          # Números colegas
+    │   ├── problema4.c          # Jogo de dardos
+    │   └── README.md            # Instruções de compilação
     ├── semana4-repeticoes-b/    # Lista 4B - Análise e padrões
-    │   ├── questao1.txt         # Resposta teórica
-    │   ├── questao2.txt         # Resposta teórica
-    │   ├── questao3.txt         # Resposta teórica
-    │   ├── questao4.txt         # Resposta teórica
-    │   ├── questao5.c           # Código do padrão
-    │   ├── questao6.c
-    │   ├── questao7.c
-    │   ├── questao8.c
-    │   ├── questao9.c
-    │   ├── questao10.c
-    │   ├── questao11.c
-    │   └── README.md
+    │   ├── questao1.txt         # Análise de código - Loop aninhado 1
+    │   ├── questao2.txt         # Análise de código - Loop aninhado 2
+    │   ├── questao3.txt         # Análise de código - Loop aninhado 3
+    │   ├── questao4.txt         # Análise de código - Loop aninhado 4
+    │   ├── questao5.c           # Padrão numérico triangular
+    │   ├── questao6.c           # Trios pitagóricos
+    │   ├── questao7.c           # Números primos em intervalo
+    │   ├── questao8.c           # Compra de placas de alumínio
+    │   ├── questao9.c           # Modificação da questão 8
+    │   ├── questao10.c          # Pacote promocional
+    │   ├── questao11.c          # Problema das 4 rainhas
+    │   └── README.md            # Instruções de compilação
     ├── semana5-funcoes/         # Lista da Semana 5
     │   ├── problema1.c          # Horários das rondas
     │   ├── problema2.c          # Primos triplos
