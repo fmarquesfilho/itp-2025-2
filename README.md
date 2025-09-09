@@ -10,7 +10,7 @@
 
 **📅 Data limite da Unidade 1:** 30/09/2025 às 23:59
 
-**📖 Instruções completas de entrega:** [Ver instruções detalhadas](./leituras/s4/instrucoes-entrega-u1.md)
+**📖 Instruções completas de entrega:** [Ver instruções detalhadas](./s4/instrucoes-entrega-u1.md)
 
 ### O que deve ser entregue na Unidade 1:
 1. **Projeto Individual** (80% da nota)
@@ -78,7 +78,7 @@ Onde:
 
 ### Estrutura do Repositório
 
-Organize seu repositório conforme especificado nas [instruções detalhadas](./leituras/s4/instrucoes-entrega-u1.md):
+Organize seu repositório conforme especificado nas [instruções detalhadas](./s4/instrucoes-entrega-u1.md):
 
 ```
 nome-do-aluno-itp-2025-2/
@@ -94,9 +94,6 @@ nome-do-aluno-itp-2025-2/
 │   ├── semana4-repeticoes-b/    # Lista 4B - Análise e padrões
 │   ├── semana5-funcoes/         # Lista da Semana 5
 │   └── semana6-vetores/         # Lista da Semana 6
-├── leituras/         # Materiais de leitura
-│   └── s4/           # Materiais da semana 4
-│       └── instrucoes-entrega-u1.md  # Instruções completas
 └── README.md         # Descrição geral do repositório (este arquivo)
 ```
 
