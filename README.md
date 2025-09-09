@@ -78,7 +78,7 @@ Onde:
 
 ### Estrutura do Repositório
 
-Organize seu repositório conforme especificado nas [das](./):
+Organize seu repositório conforme especificado nas [instruções](./leituras/s4/instrucoes-entrega-u1.md):
 
 ```
 nome-do-aluno-itp-2025-2/
