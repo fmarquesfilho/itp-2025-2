@@ -17,7 +17,8 @@
    - Link para repositório público no README
    
 2. **Listas de Exercícios** (20% da nota da unidade)
-   - Lista da Semana 3 (Condicionais)
+   - Lista da Semana 2 (Variáveis, Tipos e Operadores)
+   - Lista da Semana 3 (Estruturas Condicionais)
    - Lista da Semana 4 - Parte A (Problemas com repetição)
    - Lista da Semana 4 - Parte B (Análise de código e padrões)
 
@@ -42,10 +43,21 @@ sobrenome-nome-itp-u1-2025-2.zip
 │   ├── Makefile                 # Script de compilação (opcional)
 │   └── README.md                # Instruções específicas do projeto
 └── listas/                      # Soluções das listas
+    ├── semana2-variaveis/       # Lista da Semana 2
+    │   ├── problema1.c          # Calculadora de IMC
+    │   ├── problema2.c          # Conversão de temperatura
+    │   ├── problema3.c          # Cálculo de juros compostos
+    │   ├── problema4.c          # Operações aritméticas básicas
+    │   └── README.md            # Instruções de compilação
     ├── semana3-condicionais/    # Lista da Semana 3
-    │   ├── problema1.c
-    │   ├── problema2.c
-    │   ├── [...]
+    │   ├── problema1.c          # Classificação de IMC
+    │   ├── problema2.c          # Calculadora de energia elétrica
+    │   ├── problema3.c          # Sistema de notas
+    │   ├── problema4.c          # Pedra, papel, tesoura
+    │   ├── problema5.c          # Calculadora de desconto progressivo
+    │   ├── problema6.c          # Diagnóstico médico simples
+    │   ├── problema7.c          # Sistema de equações do 2º grau
+    │   ├── problema8.c          # Validador de triângulos
     │   └── README.md            # Instruções de compilação
     ├── semana4-repeticoes-a/    # Lista 4A - Problemas práticos
     │   ├── problema1.c
@@ -67,15 +79,6 @@ sobrenome-nome-itp-u1-2025-2.zip
         ├── questao11.c
         └── README.md
 ```
-
-**Justificativas das mudanças na estrutura:**
-
-1. **Separação clara por tipo de conteúdo**: Projeto principal separado das listas de exercícios
-2. **Organização por semana/tópico**: Facilita localização e correção
-3. **Pasta `docs/` dentro do projeto**: Centraliza documentação específica do projeto
-4. **READMEs específicos**: Cada seção tem suas próprias instruções
-5. **Nomenclatura descritiva**: Nomes de pasta indicam claramente o conteúdo
-6. **Tratamento especial para Lista 4B**: Questões teóricas em .txt, práticas em .c
 
 ---
 
@@ -141,36 +144,33 @@ sobrenome-nome-itp-u1-2025-2.zip
 
 ### 3. Listas de Exercícios (20% da nota)
 
-#### 3.1 Lista Semana 3 - Condicionais
-**Problemas disponíveis no material da semana 3**
-- Todos os problemas devem ser resolvidos
-- Cada problema em um arquivo .c separado
-- Nome dos arquivos: `problema1.c`, `problema2.c`, etc.
+#### 3.1 Lista Semana 2 - Variáveis, Tipos e Operadores
+**Problemas:**
+- **Problema 1** - Calculadora de IMC: Leia peso e altura, calcule IMC com 2 casas decimais
+- **Problema 2** - Conversão de temperatura: Converta Celsius para Fahrenheit e Kelvin
+- **Problema 3** - Cálculo de juros compostos: Calcule montante final com capital, taxa e tempo
+- **Problema 4** - Operações aritméticas básicas: Soma, diferença, produto, divisão, resto e média
 
-#### 3.2 Lista Semana 4A - Repetições Simples
+#### 3.2 Lista Semana 3 - Estruturas Condicionais
+**Problemas:**
+- **Problema 1** - Classificação de IMC: Além de calcular, classifique conforme tabela
+- **Problema 2** - Calculadora de energia elétrica: Calcule conta baseada em tipo de consumidor
+- **Problema 3** - Sistema de notas: Calcule média e determine aprovação/recuperação/reprovação
+- **Problema 4** - Pedra, papel, tesoura: Simule jogo entre dois jogadores
+- **Problema 5** - Calculadora de desconto progressivo: Aplique descontos baseados no valor
+- **Problema 6** - Diagnóstico médico simples: Sugira diagnóstico baseado em sintomas
+- **Problema 7** - Sistema de equações do 2º grau: Resolva equações quadráticas
+- **Problema 8** - Validador de triângulos: Verifique e classifique triângulos
+
+#### 3.3 Lista Semana 4A - Repetições Simples
 **4 problemas práticos:**
 
-1. **Problema 1 - Dobrando até não poder mais**
-   - Arquivo: `problema1.c`
-   - Dobrar folha até caber no bolso
-   - Usar estruturas de repetição para simular dobras
+1. **Problema 1 - Dobrando até não poder mais**: Dobrar folha até caber no bolso
+2. **Problema 2 - Salve o homem aranha**: Calcular trajetória com distância euclidiana
+3. **Problema 3 - Números colegas**: Calcular soma de divisores próprios
+4. **Problema 4 - Jogo de dardos**: Calcular pontuação com base em distâncias
 
-2. **Problema 2 - Salve o homem aranha**
-   - Arquivo: `problema2.c`
-   - Calcular trajetória com distância euclidiana
-   - Usar loops para processar múltiplos alvos
-
-3. **Problema 3 - Números colegas**
-   - Arquivo: `problema3.c`
-   - Calcular soma de divisores próprios
-   - Verificar condição de "números colegas"
-
-4. **Problema 4 - Jogo de dardos**
-   - Arquivo: `problema4.c`
-   - Calcular pontuação com base em distâncias
-   - Usar vetores para armazenar coordenadas
-
-#### 3.3 Lista Semana 4B - Análise e Padrões
+#### 3.4 Lista Semana 4B - Análise e Padrões
 **Questões 1-4: Análise de código (arquivos .txt)**
 - `questao1.txt`: Resposta sobre o que é impresso (questão 1)
 - `questao2.txt`: Resposta sobre o que é impresso (questão 2)
@@ -221,7 +221,8 @@ sobrenome-nome-itp-u1-2025-2.zip
 - [ ] Projeto executa corretamente
 
 **Listas:**
-- [ ] Todos os problemas da Semana 3 resolvidos
+- [ ] Todos os 4 problemas da Semana 2 resolvidos
+- [ ] Todos os 8 problemas da Semana 3 resolvidos
 - [ ] Todos os 4 problemas da Lista 4A resolvidos
 - [ ] Questões 1-4 da Lista 4B em arquivos .txt
 - [ ] Questões 5-11 da Lista 4B em arquivos .c
@@ -330,7 +331,7 @@ gcc -o projeto src/main.c src/outros_arquivos.c
 ## 📖 Recursos de Apoio
 
 ### Materiais Disponíveis:
-- Material de apoio das Semanas 3 e 4
+- Material de apoio das Semanas 2, 3 e 4
 - Slides das aulas gravadas
 - Exemplos de código discutidos em aula
 - Lista de projetos sugeridos no README da disciplina
@@ -376,10 +377,21 @@ gcc -o projeto src/main.c src/outros_arquivos.c
 
 ## 📚 Listas de Exercícios
 
+### Semana 2 - Variáveis, Tipos e Operadores:
+- ✅ Problema 1: Calculadora de IMC
+- ✅ Problema 2: Conversão de temperatura
+- ✅ Problema 3: Cálculo de juros compostos
+- ✅ Problema 4: Operações aritméticas básicas
+
 ### Semana 3 - Condicionais:
-- ✅ Problema 1: [Breve descrição]
-- ✅ Problema 2: [Breve descrição]
-- [...]
+- ✅ Problema 1: Classificação de IMC
+- ✅ Problema 2: Calculadora de energia elétrica
+- ✅ Problema 3: Sistema de notas
+- ✅ Problema 4: Pedra, papel, tesoura
+- ✅ Problema 5: Calculadora de desconto progressivo
+- ✅ Problema 6: Diagnóstico médico simples
+- ✅ Problema 7: Sistema de equações do 2º grau
+- ✅ Problema 8: Validador de triângulos
 
 ### Semana 4A - Repetições:
 - ✅ Problema 1: Dobrar folha
