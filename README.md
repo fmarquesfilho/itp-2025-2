@@ -10,7 +10,7 @@
 
 **📅 Data limite da Unidade 1:** 30/09/2025 às 23:59
 
-**📖 Instruções completas de entrega:** [Ver das](./leituras/s4/instrucoes-entrega-u1.md)
+**📖 Instruções completas de entrega:** [Clique aqui](./leituras/s4/instrucoes-entrega-u1.md)
 
 ### O que deve ser entregue na Unidade 1:
 1. **Projeto Individual** (80% da nota)
@@ -78,7 +78,7 @@ Onde:
 
 ### Estrutura do Repositório
 
-Organize seu repositório conforme especificado nas [das](./leituras/s4/instrucoes-entrega-u1.md):
+Organize seu repositório conforme especificado nas [das](./):
 
 ```
 nome-do-aluno-itp-2025-2/
@@ -344,4 +344,4 @@ Cada relatório deve conter:
 - 🔄 O calendário pode sofrer ajustes conforme a necessidade da turma
 - 📤 Todas as entregas devem ser feitas via SIGAA conforme instruções específicas
 - 📋 Listas de exercícios serão divulgadas semanalmente às quartas-feiras junto com as aulas gravadas
-- 📖 Consulte as [das de entrega da U1](./leituras/s4/instrucoes-entrega-u1.md) para a estrutura completa dos arquivos
+- 📖 Consulte as [instruções das de entrega da U1](./leituras/s4/instrucoes-entrega-u1.md) para a estrutura completa dos arquivos
