@@ -335,12 +335,12 @@ gcc -o projeto src/main.c src/outros_arquivos.c
 
 ---
 
-## ⚠️ Observações Importantes
+## ⚠️ Observações
 
 ### Políticas de Entrega:
 1. **Apenas 1 arquivo será aceito**: O SIGAA permite somente um anexo
 2. **Formato obrigatório**: .zip seguindo a estrutura especificada
-3. **Prazo rígido**: 30/09/2025 às 23:59 (após este horário, não será aceito)
+3. **Prazo**: 30/09/2025 às 23:59 (após este horário, não será aceito)
 4. **Commit considerado**: Apenas o commit mais recente até o prazo será avaliado
 
 ### Originalidade:
