@@ -6,6 +6,24 @@
 - **Modalidade:** Remota
 - **Link de acesso:** Google Meet (disponível no SIGAA e enviado por e-mail)
 
+## 📋 Instruções de Entrega
+
+**📅 Data limite da Unidade 1:** 30/09/2025 às 23:59
+
+**📖 Instruções completas de entrega:** [Ver instruções detalhadas](./leituras/s4/instrucoes-entrega-u1.md)
+
+### O que deve ser entregue na Unidade 1:
+1. **Projeto Individual** (80% da nota)
+2. **Listas de Exercícios** (20% da nota):
+   - Semana 2: Variáveis, Tipos e Operadores (4 problemas)
+   - Semana 3: Estruturas Condicionais (8 problemas)
+   - Semana 4A: Repetições Simples (4 problemas)
+   - Semana 4B: Análise e Padrões (11 questões)
+   - Semana 5: Funções Parte 1 (3 problemas)
+   - Semana 6: Vetores (4 problemas)
+3. **Vídeo de Demonstração** (5-8 minutos)
+4. **Relatório Técnico** (PDF, 3-5 páginas)
+
 ## Sistema de Avaliação e Frequência
 
 ### Composição das Notas
@@ -58,17 +76,9 @@ Onde:
 
 ## Entregas e Documentação
 
-### O que deve ser entregue
-
-Cada entrega deverá ser acompanhada de três elementos:
-
-1. **Link para repositório público** (GitHub, GitLab ou BitBucket) com o código desenvolvido
-2. **Vídeo de 5-8min** demonstrando o código em funcionamento
-3. **Relatório técnico** em PDF (3-5 páginas)
-
 ### Estrutura do Repositório
 
-Organize seu repositório da seguinte forma:
+Organize seu repositório conforme especificado nas [instruções detalhadas](./leituras/s4/instrucoes-entrega-u1.md):
 
 ```
 nome-do-aluno-itp-2025-2/
@@ -78,10 +88,16 @@ nome-do-aluno-itp-2025-2/
 │   ├── Makefile      # Script de compilação (opcional mas recomendado)
 │   └── README.md     # Instruções de compilação e execução
 ├── listas/           # Soluções das listas de exercícios
-│   ├── lista1/       # Lista 1
-│   ├── lista2/       # Lista 2
-│   └── ...
-└── README.md         # Descrição geral do repositório
+│   ├── semana2-variaveis/       # Lista da Semana 2
+│   ├── semana3-condicionais/    # Lista da Semana 3
+│   ├── semana4-repeticoes-a/    # Lista 4A - Problemas práticos
+│   ├── semana4-repeticoes-b/    # Lista 4B - Análise e padrões
+│   ├── semana5-funcoes/         # Lista da Semana 5
+│   └── semana6-vetores/         # Lista da Semana 6
+├── leituras/         # Materiais de leitura
+│   └── s4/           # Materiais da semana 4
+│       └── instrucoes-entrega-u1.md  # Instruções completas
+└── README.md         # Descrição geral do repositório (este arquivo)
 ```
 
 **⚠️ Importante:** Apenas o commit mais recente até **23:59 do dia da entrega** será considerado para correção.
@@ -321,7 +337,7 @@ Cada relatório deve conter:
 
 ### Feriados que Afetam o Curso
 - **03/10/25** - Dia dos Mártires de Cunhaú e Uruaçu (Feriado Estadual) - **SEXTA-FEIRA** - Não haverá aula
-- **28/10/25** - Dia do Servidor Público (Suspensão de atividades na terça-feira). A confirmar possível suspensão na segunda-feira, dia 27/10.
+- **28/10/25** - Dia do Servidor Público (Suspension de atividades na terça-feira). A confirmar possível suspensão na segunda-feira, dia 27/10.
 
 ## Observações Importantes
 
@@ -331,3 +347,5 @@ Cada relatório deve conter:
 - 🔄 O calendário pode sofrer ajustes conforme a necessidade da turma
 - 📤 Todas as entregas devem ser feitas via SIGAA conforme instruções específicas
 - 📋 Listas de exercícios serão divulgadas semanalmente às quartas-feiras junto com as aulas gravadas
+- 📖 Consulte as [instruções detalhadas de entrega da U1](./leituras/s4/instrucoes-entrega-u1.md) para a estrutura completa dos arquivos
+```
