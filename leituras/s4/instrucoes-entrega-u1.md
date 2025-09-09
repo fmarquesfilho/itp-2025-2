@@ -21,6 +21,8 @@
    - Lista da Semana 3 (Estruturas Condicionais)
    - Lista da Semana 4 - Parte A (Problemas com repetição)
    - Lista da Semana 4 - Parte B (Análise de código e padrões)
+   - **Lista da Semana 5 (Funções - Parte 1)**
+   - **Lista da Semana 6 (Vetores)**
 
 3. **Vídeo de Demonstração** (5-8 minutos)
    - Link no README principal
@@ -65,19 +67,30 @@ sobrenome-nome-itp-u1-2025-2.zip
     │   ├── problema3.c
     │   ├── problema4.c
     │   └── README.md
-    └── semana4-repeticoes-b/    # Lista 4B - Análise e padrões
-        ├── questao1.txt         # Resposta teórica
-        ├── questao2.txt         # Resposta teórica
-        ├── questao3.txt         # Resposta teórica
-        ├── questao4.txt         # Resposta teórica
-        ├── questao5.c           # Código do padrão
-        ├── questao6.c
-        ├── questao7.c
-        ├── questao8.c
-        ├── questao9.c
-        ├── questao10.c
-        ├── questao11.c
-        └── README.md
+    ├── semana4-repeticoes-b/    # Lista 4B - Análise e padrões
+    │   ├── questao1.txt         # Resposta teórica
+    │   ├── questao2.txt         # Resposta teórica
+    │   ├── questao3.txt         # Resposta teórica
+    │   ├── questao4.txt         # Resposta teórica
+    │   ├── questao5.c           # Código do padrão
+    │   ├── questao6.c
+    │   ├── questao7.c
+    │   ├── questao8.c
+    │   ├── questao9.c
+    │   ├── questao10.c
+    │   ├── questao11.c
+    │   └── README.md
+    ├── semana5-funcoes/         # Lista da Semana 5
+    │   ├── problema1.c          # Horários das rondas
+    │   ├── problema2.c          # Primos triplos
+    │   ├── problema3.c          # Pousando a sonda espacial
+    │   └── README.md            # Instruções de compilação
+    └── semana6-vetores/         # Lista da Semana 6
+        ├── problema1.c          # MEC - Correção ENEM
+        ├── problema2.c          # Álbum de figurinhas
+        ├── problema3.c          # A construção da ponte
+        ├── problema4.c          # Em busca do tesouro perdido
+        └── README.md            # Instruções de compilação
 ```
 
 ---
@@ -186,6 +199,19 @@ sobrenome-nome-itp-u1-2025-2.zip
 - `questao10.c`: Pacote promocional
 - `questao11.c`: Problema das 4 rainhas
 
+#### 3.5 Lista Semana 5 - Funções (Parte 1)
+**Problemas:**
+- **Problema 1 - Horários das rondas**: Calcule e exiba horários de rondas policiais em diferentes formatos (24h/12h)
+- **Problema 2 - Primos triplos**: Encontre todos os trios de primos na forma (x, x + 2, x + 6) até 50000
+- **Problema 3 - Pousando a sonda espacial**: Verifique condições de pouso seguro em terreno simulado
+
+#### 3.6 Lista Semana 6 - Vetores
+**Problemas:**
+- **Problema 1 - MEC**: Correção automática de provas do ENEM usando vetores
+- **Problema 2 - Álbum de figurinhas**: Identifique quais figurinhas faltam na coleção
+- **Problema 3 - A construção da ponte**: Determine o comprimento da ponte entre os dois pontos mais altos
+- **Problema 4 - Em busca do tesouro perdido**: Encontre a primeira ilha visitada duas vezes seguindo sugestões
+
 ### 4. Vídeo de Demonstração (5-8 minutos)
 
 #### 4.1 Estrutura Sugerida:
@@ -226,6 +252,8 @@ sobrenome-nome-itp-u1-2025-2.zip
 - [ ] Todos os 4 problemas da Lista 4A resolvidos
 - [ ] Questões 1-4 da Lista 4B em arquivos .txt
 - [ ] Questões 5-11 da Lista 4B em arquivos .c
+- [ ] Todos os 3 problemas da Semana 5 resolvidos
+- [ ] Todos os 4 problemas da Semana 6 resolvidos
 - [ ] READMEs com instruções de compilação
 
 **Vídeo:**
@@ -285,6 +313,12 @@ gcc -o nome_programa nome_programa.c
 ./nome_programa
 ```
 
+### Para arquivos que usam math.h (Semana 5 - Problema 3):
+```bash
+gcc -o nome_programa nome_programa.c -lm
+./nome_programa
+```
+
 ### Para o projeto (se usar Makefile):
 ```bash
 make
@@ -331,7 +365,7 @@ gcc -o projeto src/main.c src/outros_arquivos.c
 ## 📖 Recursos de Apoio
 
 ### Materiais Disponíveis:
-- Material de apoio das Semanas 2, 3 e 4
+- Material de apoio das Semanas 2, 3, 4, 5 e 6
 - Slides das aulas gravadas
 - Exemplos de código discutidos em aula
 - Lista de projetos sugeridos no README da disciplina
@@ -402,6 +436,17 @@ gcc -o projeto src/main.c src/outros_arquivos.c
 ### Semana 4B - Análise e Padrões:
 - ✅ Questões 1-4: Análise de código
 - ✅ Questões 5-11: Implementações
+
+### Semana 5 - Funções (Parte 1):
+- ✅ Problema 1: Horários das rondas
+- ✅ Problema 2: Primos triplos
+- ✅ Problema 3: Pousando a sonda espacial
+
+### Semana 6 - Vetores:
+- ✅ Problema 1: MEC - Correção ENEM
+- ✅ Problema 2: Álbum de figurinhas
+- ✅ Problema 3: A construção da ponte
+- ✅ Problema 4: Em busca do tesouro perdido
 
 ## 🎯 Principais Aprendizados
 [Reflita sobre os principais conceitos aprendidos na U1]
