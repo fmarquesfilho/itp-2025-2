@@ -10,7 +10,7 @@
 
 **📅 Data limite da Unidade 1:** 30/09/2025 às 23:59
 
-**📖 Instruções completas de entrega:** [Ver instruções detalhadas](./s4/instrucoes-entrega-u1.md)
+**📖 Instruções completas de entrega:** [Ver instruções detalhadas](./leituras/s4/instrucoes-entrega-u1.md)
 
 ### O que deve ser entregue na Unidade 1:
 1. **Projeto Individual** (80% da nota)
