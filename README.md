@@ -348,4 +348,3 @@ Cada relatório deve conter:
 - 📤 Todas as entregas devem ser feitas via SIGAA conforme instruções específicas
 - 📋 Listas de exercícios serão divulgadas semanalmente às quartas-feiras junto com as aulas gravadas
 - 📖 Consulte as [instruções detalhadas de entrega da U1](./leituras/s4/instrucoes-entrega-u1.md) para a estrutura completa dos arquivos
-```
