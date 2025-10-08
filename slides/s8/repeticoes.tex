@@ -1,0 +1,179 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\documentclass[portuguese,10pt,xcolor=table]{bredelebeamer}
+\setbeameroption{show notes}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{varwidth}
+\usepackage{listings} % Código de programas
+\usepackage{tikz}
+\usepackage{pifont}
+\usepackage[tikz]{bclogo}
+\usepackage{tikzsymbols}
+\usepackage{fourier}
+\usepackage{mathabx}
+\let\widering\relax
+\usetikzlibrary{arrows,shapes}
+
+\usetikzlibrary{calc,decorations.pathmorphing,patterns}
+\pgfdeclaredecoration{penciline}{initial}{
+	\state{initial}[width=+\pgfdecoratedinputsegmentremainingdistance,
+		auto corner on length=1mm,]{
+			\pgfpathcurveto%
+			{% From
+				\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}
+				{\pgfdecorationsegmentamplitude}
+			}
+			{%  Control 1
+				\pgfmathrand
+					\pgfpointadd{\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}{0pt}}
+				{\pgfqpoint{-\pgfdecorationsegmentaspect
+							   \pgfdecoratedinputsegmentremainingdistance}%
+							   {\pgfmathresult\pgfdecorationsegmentamplitude}
+				}
+			}
+			{%TO 
+				\pgfpointadd{\pgfpointdecoratedinputsegmentlast}{\pgfpoint{1pt}{1pt}}
+			}
+		}
+	\state{final}{}
+}
+
+
+
+\everymath{\displaystyle}
+\tikzstyle{every picture}+=[remember picture,decoration=penciline]
+\DeclareTextFontCommand{\textdf}{\bfseries\color{blue!80}}
+%\tikzstyle{every node}+=[decorate]
+%\tikzstyle{every path}+=[decorate]
+%\tikzstyle{na} = [baseline=-.5ex]
+
+\usepackage[T1]{fontenc}
+
+\def\lecturename{IMD0012 - Introdução às técnicas de programação}
+
+\title{\insertlecture}
+
+\author{Prof. Fernando Figueira\\(adaptado do material do Prof. Rafael Beserra Gomes)}
+
+\institute{UFRN}
+
+\subject{Estruturas de Repetição Aninhadas}
+
+\lecture[]{Estruturas de Repetição Aninhadas}{}
+
+\date{}
+
+\def\exe[#1]{\color{gray}#1\color{black}}
+\def\exp[#1]{\color{gray}<\textit{#1}>\color{black}}
+\def\espaco{\color{gray}\hspace{0.2cm}\color{black}}
+\def\espaco{\color{blue}␣\color{black}}
+\def\inativo[#1]{\color{gray}#1\color{black}}
+
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{deepred}{rgb}{0.5,0,0}
+\lstset{
+	language=C,
+	basicstyle=\footnotesize\ttfamily,
+	%basicstyle=\scriptsize\ttfamily,
+	keywordstyle=\footnotesize\bfseries\sffamily,
+	%keywordstyle=\scriptsize\bfseries\sffamily,
+	showstringspaces=false,
+	numbers=left,
+	numberstyle=\footnotesize,
+	stepnumber=1,
+	numbersep=5pt,
+	tabsize=4,
+	%backgroundcolor=\color{blue!05},
+	backgroundcolor=\color{gray!35},
+	showspaces=false,
+	showtabs=false,
+	stringstyle=\ttfamily\color{red!80!brown},
+	commentstyle=\ttfamily\color{blue!80},
+	keywordstyle=\bfseries\color{deepgreen},
+	escapeinside={@}{@}
+	}
+	\renewcommand{\lstlistingname}{Código}
+\begin{document}
+
+\usebackgroundtemplate{%
+	\includegraphics[width=\paperwidth,height=\paperheight]{background2}
+}
+\begin{frame}
+  \maketitle
+ \begin{center}
+ \tiny
+Material compilado em \today.\\
+  Licença desta apresentação:\\
+		\includegraphics[height=1.0cm]{by-nc-nd.png}\\
+http://creativecommons.org/licenses/
+	\end{center}
+\end{frame}
+
+
+\def\WN[#1]{\cellcolor{white!40}#1}
+\def\VN[#1]{\cellcolor{blue!40}#1}
+\def\UN[#1]{\cellcolor{green!40}#1}
+\def\ZN[#1]{\cellcolor{deepgreen!90}#1}
+\def\RN[#1]{\cellcolor{red!40}#1}
+\def\DRN[#1]{\cellcolor{deepred!90}#1}
+
+
+\section{Estruturas de repetição aninhadas}
+
+	\begin{frame}[c]
+		\begin{center}
+			\structure{\large \insertsection}
+		\end{center}
+	\end{frame} 
+	
+
+	\begin{frame}
+	\begin{alertblock}{\ding{46} Exercício em sala}
+		Usando \textbf{estruturas de repetição aninhadas} escreva um programa em C para escrever 5 vezes na tela os números de 1 a 9\\
+		\colorbox{gray!15}{
+			\begin{varwidth}{700px}
+				1 2 3 4 5 6 7 8 9\\
+				1 2 3 4 5 6 7 8 9\\
+				1 2 3 4 5 6 7 8 9\\
+				1 2 3 4 5 6 7 8 9\\
+				1 2 3 4 5 6 7 8 9\\
+			\end{varwidth}
+		}\\
+	\end{alertblock}
+	\end{frame}
+
+	\begin{frame}
+	\begin{alertblock}{\ding{46} Exercício em sala}
+		Usando \textbf{estruturas de repetição aninhadas} escreva um programa em C para escrever na tela o seguinte padrão:\\
+		\colorbox{gray!15}{
+			\begin{varwidth}{700px}
+				1\\
+				1 2\\
+				1 2 3\\
+				1 2 3 4\\
+				1 2 3 4 5\\
+				1 2 3 4 5 6\\
+				1 2 3 4 5 6 7\\
+				1 2 3 4 5 6 7 8\\
+				1 2 3 4 5 6 7 8 9
+			\end{varwidth}
+		}\\
+	\end{alertblock}
+	\end{frame}
+
+
+
+
+
+\end{document}
+
