@@ -195,22 +195,18 @@ Se você optou por continuar o projeto da U1, aqui estão algumas ideias de como
 #### Semana 7: Strings
 - **Pasta:** `listas/semana7-strings/`
 - **Conteúdo:** Manipulação de strings, funções da biblioteca padrão
-- **Quantidade esperada:** 4-6 problemas
 
 #### Semana 8: Estruturas de Repetição Aninhadas
 - **Pasta:** `listas/semana8-repeticoes-aninhadas/`
 - **Conteúdo:** Loops aninhados, padrões, figuras
-- **Quantidade esperada:** 4-6 problemas
 
 #### Semana 9: Matrizes
 - **Pasta:** `listas/semana9-matrizes/`
 - **Conteúdo:** Operações com matrizes bidimensionais
-- **Quantidade esperada:** 4-6 problemas
 
 #### Semana 10: Ponteiros e Alocação Dinâmica 1
 - **Pasta:** `listas/semana10-ponteiros-alocacao/`
 - **Conteúdo:** Ponteiros básicos, malloc, free
-- **Quantidade esperada:** 4-6 problemas
 
 ### Formato de Entrega das Listas:
 
