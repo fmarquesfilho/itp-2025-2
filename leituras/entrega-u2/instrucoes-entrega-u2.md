@@ -322,7 +322,7 @@ semana7-strings/
 
 ### Especificações:
 
-- **Duração:** 5 a 8 minutos (estritamente respeitado)
+- **Duração:** 5 a 8 minutos
 - **Formato:** Link para YouTube, Google Drive ou similar
 - **Localização:** `videos/demonstracao-u2.md`
 
