@@ -8,11 +8,11 @@
 
 ## 📋 Instruções de Entrega
 
-**📅 Data limite da Unidade 1:** 30/09/2025 às 23:59
+### 📅 Unidade 1 - ENCERRADA
+**Data limite** para não ter desconto na nota: 07/10/2025 às 23:59  
+**📖 Instruções completas:** [Clique aqui](./leituras/s4/instrucoes-entrega-u1.md)
 
-**📖 Instruções completas de entrega:** [Clique aqui](./leituras/s4/instrucoes-entrega-u1.md)
-
-### O que deve ser entregue na Unidade 1:
+#### O que foi entregue na Unidade 1:
 1. **Projeto Individual** (80% da nota)
 2. **Listas de Exercícios** (20% da nota):
    - Semana 2: Variáveis, Tipos e Operadores (4 problemas)
@@ -23,6 +23,36 @@
    - Semana 6: Vetores (4 problemas)
 3. **Vídeo de Demonstração** (5-8 minutos)
 4. **Relatório Técnico** (PDF, 3-5 páginas)
+
+---
+
+### 📅 Unidade 2 - EM ANDAMENTO
+**Data limite:** 03/11/2025 às 23:59  
+**📖 Instruções completas:** [Clique aqui](./leituras/s8/instrucoes-entrega-u2.md)
+
+#### O que deve ser entregue na Unidade 2:
+1. **Projeto Individual** (80% da nota)
+   - Deve incluir todos os conceitos da U1
+   - **Novos conteúdos obrigatórios:**
+     - ✨ Strings e manipulação de texto
+     - ✨ Estruturas de repetição aninhadas
+     - ✨ Matrizes (arrays bidimensionais)
+     - ✨ Ponteiros básicos
+     - ✨ Alocação dinâmica de memória básica
+
+2. **Listas de Exercícios** (20% da nota):
+   - Semana 7: Strings
+   - Semana 8: Estruturas de Repetição Aninhadas
+   - Semana 9: Matrizes
+   - Semana 10: Ponteiros e Alocação Dinâmica 1
+
+3. **Vídeo de Demonstração** (5-8 minutos)
+   - Foco nas novas funcionalidades da U2
+
+4. **Relatório Técnico** (PDF, 3-5 páginas)
+   - Deve abordar especialmente: gerenciamento de memória e uso de ponteiros
+
+---
 
 ## Sistema de Avaliação e Frequência
 
@@ -78,7 +108,7 @@ Onde:
 
 ### Estrutura do Repositório
 
-Organize seu repositório conforme especificado nas [instruções](./leituras/s4/instrucoes-entrega-u1.md):
+Organize seu repositório conforme especificado nas instruções de cada unidade:
 
 ```
 nome-do-aluno-itp-2025-2/
@@ -88,12 +118,22 @@ nome-do-aluno-itp-2025-2/
 │   ├── Makefile      # Script de compilação (opcional mas recomendado)
 │   └── README.md     # Instruções de compilação e execução
 ├── listas/           # Soluções das listas de exercícios
-│   ├── semana2-variaveis/       # Lista da Semana 2
-│   ├── semana3-condicionais/    # Lista da Semana 3
-│   ├── semana4-repeticoes-a/    # Lista 4A - Problemas práticos
-│   ├── semana4-repeticoes-b/    # Lista 4B - Análise e padrões
-│   ├── semana5-funcoes/         # Lista da Semana 5
-│   └── semana6-vetores/         # Lista da Semana 6
+│   ├── semana2-variaveis/              # U1
+│   ├── semana3-condicionais/           # U1
+│   ├── semana4-repeticoes-a/           # U1
+│   ├── semana4-repeticoes-b/           # U1
+│   ├── semana5-funcoes/                # U1
+│   ├── semana6-vetores/                # U1
+│   ├── semana7-strings/                # ✨ U2
+│   ├── semana8-repeticoes-aninhadas/   # ✨ U2
+│   ├── semana9-matrizes/               # ✨ U2
+│   └── semana10-ponteiros-alocacao/    # ✨ U2
+├── relatorios/       # Relatórios técnicos
+│   ├── relatorio-u1.pdf                # U1
+│   └── relatorio-u2.pdf                # ✨ U2
+├── videos/           # Links dos vídeos de demonstração
+│   ├── demonstracao-u1.md              # U1
+│   └── demonstracao-u2.md              # ✨ U2
 └── README.md         # Descrição geral do repositório (este arquivo)
 ```
 
@@ -123,6 +163,8 @@ Cada relatório deve conter:
 **Unidade 2:**
 - Como foram implementadas as estruturas de dados complexas?
 - Qual a estratégia para gerenciamento de memória?
+- Como você garante que não há vazamentos de memória (memory leaks)?
+- Quais vantagens a alocação dinâmica trouxe para seu projeto?
 
 **Unidade 3:**
 - Como a modularização contribuiu para a qualidade do código?
@@ -155,7 +197,7 @@ Cada relatório deve conter:
 - Ser original (não copiado de repositórios públicos)
 - Ter complexidade média ou alta
 
-### Ideias de Projetos
+### Ideias de Projetos (para qualquer unidade)
 
 1. **Sistema de Gerenciamento de Biblioteca**
 2. **Jogo da Velha com IA Básica**
@@ -177,6 +219,19 @@ Cada relatório deve conter:
 18. **Analisador Léxico para uma Linguagem Simples**
 19. **Sistema de Logs com Filtros e Estatísticas**
 20. **Gerenciador de Finanças Pessoais**
+
+### Projetos Sugeridos Especificamente para U2
+
+Se você está começando um novo projeto ou expandindo o da U1, considere estas ideias que exploram bem os conceitos da U2:
+
+1. **Sistema de Criptografia de Textos** - Ênfase em strings
+2. **Editor de Texto Simples em Memória** - Strings e alocação dinâmica
+3. **Jogo de Palavras Cruzadas** - Matrizes e strings
+4. **Sistema de Análise de Textos** - Strings e ponteiros
+5. **Simulador de Planilha Eletrônica Simples** - Matrizes e alocação dinâmica
+6. **Sistema de Processamento de Imagens ASCII Art** - Matrizes e strings
+7. **Jogo de Sudoku** - Matrizes e loops aninhados
+8. **Gerenciador de Senhas com Criptografia** - Strings e alocação dinâmica
 
 ## Cronograma Detalhado
 
@@ -334,7 +389,7 @@ Cada relatório deve conter:
 
 ### Feriados que Afetam o Curso
 - **03/10/25** - Dia dos Mártires de Cunhaú e Uruaçu (Feriado Estadual) - **SEXTA-FEIRA** - Não haverá aula
-- **28/10/25** - Dia do Servidor Público (Suspension de atividades na terça-feira). A confirmar possível suspensão na segunda-feira, dia 27/10.
+- **28/10/25** - Dia do Servidor Público (Suspensão de atividades na terça-feira). A confirmar possível suspensão na segunda-feira, dia 27/10.
 
 ## Observações Importantes
 
@@ -344,4 +399,16 @@ Cada relatório deve conter:
 - 🔄 O calendário pode sofrer ajustes conforme a necessidade da turma
 - 📤 Todas as entregas devem ser feitas via SIGAA conforme instruções específicas
 - 📋 Listas de exercícios serão divulgadas semanalmente às quartas-feiras junto com as aulas gravadas
-- 📖 Consulte as [instruções das de entrega da U1](./leituras/s4/instrucoes-entrega-u1.md) para a estrutura completa dos arquivos
+- 📖 Consulte as instruções de entrega de cada unidade:
+  - [Instruções de Entrega da U1](./leituras/s4/instrucoes-entrega-u1.md)
+  - [Instruções de Entrega da U2](./leituras/s8/instrucoes-entrega-u2.md)
+
+## 🔗 Links Úteis
+
+- **Repositório do Curso:** https://github.com/fmarquesfilho/itp-2025-2
+- **SIGAA:** [Link para a plataforma]
+- **Google Meet:** Disponível no SIGAA
+
+---
+
+**Última atualização:** Outubro/2025 - Inclusão das instruções da Unidade 2
