@@ -1,8 +1,8 @@
 # Instruções de Entrega - Unidade 2
 
 **Disciplina:** Introdução a Técnicas de Programação (ITP)  
-**Período:** 01/10/2025 a 27/10/2025  
-**Data limite:** 27/10/2025 às 23:59  
+**Período:** 01/10/2025 a 03/11/2025  
+**Data limite:** 03/11/2025 às 23:59  
 **Plataforma de entrega:** SIGAA
 
 ---
@@ -491,7 +491,7 @@ Mostre trechos relevantes do código explicando:
 
 ### ⚠️ Atenção:
 
-- **Prazo final:** 27/10/2025 às 23:59
+- **Prazo final:** 03/11/2025 às 23:59
 - 📧 **Dúvidas:** Entre em contato comigo o quanto antes, não deixe pra última hora
 - 🚫 **Plágio:** Resultará em nota zero
 - 🔒 **Repositório:** Deve estar público ou com acesso compartilhado
