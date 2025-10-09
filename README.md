@@ -10,7 +10,7 @@
 
 ### 📅 Unidade 1 - ENCERRADA
 **Data limite** para não ter desconto na nota: 07/10/2025 às 23:59  
-**📖 Instruções completas:** [Clique aqui](./leituras/s4/instrucoes-entrega-u1.md)
+**📖 Instruções completas:** [Clique aqui](./leituras/entrega-u1/instrucoes-entrega-u1.md)
 
 #### O que foi entregue na Unidade 1:
 1. **Projeto Individual** (80% da nota)
@@ -28,7 +28,7 @@
 
 ### 📅 Unidade 2 - EM ANDAMENTO
 **Data limite:** 03/11/2025 às 23:59  
-**📖 Instruções completas:** [Clique aqui](./leituras/s8/instrucoes-entrega-u2.md)
+**📖 Instruções completas:** [Clique aqui](./leituras/entrega-u2/instrucoes-entrega-u2.md)
 
 #### O que deve ser entregue na Unidade 2:
 1. **Projeto Individual** (80% da nota)
