@@ -1,13 +1,17 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+int* alocaVetor(int n) {
+    return calloc(n, sizeof(int));
+}
+
 int* somaVetores(int *a, int n1, int *b, int n2) {
     int *res, i;
 
     if (n1 > n2)
-        res = malloc(n1 * sizeof(int));
+        res = alocaVetor(n1);
     else
-        res = malloc(n2 * sizeof(int));
+        res = alocaVetor(n2);
 
     // soma dos elementos até o final do menor vetor
     for (i = 0; (i < n1) && (i < n2); i++)
@@ -32,18 +36,22 @@ int main() {
     scanf("%d %d", &n1, &n2);
 
     // alocar dinamicamente os vetores
-    u = malloc(n1 * sizeof(int));
-    v = malloc(n2 * sizeof(int));
+    u = alocaVetor(n1);
+    v = alocaVetor(n2);
 
     // lê vetor u
-    for (i = 0; i < (n1 - 1); i++)
-        scanf("%d ", &u[i]);
-    scanf("%d", &u[n1-1]);
+    if (n1 > 0) {
+        for (i = 0; i < (n1 - 1); i++)
+            scanf("%d ", &u[i]);
+        scanf("%d", &u[n1-1]);
+    }
 
     // lê vetor v
-    for (i = 0; i < (n2 - 1); i++)
-        scanf("%d ", &v[i]);
-    scanf("%d", &v[n2-1]);
+    if (n2 > 0) {
+        for (i = 0; i < (n2 - 1); i++)
+            scanf("%d ", &v[i]);
+        scanf("%d", &v[n2-1]);
+    }
 
     vetor_soma = somaVetores(u, n1, v, n2);
 
