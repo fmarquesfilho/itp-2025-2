@@ -27,7 +27,7 @@
 ---
 
 ### 📅 Unidade 2 - EM ANDAMENTO
-**Data limite:** 03/11/2025 às 23:59  
+**Data limite:** 10/11/2025 às 23:59 (prazo adiado) 
 **📖 Instruções completas:** [Clique aqui](./leituras/entrega-u2/instrucoes-entrega-u2.md)
 
 #### O que deve ser entregue na Unidade 2:
