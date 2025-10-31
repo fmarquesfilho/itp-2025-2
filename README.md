@@ -281,59 +281,59 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 ### **Semana 6** - Vetores (último conteúdo da U1)
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 22/09/25 | Segunda | Revisão e dúvidas: Funções 1 |
+| 22/09/25 | Segunda | **Lançamento:** Vetores |
 | 24/09/25 | Quarta | **Lançamento:** Vetores |
 | 26/09/25 | Sexta | Revisão e dúvidas: Vetores |
 
 ---
 
-### **Semana 7** - **UNIDADE 2** - Strings
+### **Semana 7** - Plantão de dúvidas sobre o projeto
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 29/09/25 | Segunda | Revisão e dúvidas: Vetores |
-| 30/09/25 | Terça | **📅 Entrega da U1 até 23:59** - Projeto + Relatório + Listas (até Vetores) |
-| 01/10/25 | Quarta | **Lançamento:** Strings |
+| 29/09/25 | Segunda | Plantão de dúvidas |
+| 01/10/25 | Quarta | Plantão de dúvidas |
 | 03/10/25 | Sexta | **⚠️ NÃO HAVERÁ AULA** - Feriado Estadual (Dia dos Mártires de Cunhaú e Uruaçu) |
 
 ---
 
-### **Semana 8** - Estruturas de Repetição Aninhadas
+### **Semana 8** - **UNIDADE 2** - Estruturas de Repetição Aninhadas e Strings
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 06/10/25 | Segunda | Revisão e dúvidas: Strings |
-| 08/10/25 | Quarta | **Lançamento:** Estruturas de Repetição Aninhadas |
-| 10/10/25 | Sexta | Revisão e dúvidas: Estruturas de Repetição Aninhadas |
+| 06/10/25 | Segunda | Plantão de dúvidas |
+| 07/10/25 | Terça | **📅 Entrega da U1 até 23:59** - Projeto + Relatório + Listas (até Vetores) |
+| 08/10/25 | Quarta | **Lançamento:** Strings |
+| 10/10/25 | Sexta | **Lançamento:** Repetições Aninhadas |
 
 ---
 
-### **Semana 9** - Matrizes
+### **Semana 9** - Matrizes, Ponteiros e Alocação Dinâmica (último conteúdo da U2)
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 13/10/25 | Segunda | Revisão e dúvidas: Estruturas de Repetição Aninhadas |
+| 13/10/25 | Segunda | **Lançamento:** Matrizes |
 | 15/10/25 | Quarta | **Lançamento:** Matrizes |
-| 17/10/25 | Sexta | Revisão e dúvidas: Matrizes |
+| 17/10/25 | Sexta | Não houve aula |
 
 ---
 
-### **Semana 10** - Ponteiros/Alocação Dinâmica 1 (último conteúdo da U2)
+### **Semana 10** - Solução de exercícios I (Unidade 2)
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 20/10/25 | Segunda | Revisão e dúvidas: Matrizes |
-| 22/10/25 | Quarta | **Lançamento:** Ponteiros/Alocação Dinâmica 1 |
-| 24/10/25 | Sexta | Revisão e dúvidas: Ponteiros/Alocação Dinâmica 1 |
+| 20/10/25 | Segunda | Solução de exercícios |
+| 22/10/25 | Quarta | Solução de exercícios |
+| 24/10/25 | Sexta | Não houve aula |
 
 ---
 
-### **Semana 11** - **UNIDADE 3** - Ponteiros/Alocação Dinâmica 2 
+### **Semana 11** - Solução de exercícios II (Unidade 2)
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 27/10/25 | Segunda | **📅 Entrega da U2 até 23:59** - Projeto + Relatório + Listas (até Ponteiros/Alocação Dinâmica 1) |
-| 29/10/25 | Quarta | **Lançamento:** Ponteiros/Alocação Dinâmica 2 |
-| 31/10/25 | Sexta | Revisão e dúvidas: Ponteiros/Alocação Dinâmica 2 |
+| 27/10/25 | Segunda | Feriado |
+| 29/10/25 | Quarta | Solução de exercícios |
+| 31/10/25 | Sexta | Solução de exercícios |
 
 ---
 
-### **Semana 12** - Funções 2
+### **Semana 12** - **UNIDADE 3** -- Funções 2
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 03/11/25 | Segunda | Revisão e dúvidas: Ponteiros/Alocação Dinâmica 2 |
@@ -345,7 +345,7 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 ### **Semana 13** - Arquivos
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 10/11/25 | Segunda | Revisão e dúvidas: Funções 2 |
+| 10/11/25 | Segunda | **📅 Entrega da U2 até 23:59** - Projeto + Relatório + Listas (até Ponteiros e Alocação Dinâmica) |
 | 12/11/25 | Quarta | **Lançamento:** Arquivos |
 | 14/11/25 | Sexta | Revisão e dúvidas: Arquivos |
 
@@ -382,14 +382,14 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 08/12/25 | Segunda | Não haverá aula |
-| 10/12/25 | Quarta | Recuperação |
+| 10/12/25 | Quarta | Reposição |
 | 12/12/25 | Sexta | **Encerramento do curso** |
 
 ## Feriados e Suspensões
 
 ### Feriados que Afetam o Curso
 - **03/10/25** - Dia dos Mártires de Cunhaú e Uruaçu (Feriado Estadual) - **SEXTA-FEIRA** - Não haverá aula
-- **28/10/25** - Dia do Servidor Público (Suspensão de atividades na terça-feira). A confirmar possível suspensão na segunda-feira, dia 27/10.
+- **27/10/25** - Dia do Servidor Público (Suspensão de atividades na segunda-feira). 
 
 ## Observações Importantes
 
@@ -411,4 +411,4 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 
 ---
 
-**Última atualização:** Outubro/2025 - Inclusão das instruções da Unidade 2
+**Última atualização:** Outubro/2025 - Atualização do Calendário e Datas de Entrega de Tarefa
