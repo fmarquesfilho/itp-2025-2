@@ -28,7 +28,8 @@ int main() {
     // conta presenças para o nome buscado
     presencas = 0;
     total_dias = 0;
-    for (i = i + 1; i < l; ) {
+    i = i + 1;
+    while (i < l) {
         // verifica se é data
         if ((entrada[i] >= '0') && (entrada[i] <= '9')) {
             total_dias++;
@@ -39,9 +40,9 @@ int main() {
         } else if (entrada[i] == ' ') {
             // pula espaço
             i++;
-            continue;
+            continue; // necessário? não é, mas deixa claro
         } else {
-            // verifica nome
+            // verifica nome se bate com a string de busca
             int encontrou = 1;
             for (j = 0; ((i + j) < l) && (nome_busca[j] != '\0') && (encontrou); j++) {
                 if (entrada[i + j] != nome_busca[j]) {
@@ -50,11 +51,12 @@ int main() {
             }
 
             // se encontrou o nome e é final da string ou próximo caractere é espaço, conta presença
+            // (nome_busca[j] == '\0') é necessário? não é, mas deixa claro.
             if ( (nome_busca[j] == '\0') && ((i + j == l) || (entrada[i + j] == ' ')) && (encontrou)) {
                 presencas++;
             } 
-            
-            // pula nome
+
+            // pula remanente do nome ou espaço (caso tenha encontrado o nome ou não)
             while ((i < l) && (entrada[i] != ' ')) {
                 i++;
             }
