@@ -117,7 +117,7 @@ Onde:
 - **Se Prova < 5,0**: Será calculado um número de faltas proporcional
 
 #### Cálculo das Faltas (quando aplicável)
-Quando pelo menos uma das notas (listas ou projeto) for inferior a 7,0:
+Quando pelo menos uma das notas (listas ou projeto) for inferior a 7,0 (Unidades 1 e 2) ou inferior a 5,0 (Unidade 3):
 
 ```
 F = T - ⌊(N / 10) × T⌋
