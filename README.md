@@ -54,28 +54,67 @@
 
 ---
 
+### 📅 Unidade 3 - ⚠️ MUDANÇA IMPORTANTE NA AVALIAÇÃO
+
+**🎯 NOVA MODALIDADE DE AVALIAÇÃO:**
+
+A Unidade 3 **NÃO será avaliada por projeto**, mas sim por uma **prova escrita online**.
+
+#### Detalhes da Prova:
+- **📅 Data:** 05/12/2025
+- **⏰ Horário:** Início rigorosamente às 16:40
+- **⏱️ Duração:** Aproximadamente 1 hora (pode ser inferior ao tempo total de aula)
+- **🖥️ Plataforma:** Multiprova
+- **📚 Conteúdo:** Todo o conteúdo das Unidades 1 e 2 (até Ponteiros e Alocação Dinâmica)
+- **👤 Modalidade:** Individual
+
+#### ⚠️ Requisitos para a Prova:
+- Computador funcionando
+- Conexão estável à Internet
+- Pontualidade (início às 16:40)
+
+#### 📖 Sobre os Conteúdos da U3:
+- Os conteúdos da U3 (Funções 2, Arquivos, Registros/Enumerações, Modularização) **NÃO serão cobrados na prova**
+- As aulas da U3 ocorrerão normalmente conforme o calendário
+
+#### 💡 Justificativa da Mudança:
+Devido à baixa participação nas aulas síncronas e ao número reduzido de dúvidas, foi necessário adaptar o formato de avaliação para garantir uma verificação mais efetiva do aprendizado individual dos alunos.
+
+---
+
 ## Sistema de Avaliação e Frequência
 
 ### Composição das Notas
 
-As avaliações ocorrerão ao final de cada unidade e serão baseadas na solução das **listas** de exercícios (20% de cada unidade) e em um **projeto individual** que vale 80% da nota de cada unidade.
+**⚠️ ATUALIZAÇÃO:** A avaliação foi ajustada conforme descrito abaixo:
 
-**Fórmula da nota final de cada unidade:**
+**Unidades 1 e 2:**
 ```
 Nota da Unidade = (Projeto × 0,8) + (Média das Listas × 0,2)
 ```
 
+**Unidade 3:**
+```
+Nota da Unidade = Nota da Prova (100%)
+```
+
+As avaliações das Unidades 1 e 2 são baseadas na solução das **listas** de exercícios (20% de cada unidade) e em um **projeto individual** que vale 80% da nota de cada unidade. A Unidade 3 será avaliada exclusivamente pela prova escrita.
+
 ### Controle de Frequência
 
-A frequência será calculada com base nas entregas de cada unidade, seguindo os critérios abaixo:
+A frequência será calculada com base nas entregas de cada unidade (U1 e U2) e na realização da prova (U3), seguindo os critérios abaixo:
 
-#### Critério Principal
+#### Critério Principal (Unidades 1 e 2)
 - **Se L ≥ 7,0 E P ≥ 7,0**: Nenhuma falta será atribuída na unidade
 - **Se L < 7,0 OU P < 7,0**: Será calculado um número de faltas proporcional
 
 Onde:
 - **L** = Nota média das listas da unidade
 - **P** = Nota do projeto da unidade
+
+#### Critério para Unidade 3
+- **Se Prova ≥ 5,0**: Nenhuma falta será atribuída na unidade
+- **Se Prova < 5,0**: Será calculado um número de faltas proporcional
 
 #### Cálculo das Faltas (quando aplicável)
 Quando pelo menos uma das notas (listas ou projeto) for inferior a 7,0:
@@ -85,7 +124,7 @@ F = T - ⌊(N / 10) × T⌋
 
 Onde:
 - F = Número de faltas atribuídas
-- N = min(L, P) (menor nota entre listas e projeto)
+- N = min(L, P) para U1 e U2, ou nota da prova para U3
 - T = Número total de encontros da unidade
 - ⌊ ⌋ = Função piso (arredondamento para baixo)
 ```
@@ -98,11 +137,11 @@ Onde:
 
 ### Mapeamento de Conteúdos por Unidade
 
-| Unidade | Período | Conteúdos que devem estar presentes no projeto |
-|---------|---------|------------------------------------------------|
-| **U1** | 22/08 a 30/09 | Variáveis com tipos bem-definidos, operações, vetores, comandos condicionais e de repetição, funções |
-| **U2** | 1/10 a 27/10 | Todos os tópicos da U1 + strings, estruturas de repetição aninhadas, matrizes, ponteiros e alocação dinâmica básica |
-| **U3** | 29/10 a 28/11 | Todos os tópicos das U1 e U2 + ponteiros avançados, funções complexas, arquivos, registros, enumerações, modularização |
+| Unidade | Período | Conteúdos / Avaliação |
+|---------|---------|------------------------|
+| **U1** | 22/08 a 30/09 | Projeto com: Variáveis com tipos bem-definidos, operações, vetores, comandos condicionais e de repetição, funções |
+| **U2** | 1/10 a 27/10 | Projeto com: Todos os tópicos da U1 + strings, estruturas de repetição aninhadas, matrizes, ponteiros e alocação dinâmica básica |
+| **U3** | 29/10 a 28/11 | **Prova escrita** sobre conteúdos das U1 e U2. Aulas sobre: ponteiros avançados, funções complexas, arquivos, registros, enumerações, modularização (não serão cobrados na prova) |
 
 ## Entregas e Documentação
 
@@ -166,27 +205,29 @@ Cada relatório deve conter:
 - Como você garante que não há vazamentos de memória (memory leaks)?
 - Quais vantagens a alocação dinâmica trouxe para seu projeto?
 
-**Unidade 3:**
-- Como a modularização contribuiu para a qualidade do código?
-- Quais técnicas de manipulação de arquivos foram utilizadas?
-
 ### Critérios de Avaliação
 
-#### Código (Repositório Git) - 40% da nota do projeto
+#### Para Unidades 1 e 2:
+
+**Código (Repositório Git) - 40% da nota do projeto**
 - **Qualidade e organização (10%)**: Estrutura de pastas, nomenclatura, indentação, comentários
 - **Funcionalidade (15%)**: O programa executa conforme esperado e resolve o problema proposto
 - **Aplicação dos conceitos da unidade (10%)**: Uso adequado dos tópicos estudados
 - **Histórico de commits (5%)**: Commits frequentes e descritivos ao longo do desenvolvimento
 
-#### Relatório Técnico (PDF) - 30% da nota do projeto
+**Relatório Técnico (PDF) - 30% da nota do projeto**
 - **Clareza e coerência (10%)**
 - **Profundidade técnica (10%)**
 - **Resposta às perguntas orientadoras (10%)**
 
-#### Vídeo (5-8 minutos) - 30% da nota do projeto
+**Vídeo (5-8 minutos) - 30% da nota do projeto**
 - **Demonstração do projeto (15%)**: Mostra o funcionamento do código
 - **Qualidade da explicação (10%)**: Clareza, objetividade e domínio do conteúdo
 - **Tempo (5%)**: Dentro do limite de 5 a 8 minutos
+
+#### Para Unidade 3:
+
+A avaliação será 100% baseada na **prova escrita online** realizada no Multiprova, cobrindo todo o conteúdo das Unidades 1 e 2.
 
 ## Sugestões de Projetos
 
@@ -360,7 +401,7 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 
 ---
 
-### **Semana 15** - Modularização e Compilação (último conteúdo da U3)
+### **Semana 15** - Modularização e Compilação
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 24/11/25 | Segunda | Revisão e dúvidas: Registros e Enumerações |
@@ -369,12 +410,12 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 
 ---
 
-### **Semana 16** - Entrega final do projeto
+### **Semana 16** - Revisão para prova e realização da prova
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 01/12/25 | Segunda | Acompanhamento de projeto |
-| 03/12/25 | Quarta | Acompanhamento de projeto |
-| 05/12/25 | Sexta | **📅 Entrega final do projeto até 23:59** - Projeto + Relatório + Listas (até Modularização e Compilação) |
+| 01/12/25 | Segunda | Revisão para prova - Conteúdos U1 e U2 |
+| 03/12/25 | Quarta | Revisão para prova - Conteúdos U1 e U2 |
+| 05/12/25 | Sexta | **🎯 PROVA DA U3 - 16:40** (Multiprova - Conteúdo U1 e U2) |
 
 ---
 
@@ -399,9 +440,11 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 - 🔄 O calendário pode sofrer ajustes conforme a necessidade da turma
 - 📤 Todas as entregas devem ser feitas via SIGAA conforme instruções específicas
 - 📋 Listas de exercícios serão divulgadas semanalmente às quartas-feiras junto com as aulas gravadas
+- ⚠️ **ATENÇÃO:** A Unidade 3 será avaliada por prova escrita no dia 05/12/2025 às 16:40
+- 📝 Conteúdo da prova: Todo conteúdo das Unidades 1 e 2 (até Ponteiros e Alocação Dinâmica)
 - 📖 Consulte as instruções de entrega de cada unidade:
-  - [Instruções de Entrega da U1](./leituras/s4/instrucoes-entrega-u1.md)
-  - [Instruções de Entrega da U2](./leituras/s8/instrucoes-entrega-u2.md)
+  - [Instruções de Entrega da U1](./leituras/entrega-u1/instrucoes-entrega-u1.md)
+  - [Instruções de Entrega da U2](./leituras/entrega-u2/instrucoes-entrega-u2.md)
 
 ## 🔗 Links Úteis
 
@@ -411,4 +454,4 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 
 ---
 
-**Última atualização:** Outubro/2025 - Atualização do Calendário e Datas de Entrega de Tarefa
+**Última atualização:** Novembro/2025 - Atualização do sistema de avaliação da U3 (prova escrita)
