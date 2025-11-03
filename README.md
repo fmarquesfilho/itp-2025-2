@@ -374,39 +374,40 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 
 ---
 
-### **Semana 12** - **UNIDADE 3** -- Funções 2
+### **Semana 12** - Plantão de dúvidas e correção dos trabalhos da U1
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 03/11/25 | Segunda | Revisão e dúvidas: Ponteiros/Alocação Dinâmica 2 |
-| 05/11/25 | Quarta | **Lançamento:** Funções 2 |
-| 07/11/25 | Sexta | Revisão e dúvidas: Funções 2 |
+| 03/11/25 | Segunda | Plantão de dúvidas |
+| 05/11/25 | Quarta | Plantão de dúvidas |
+| 07/11/25 | Sexta | Plantão de dúvidas |
 
 ---
 
-### **Semana 13** - Arquivos
+### **Semana 13** - **UNIDADE 3** - Registros e Enumerações
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 10/11/25 | Segunda | **📅 Entrega da U2 até 23:59** - Projeto + Relatório + Listas (até Ponteiros e Alocação Dinâmica) |
-| 12/11/25 | Quarta | **Lançamento:** Arquivos |
-| 14/11/25 | Sexta | Revisão e dúvidas: Arquivos |
+| 10/11/25 | Segunda | **Lançamento:** Registros e Enumerações |
+| 12/11/25 | Quarta | **Lançamento:** Registros e Enumerações |
+| 14/11/25 | Sexta | Revisão e dúvidas: Registros e Enumerações |
 
 ---
 
-### **Semana 14** - Registros e Enumerações
+### **Semana 14** - Modularização e Compilação
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 17/11/25 | Segunda | Revisão e dúvidas: Arquivos |
-| 19/11/25 | Quarta | **Lançamento:** Registros e Enumerações |
-| 21/11/25 | Sexta | Revisão e dúvidas: Registros e Enumerações |
-
----
-
-### **Semana 15** - Modularização e Compilação
-| Data | Dia | Atividade |
-|------|-----|-----------|
-| 24/11/25 | Segunda | Revisão e dúvidas: Registros e Enumerações |
+| 24/11/25 | Segunda | **Lançamento:** Modularização e Compilação |
 | 26/11/25 | Quarta | **Lançamento:** Modularização e Compilação |
 | 28/11/25 | Sexta | Revisão e dúvidas: Modularização e Compilação |
+
+---
+
+### **Semana 15** - Arquivos
+| Data | Dia | Atividade |
+|------|-----|-----------|
+| 17/11/25 | Segunda | **Lançamento:** Arquivos |
+| 19/11/25 | Quarta | **Lançamento:** Arquivos |
+| 21/11/25 | Sexta | Revisão e dúvidas: Arquivos |
 
 ---
 
