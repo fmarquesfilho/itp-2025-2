@@ -328,11 +328,11 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 
 ---
 
-### **Semana 7** - Plantão de dúvidas sobre o projeto
+### **Semana 7** - Plantão de dúvidas e solução de exercícios 
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 29/09/25 | Segunda | Plantão de dúvidas |
-| 01/10/25 | Quarta | Plantão de dúvidas |
+| 01/10/25 | Quarta | Solução de exercícios - Unidade 1 |
 | 03/10/25 | Sexta | **⚠️ NÃO HAVERÁ AULA** - Feriado Estadual (Dia dos Mártires de Cunhaú e Uruaçu) |
 
 ---
@@ -340,7 +340,7 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 ### **Semana 8** - **UNIDADE 2** - Estruturas de Repetição Aninhadas e Strings
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 06/10/25 | Segunda | Plantão de dúvidas |
+| 06/10/25 | Segunda | Solução de exercícios - Unidade 1 |
 | 07/10/25 | Terça | **📅 Entrega da U1 até 23:59** - Projeto + Relatório + Listas (até Vetores) |
 | 08/10/25 | Quarta | **Lançamento:** Strings |
 | 10/10/25 | Sexta | **Lançamento:** Repetições Aninhadas |
