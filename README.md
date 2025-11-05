@@ -139,9 +139,9 @@ Onde:
 
 | Unidade | Período | Conteúdos / Avaliação |
 |---------|---------|------------------------|
-| **U1** | 22/08 a 30/09 | Projeto com: Variáveis com tipos bem-definidos, operações, vetores, comandos condicionais e de repetição, funções |
-| **U2** | 1/10 a 27/10 | Projeto com: Todos os tópicos da U1 + strings, estruturas de repetição aninhadas, matrizes, ponteiros e alocação dinâmica básica |
-| **U3** | 29/10 a 28/11 | **Prova escrita** sobre conteúdos das U1 e U2. Aulas sobre: ponteiros avançados, funções complexas, arquivos, registros, enumerações, modularização (não serão cobrados na prova) |
+| **U1** | 22/08 a 6/10 | Projeto com: Variáveis com tipos bem-definidos, operações, vetores, comandos condicionais e de repetição, funções |
+| **U2** | 6/10 a 10/11 | Projeto com: Todos os tópicos da U1 + strings, estruturas de repetição aninhadas, matrizes, ponteiros e alocação dinâmica |
+| **U3** | 10/11 a 12/12 | **Prova escrita** sobre conteúdos das U1 e U2. Aulas sobre: arquivos, registros, enumerações, modularização (não serão cobrados na prova) |
 
 ## Entregas e Documentação
 
