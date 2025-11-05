@@ -27,7 +27,7 @@
 ---
 
 ### 📅 Unidade 2 - EM ANDAMENTO
-**Data limite:** 10/11/2025 às 23:59 (prazo adiado) 
+**Data limite:** 17/11/2025 às 23:59 (prazo adiado) 
 **📖 Instruções completas:** [Clique aqui](./leituras/entrega-u2/instrucoes-entrega-u2.md)
 
 #### O que deve ser entregue na Unidade 2:
@@ -386,7 +386,6 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 ### **Semana 13** - **UNIDADE 3** - Registros e Enumerações
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 10/11/25 | Segunda | **📅 Entrega da U2 até 23:59** - Projeto + Relatório + Listas (até Ponteiros e Alocação Dinâmica) |
 | 10/11/25 | Segunda | **Lançamento:** Registros e Enumerações |
 | 12/11/25 | Quarta | **Lançamento:** Registros e Enumerações |
 | 14/11/25 | Sexta | Revisão e dúvidas: Registros e Enumerações |
@@ -396,18 +395,18 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 ### **Semana 14** - Modularização e Compilação
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 24/11/25 | Segunda | **Lançamento:** Modularização e Compilação |
-| 26/11/25 | Quarta | **Lançamento:** Modularização e Compilação |
-| 28/11/25 | Sexta | Revisão e dúvidas: Modularização e Compilação |
+| 17/11/25 | Segunda | **📅 Entrega da U2 até 23:59** - Projeto + Relatório + Listas (até Ponteiros e Alocação Dinâmica) |
+| 17/11/25 | Segunda | **Lançamento:** Modularização e Compilação |
+| 19/11/25 | Quarta | **Lançamento:** Modularização e Compilação |
+| 21/11/25 | Sexta | Revisão e dúvidas: Modularização e Compilação |
 
 ---
-
 ### **Semana 15** - Arquivos
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 17/11/25 | Segunda | **Lançamento:** Arquivos |
-| 19/11/25 | Quarta | **Lançamento:** Arquivos |
-| 21/11/25 | Sexta | Revisão e dúvidas: Arquivos |
+| 24/11/25 | Segunda | **Lançamento:** Arquivos |
+| 26/11/25 | Quarta | **Lançamento:** Arquivos |
+| 28/11/25 | Sexta | Revisão e dúvidas: Arquivos |
 
 ---
 
