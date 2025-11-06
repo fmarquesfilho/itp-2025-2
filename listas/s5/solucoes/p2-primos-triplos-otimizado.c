@@ -42,7 +42,7 @@ int main() {
         x++; // incrementa x
         // calcula se o novo valor (x+6) é primo e armazena em v[6]
         v[6] = primo(x+6);
-    } while (x < (60 - 6)); // último x que permite x+6 <= 50000
+    } while (x < (50000 - 6)); // último x que permite x+6 <= 50000
 
     return 0;
 }
