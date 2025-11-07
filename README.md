@@ -351,7 +351,7 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 13/10/25 | Segunda | **Lançamento:** Matrizes |
-| 15/10/25 | Quarta | **Lançamento:** Matrizes |
+| 15/10/25 | Quarta | **Lançamento:** Ponteiros e Alocação Dinâmica |
 | 17/10/25 | Sexta | Não houve aula |
 
 ---
@@ -374,12 +374,12 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 
 ---
 
-### **Semana 12** - Plantão de dúvidas e correção dos trabalhos da U1
+### **Semana 12** - Análise de Algoritmos - Plantão de dúvidas e correção dos trabalhos da U1
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 03/11/25 | Segunda | Plantão de dúvidas |
 | 05/11/25 | Quarta | Plantão de dúvidas |
-| 07/11/25 | Sexta | Plantão de dúvidas |
+| 07/11/25 | Sexta | Análise de complexidade de algoritmos |
 
 ---
 
