@@ -65,7 +65,7 @@ A Unidade 3 **NÃO será avaliada por projeto**, mas sim por uma **prova escrita
 - **⏰ Horário:** Início rigorosamente às 16:40
 - **⏱️ Duração:** Aproximadamente 1 hora (pode ser inferior ao tempo total de aula)
 - **🖥️ Plataforma:** Multiprova
-- **📚 Conteúdo:** Todo o conteúdo das Unidades 1 e 2 (até Ponteiros e Alocação Dinâmica)
+- **📚 Conteúdo:** Todo o conteúdo das Unidades 1 e 2 (até Ponteiros e Alocação Dinâmica) **+ Análise de Complexidade de Algoritmos**
 - **👤 Modalidade:** Individual
 
 #### ⚠️ Requisitos para a Prova:
@@ -74,7 +74,8 @@ A Unidade 3 **NÃO será avaliada por projeto**, mas sim por uma **prova escrita
 - Pontualidade (início às 16:40)
 
 #### 📖 Sobre os Conteúdos da U3:
-- Os conteúdos da U3 (Funções 2, Arquivos, Registros/Enumerações, Modularização) **NÃO serão cobrados na prova**
+- **Análise de Complexidade de Algoritmos (07/11)** será cobrado na prova
+- Os demais conteúdos da U3 (Funções 2, Arquivos, Registros/Enumerações, Modularização) **NÃO serão cobrados na prova**
 - As aulas da U3 ocorrerão normalmente conforme o calendário
 
 #### 💡 Justificativa da Mudança:
@@ -141,7 +142,7 @@ Onde:
 |---------|---------|------------------------|
 | **U1** | 22/08 a 6/10 | Projeto com: Variáveis com tipos bem-definidos, operações, vetores, comandos condicionais e de repetição, funções |
 | **U2** | 6/10 a 10/11 | Projeto com: Todos os tópicos da U1 + strings, estruturas de repetição aninhadas, matrizes, ponteiros e alocação dinâmica |
-| **U3** | 10/11 a 12/12 | **Prova escrita** sobre conteúdos das U1 e U2. Aulas sobre: arquivos, registros, enumerações, modularização (não serão cobrados na prova) |
+| **U3** | 10/11 a 12/12 | **Prova escrita** sobre conteúdos das U1 e U2 + Análise de Complexidade. Aulas sobre: arquivos, registros, enumerações, modularização (não serão cobrados na prova) |
 
 ## Entregas e Documentação
 
@@ -227,7 +228,7 @@ Cada relatório deve conter:
 
 #### Para Unidade 3:
 
-A avaliação será 100% baseada na **prova escrita online** realizada no Multiprova, cobrindo todo o conteúdo das Unidades 1 e 2.
+A avaliação será 100% baseada na **prova escrita online** realizada no Multiprova, cobrindo todo o conteúdo das Unidades 1 e 2 + Análise de Complexidade de Algoritmos.
 
 ## Sugestões de Projetos
 
@@ -310,7 +311,7 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 
 ---
 
-### **Semana 5** - Funções 1
+### **Semana 5** - Funções
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 15/09/25 | Segunda | Revisão e dúvidas: Estruturas de Repetição |
@@ -379,7 +380,7 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 |------|-----|-----------|
 | 03/11/25 | Segunda | Plantão de dúvidas |
 | 05/11/25 | Quarta | Plantão de dúvidas |
-| 07/11/25 | Sexta | Análise de complexidade de algoritmos |
+| 07/11/25 | Sexta | **Análise de complexidade de algoritmos** ⚠️ *Conteúdo incluído na prova da U3* |
 
 ---
 
@@ -413,9 +414,9 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 ### **Semana 16** - Revisão para prova e realização da prova
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 01/12/25 | Segunda | Revisão para prova - Conteúdos U1 e U2 |
-| 03/12/25 | Quarta | Revisão para prova - Conteúdos U1 e U2 |
-| 05/12/25 | Sexta | **🎯 PROVA DA U3 - 16:40** (Multiprova - Conteúdo U1 e U2) |
+| 01/12/25 | Segunda | Revisão para prova - Conteúdos U1 e U2 + Análise de Complexidade |
+| 03/12/25 | Quarta | Revisão para prova - Conteúdos U1 e U2 + Análise de Complexidade |
+| 05/12/25 | Sexta | **🎯 PROVA DA U3 - 16:40** (Multiprova - Conteúdo U1 + U2 + Análise de Complexidade) |
 
 ---
 
@@ -441,7 +442,7 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 - 📤 Todas as entregas devem ser feitas via SIGAA conforme instruções específicas
 - 📋 Listas de exercícios serão divulgadas semanalmente às quartas-feiras junto com as aulas gravadas
 - ⚠️ **ATENÇÃO:** A Unidade 3 será avaliada por prova escrita no dia 05/12/2025 às 16:40
-- 📝 Conteúdo da prova: Todo conteúdo das Unidades 1 e 2 (até Ponteiros e Alocação Dinâmica)
+- 📝 **Conteúdo da prova:** Todo conteúdo das Unidades 1 e 2 (até Ponteiros e Alocação Dinâmica) **+ Análise de Complexidade de Algoritmos (aula de 07/11)**
 - 📖 Consulte as instruções de entrega de cada unidade:
   - [Instruções de Entrega da U1](./leituras/entrega-u1/instrucoes-entrega-u1.md)
   - [Instruções de Entrega da U2](./leituras/entrega-u2/instrucoes-entrega-u2.md)
@@ -454,4 +455,4 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 
 ---
 
-**Última atualização:** Novembro/2025 - Atualização do sistema de avaliação da U3 (prova escrita)
+**Última atualização:** Novembro/2025 - Inclusão de Análise de Complexidade de Algoritmos no conteúdo da prova da U3
