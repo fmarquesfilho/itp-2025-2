@@ -1,4 +1,4 @@
-int janela[7] = {0};
+int janela[7];
 for (int i = 0; i < 7; i++) {
     janela[i] = primo(inicio + i);
 }
