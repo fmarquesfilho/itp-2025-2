@@ -75,7 +75,7 @@ A Unidade 3 **NÃO será avaliada por projeto**, mas sim por uma **prova escrita
 
 #### 📖 Sobre os Conteúdos da U3:
 - **Análise de Complexidade de Algoritmos (07/11)** será cobrado na prova
-- Os demais conteúdos da U3 (Funções 2, Arquivos, Registros/Enumerações, Modularização) **NÃO serão cobrados na prova**
+- Os demais conteúdos da U3 (Arquivos, Registros/Enumerações, Modularização) **NÃO serão cobrados na prova**
 - As aulas da U3 ocorrerão normalmente conforme o calendário
 
 #### 💡 Justificativa da Mudança:
