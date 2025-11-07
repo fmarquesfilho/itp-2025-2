@@ -1,0 +1,5 @@
+valgrind --tool=massif ./primos_nao_otimizado
+valgrind --tool=massif ./primos_otimizado_vetor
+valgrind --tool=massif ./primos_otimizado_lista
+
+ms_print massif.out.*

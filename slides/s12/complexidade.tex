@@ -1,0 +1,364 @@
+% Copyright 2024 by IA Assistant
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+
+\documentclass[portuguese,10pt,xcolor=table]{beamer}
+\setbeameroption{show notes}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{varwidth}
+\usepackage{tikz}
+\usepackage{pifont}
+\usepackage{tikzsymbols}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{multicol}
+
+\usetikzlibrary{arrows,shapes,calc,decorations.pathmorphing,patterns}
+
+\lstset{
+    language=C,
+    basicstyle=\normalsize\ttfamily,
+    keywordstyle=\scriptsize\bfseries\sffamily,
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=29pt,
+    backgroundcolor=\color{gray!35},
+    keywordstyle=\bfseries\color{green!40!black},
+    commentstyle=\itshape\color{purple!40!black},
+    identifierstyle=\color{blue},
+    stringstyle=\color{red},
+    extendedchars=true,
+    showspaces=false,
+    showtabs=false,
+}
+\renewcommand{\lstlistingname}{Código}
+
+\everymath{\displaystyle}
+
+\usepackage[T1]{fontenc}
+
+
+\title{Complexidade de Algoritmos}
+\subtitle{Análise de Eficiência Computacional}
+\author{Prof. Fernando Figueira}
+\institute{UFRN}
+
+\date{7 de Novembro de 2025}
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+  \begin{center}
+    \tiny
+    Material compilado em \today.\\
+    Licença desta apresentação:\\
+    \includegraphics[height=1.0cm]{by-nc-nd.png}\\
+    http://creativecommons.org/licenses/
+  \end{center}
+\end{frame}
+
+\def\GN[#1]{\colorbox{gray!40}{#1}}
+\def\RN[#1]{\colorbox{red!40}{#1}}
+\def\BN[#1]{\colorbox{blue!40}{#1}}
+\def\ON[#1]{\colorbox{orange!40}{#1}}
+
+\section{Introdução}
+
+\begin{frame}
+    \begin{center}
+        \structure{\large O que é Complexidade de Algoritmos?}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{beamerboxesrounded}{Definição}
+        Medida teórica do consumo de recursos computacionais (tempo e memória) de um algoritmo em função do tamanho da entrada.
+    \end{beamerboxesrounded}
+    \vspace{0.5cm}
+    
+    \begin{itemize}
+        \item \textbf{Independente de hardware}: Analisa o algoritmo, não a máquina
+        \item \textbf{Foco no crescimento}: Como o consumo escala com o tamanho da entrada
+        \item \textbf{Análise assintótica}: Comportamento para entradas muito grandes
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \structure{\large Por que estudar complexidade?}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \begin{columns}[T]
+        \begin{column}{0.48\textwidth}
+            \textbf{Aplicações práticas:}
+            \begin{itemize}
+                \item Escolha de algoritmos
+                \item Previsão de desempenho
+                \item Otimização de recursos
+                \item Projeto de sistemas
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \textbf{Exemplo real:}
+            \begin{itemize}
+                \item Algoritmo O(n²): 1s para 1000 elementos
+                \item Algoritmo O(n log n): 10s para 10000 elementos
+                \item Algoritmo O(n²): 100s para 10000 elementos
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Tipos de Complexidade}
+
+\begin{frame}
+    \begin{center}
+        \structure{\large Complexidade Temporal}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \textbf{Complexidade Temporal}\\
+    Mede o número de operações em função do tamanho da entrada n.
+    
+    \vspace{0.5cm}
+    \begin{table}
+        \begin{tabular}{ll}
+            \textbf{O(1)} & Tempo constante (acesso a array)\\
+            \textbf{O(log n)} & Tempo logarítmico (busca binária)\\
+            \textbf{O(n)} & Tempo linear (busca sequencial)\\
+            \textbf{O(n log n)} & (Merge sort, Quick sort)\\
+            \textbf{O(n\textsuperscript{2})} & Tempo quadrático (Bubble sort)\\
+            \textbf{O(2\textsuperscript{n})} & Tempo exponencial (Fibonacci recursivo)
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \structure{\large Complexidade Espacial}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \textbf{Complexidade Espacial}\\
+    Mede a quantidade de memória utilizada.
+    
+    \vspace{0.5cm}
+    \begin{table}
+        \begin{tabular}{ll}
+            \textbf{O(1)} & Uso constante de memória (algoritmos in-place)\\
+            \textbf{O(n)} & Memória proporcional à entrada\\
+            \textbf{O(n²)} & Matriz n×n\\
+            \textbf{O(log n)} & Pilha de recursão
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\section{Gargalos de Hardware}
+
+\begin{frame}
+    \begin{center}
+        \structure{\large Hierarquia de Memória}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \textbf{Hierarquia de Memória e Custos:}
+    
+    \begin{enumerate}
+        \item \textbf{Registradores}: Mais rápido, menor capacidade
+        \item \textbf{Cache L1/L2/L3}: Muito rápido, acesso em nanosegundos
+        \item \textbf{RAM}: Rápido, acesso em microssegundos
+        \item \textbf{Disco/SSD}: Lento, acesso em milissegundos
+    \end{enumerate}
+    
+    \vspace{0.5cm}
+    \textbf{Custo das Operações:}
+    \begin{itemize}
+        \item Operação na CPU: 1 unidade de tempo
+        \item Acesso à RAM: ~100-200 unidades
+        \item Acesso ao disco: ~1.000.000 unidades
+    \end{itemize}
+\end{frame}
+
+\section{Análise de Algoritmos}
+
+\begin{frame}
+    \begin{center}
+        \structure{\large Exemplos Práticos}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \textbf{Exemplo 1: Busca Linear - O(n)}
+    \lstinputlisting{exemplos/busca_linear.c}
+\end{frame}
+
+\begin{frame}
+    \textbf{Exemplo 2: Bubble Sort - O(n²)}
+    \lstinputlisting{exemplos/bubble_sort.c}
+\end{frame}
+
+\begin{frame}
+    \textbf{Exemplo 3: Busca Binária - O(log n)}
+    \lstinputlisting{exemplos/busca_binaria.c}
+\end{frame}
+
+\section{Problema dos Primos Triplos}
+
+\begin{frame}
+    \begin{center}
+        \structure{\large Análise do Problema 2}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \textbf{Problema:} Encontrar trios de primos (x, x+2, x+6) para x <= 50000
+    
+    \vspace{0.3cm}
+    \textbf{Solução Não Otimizada:}
+    \lstinputlisting{exemplos/primos_nao_otimizado.c}
+\end{frame}
+
+\begin{frame}
+    \textbf{Problemas da Solução Não Otimizada:}
+    \begin{itemize}
+        \item Verificações redundantes
+        \item Cada número verificado múltiplas vezes
+        \item Complexidade: $O(n \times \sqrt{n})$
+        \item $\approx 150.000$ chamadas à função primo()
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \textbf{Solução Otimizada com Vetor:}
+    \lstinputlisting{exemplos/primos_otimizado_vetor.c}
+\end{frame}
+
+\begin{frame}
+    \textbf{Vantagens da Solução Otimizada:}
+    \begin{itemize}
+        \item Reduz chamadas à função primo()
+        \item Reutiliza verificações anteriores
+        \item Complexidade: O(n)
+        \item ~50.000 chamadas à função primo()
+        \item Redução de 66\% nas operações
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \textbf{Solução com Lista Ligada:}
+    \lstinputlisting{exemplos/primos_lista_ligada.c}
+\end{frame}
+
+\begin{frame}
+    \textbf{Comparação das Soluções:}
+    
+    \begin{table}
+        \begin{tabular}{lccc}
+            \textbf{Métrica} & \textbf{Não Otimizada} & \textbf{Vetor} & \textbf{Lista} \\
+            \hline
+            Chamadas primo() & ~150.000 & ~50.000 & ~50.000 \\
+            Operações escrita & 0 & 6/iteração & 2/iteração \\
+            Uso memória & O(1) & O(1) & O(k) \\
+            Simplicidade & Alta & Média & Baixa \\
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\section{Medição de Performance}
+
+\begin{frame}
+    \begin{center}
+        \structure{\large Ferramentas de Análise}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \textbf{Ferramentas Open-Source:}
+    \begin{itemize}
+        \item \textbf{Valgrind}: Análise de memória e performance
+        \item \textbf{gprof}: Profiling de código
+        \item \textbf{time}: Medição de tempo de execução
+        \item \textbf{perf}: Análise de performance do Linux
+    \end{itemize}
+    
+    \vspace{0.5cm}
+    \textbf{Instalação:}
+    \lstinputlisting{exemplos/instalacao.txt}
+\end{frame}
+
+\begin{frame}
+    \textbf{Uso do Valgrind - Callgrind:}
+    \lstinputlisting{exemplos/valgrind_callgrind.txt}
+    
+    \vspace{0.3cm}
+    \textbf{Uso do Valgrind - Massif:}
+    \lstinputlisting{exemplos/valgrind_massif.txt}
+\end{frame}
+
+\begin{frame}
+    \textbf{Script de Comparação Automática:}
+    \lstinputlisting{exemplos/script_comparacao.sh}
+\end{frame}
+
+\begin{frame}
+    \textbf{Métricas a Observar:}
+    \begin{itemize}
+        \item Tempo real de execução
+        \item Número de instruções executadas
+        \item Cache misses
+        \item Uso de memória heap
+        \item Número de chamadas da função primo()
+    \end{itemize}
+\end{frame}
+
+\section{Conclusão}
+
+\begin{frame}
+    \begin{center}
+        \structure{\large Resumo e Próximos Passos}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \textbf{Pontos Principais:}
+    \begin{itemize}
+        \item Complexidade ajuda na escolha de algoritmos adequados
+        \item Trade-off entre tempo e espaço
+        \item Otimizações devem considerar o contexto de uso
+        \item Ferramentas de profiling são essenciais para análise prática
+    \end{itemize}
+    
+    \vspace{0.5cm}
+    \textbf{Próximos Tópicos:}
+    \begin{itemize}
+        \item Notações assintóticas (Big O, Theta, Omega)
+        \item Análise de casos (melhor, médio, pior)
+        \item Complexidade amortizada
+        \item Estruturas de dados avançadas
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \Huge Perguntas?
+        \vspace{1cm}
+        
+        \large Obrigado!
+    \end{center}
+\end{frame}
+
+\end{document}

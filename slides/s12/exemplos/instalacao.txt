@@ -1,0 +1,3 @@
+sudo apt-get install valgrind gcc  # Linux
+brew install valgrind gcc         # macOS
+# Windows: usar WSL ou ferramentas alternativas

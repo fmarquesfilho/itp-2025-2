@@ -1,0 +1,5 @@
+valgrind --tool=callgrind ./primos_nao_otimizado
+valgrind --tool=callgrind ./primos_otimizado_vetor
+valgrind --tool=callgrind ./primos_otimizado_lista
+
+kcachegrind callgrind.out.*
