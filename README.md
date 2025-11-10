@@ -393,13 +393,13 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 
 ---
 
-### **Semana 14** - Modularização e Compilação
+### **Semana 14** - Recursão
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 17/11/25 | Segunda | **📅 Entrega da U2 até 23:59** - Projeto + Relatório + Listas (até Ponteiros e Alocação Dinâmica) |
-| 17/11/25 | Segunda | **Lançamento:** Modularização e Compilação |
-| 19/11/25 | Quarta | **Lançamento:** Modularização e Compilação |
-| 21/11/25 | Sexta | Revisão e dúvidas: Modularização e Compilação |
+| 17/11/25 | Segunda | **Lançamento:** Recursão |
+| 19/11/25 | Quarta | **Lançamento:** Recursão |
+| 21/11/25 | Sexta | Revisão e dúvidas: Recursão |
 
 ---
 ### **Semana 15** - Arquivos
