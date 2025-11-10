@@ -75,7 +75,7 @@ A Unidade 3 **NÃO será avaliada por projeto**, mas sim por uma **prova escrita
 
 #### 📖 Sobre os Conteúdos da U3:
 - **Análise de Complexidade de Algoritmos (07/11)** será cobrado na prova
-- Os demais conteúdos da U3 (Arquivos, Registros/Enumerações, Modularização) **NÃO serão cobrados na prova**
+- Os demais conteúdos da U3 (Arquivos, Registros/Enumerações, Recursão) **NÃO serão cobrados na prova**
 - As aulas da U3 ocorrerão normalmente conforme o calendário
 
 #### 💡 Justificativa da Mudança:
@@ -142,7 +142,7 @@ Onde:
 |---------|---------|------------------------|
 | **U1** | 22/08 a 6/10 | Projeto com: Variáveis com tipos bem-definidos, operações, vetores, comandos condicionais e de repetição, funções |
 | **U2** | 6/10 a 10/11 | Projeto com: Todos os tópicos da U1 + strings, estruturas de repetição aninhadas, matrizes, ponteiros e alocação dinâmica |
-| **U3** | 10/11 a 12/12 | **Prova escrita** sobre conteúdos das U1 e U2 + Análise de Complexidade. Aulas sobre: arquivos, registros, enumerações, modularização (não serão cobrados na prova) |
+| **U3** | 10/11 a 12/12 | **Prova escrita** sobre conteúdos das U1 e U2 + Análise de Complexidade. Aulas sobre: arquivos, registros, enumerações, recursão (não serão cobrados na prova) |
 
 ## Entregas e Documentação
 
