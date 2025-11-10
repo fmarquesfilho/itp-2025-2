@@ -1,0 +1,349 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\documentclass[portuguese,10pt,xcolor=table]{bredelebeamer}
+\setbeameroption{show notes}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{varwidth}
+\usepackage{listings} % Código de programas
+\usepackage{tikz}
+\usepackage[tikz]{bclogo}
+\usepackage{pifont}
+\usetikzlibrary{arrows,shapes}
+
+\usetikzlibrary{calc,decorations.pathmorphing,patterns}
+\pgfdeclaredecoration{penciline}{initial}{
+	\state{initial}[width=+\pgfdecoratedinputsegmentremainingdistance,
+	auto corner on length=1mm,]{
+		\pgfpathcurveto%
+		{% From
+			\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}
+			{\pgfdecorationsegmentamplitude}
+		}
+		{%  Control 1
+			\pgfmathrand
+			\pgfpointadd{\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}{0pt}}
+			{\pgfqpoint{-\pgfdecorationsegmentaspect
+				\pgfdecoratedinputsegmentremainingdistance}%
+				{\pgfmathresult\pgfdecorationsegmentamplitude}
+			}
+		}
+		{%TO 
+			\pgfpointadd{\pgfpointdecoratedinputsegmentlast}{\pgfpoint{1pt}{1pt}}
+		}
+	}
+	\state{final}{}
+}
+
+
+
+\everymath{\displaystyle}
+\tikzstyle{every picture}+=[remember picture,decoration=penciline]
+\DeclareTextFontCommand{\textdf}{\bfseries\color{blue!80}}
+%\tikzstyle{every node}+=[decorate]
+%\tikzstyle{every path}+=[decorate]
+%\tikzstyle{na} = [baseline=-.5ex]
+
+\usepackage[T1]{fontenc}
+
+\def\lecturename{DIM0118 - Introdução às técnicas de programação}
+
+\title{\insertlecture}
+
+\author{Prof. Fernando Figueira\\(adaptado do material do Prof. Rafael Beserra Gomes)}
+
+\institute{UFRN}
+
+\subject{Registros (+typedef) e Enumerações}
+
+\lecture[]{Registros (+typedef) e Enumerações}{}
+
+\date{}
+
+\def\exe[#1]{\color{gray}#1\color{black}}
+\def\exp[#1]{\color{gray}<\textit{#1}>\color{black}}
+\def\espaco{\color{gray}\hspace{0.2cm}\color{black}}
+\def\espaco{\color{blue}␣\color{black}}
+\def\inativo[#1]{\color{gray}#1\color{black}}
+
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\lstset{
+	language=C,
+	basicstyle=\footnotesize\ttfamily,
+	%basicstyle=\scriptsize\ttfamily,
+	keywordstyle=\footnotesize\bfseries\sffamily,
+	%keywordstyle=\scriptsize\bfseries\sffamily,
+	showstringspaces=false,
+	numbers=left,
+	numberstyle=\footnotesize,
+	stepnumber=1,
+	numbersep=5pt,
+	tabsize=4,
+	%backgroundcolor=\color{blue!05},
+	backgroundcolor=\color{gray!35},
+	showspaces=false,
+	showtabs=false,
+	stringstyle=\ttfamily\color{red!80!brown},
+	commentstyle=\ttfamily\color{blue!80},
+	keywordstyle=\bfseries\color{deepgreen},
+	escapeinside={\%*}{*)}
+	}
+	\renewcommand{\lstlistingname}{Código}
+	\begin{document}
+
+	\usebackgroundtemplate{%
+		\includegraphics[width=\paperwidth,height=\paperheight]{background2}
+	}
+	\begin{frame}
+		\maketitle
+		\begin{center}
+			\tiny
+			Material compilado em \today.\\
+			Licença desta apresentação:\\
+			\includegraphics[height=1.0cm]{by-sa.png}\\
+			http://creativecommons.org/licenses/
+		\end{center}
+	\end{frame}
+	\def\GN[#1]{\colorbox{gray!40}{#1}}
+	\def\RN[#1]{\colorbox{red!40}{#1}}
+	\def\BN[#1]{\colorbox{blue!40}{#1}}
+	\def\ON[#1]{\colorbox{orange!40}{#1}}
+	\def\WN[#1]{\colorbox{white!40}{#1}}
+
+	\section{Registros}
+
+	\begin{frame}{Definição}
+		\begin{itemize}
+			\item Uma implementação pode precisar armazenar diversas variáveis para elementos semelhantes:
+			\item Exemplo:\\
+				\lstinputlisting{exemplo1.c}
+			\item Para facilitar a programação, seria interessante agrupar essas variáveis em uma mesma estrutura
+		\end{itemize}
+	\end{frame} 
+
+	\begin{frame}{Definição}
+		\begin{itemize}
+			\item \textdf{Registros} (\textdf{struct} em C) é um \textbf{tipo de dado composto}
+			\item No exemplo anterior: nome, notas e matrícula vão \textbf{compor um novo tipo}
+		\end{itemize}
+	\end{frame} 
+
+
+	\begin{frame}{Declaração de struct em C}
+		struct \exp[identificador] \{\\
+				\exp[campo1]; //cada variável é um campo da estrutura\\ 
+				\exp[campo2];\\
+				...\\
+				\exp[campon];\\
+				\};
+				\lstinputlisting{exemplo2.c}
+	\end{frame} 
+	
+	\begin{frame}{Declaração de struct em C}
+		Observações:
+				\begin{itemize}
+					\item você pode declarar uma struct dentro de uma função, sendo visível somente nela, mas não é o usual
+					\item você pode definir variáveis dessa estrutura logo após a definição, mas lembre-se de que se tornam globais
+				\lstinputlisting{exemplo3.c}
+			\item você pode inicializar durante a declaração da variável
+				\lstinputlisting{exemplo35.c}
+				\end{itemize}
+	\end{frame} 
+
+
+
+	\begin{frame}{Acessando os campos}
+	Para acessar um campo:\\	
+		\exp[identificador].\exp[campo]
+				\lstinputlisting{exemplo4.c}
+	\end{frame} 
+
+		\begin{frame}
+			\begin{alertblock}{\ding{46} Exercício em sala}
+				\begin{itemize}
+					\item declare uma estrutura \textbf{Data} com os campos: dia, mes e ano.
+					\item na função main:
+						\begin{itemize}
+							\item declare duas variáveis d1 e d2 do tipo \textbf{Data}, inicializando d1 com \textit{06/05/2018}.
+							\item altere os campos de d2 para \textit{31/12/2018}
+							\item escreva na tela as duas datas no formato \textit{AAAA/MM/DD} acessando os campos de d1 e d2
+						\end{itemize}
+				\end{itemize}
+			\end{alertblock}
+		\end{frame}
+
+	\begin{frame}{Acessando os campos}
+		Uma struct também pode ser um campo de outra struct:
+				\lstinputlisting{exemplo5.c}
+	\end{frame} 
+
+		\begin{frame}
+			\begin{alertblock}{\ding{46} Exercício em sala}
+				\begin{itemize}
+					\item utilize o código do exercício anterior
+					\item declare uma estrutura \textbf{Tarefa} com os campos dataInicial e dataFinal (ambas do tipo \textbf{Data})
+					\item na função main:
+						\begin{itemize}
+							\item declare uma tarefa lista1 do tipo \textbf{Tarefa}, com datas \textit{18/02/2018} a \textit{01/04/2018}
+							\item altere o dia da data inicial para 19
+							\item altere o mês da data final para 3
+							\item escreva na tela as duas datas no formato \textit{AAAA/MM/DD}
+						\end{itemize}
+				\end{itemize}
+			\end{alertblock}
+		\end{frame}
+
+		\begin{frame}
+			\begin{alertblock}{\ding{46} Exercícios}
+				Implemente as funções que constam em data.c (disponível no repositório) e resolva o exercício na main
+			\end{alertblock}
+		\end{frame}
+		
+		\begin{frame}
+			\begin{alertblock}{\ding{46} Exercício em sala}
+				\begin{itemize}
+					\item declare uma estrutura \textbf{Ponto} com os campos: identificador (int), x, y e z (float)
+					\item implemente uma função para calcular a distância euclidiana entre dois pontos\\
+float distancia(Ponto p1, Ponto p2);\\
+						dada por $$\sqrt{(x_2-x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$$
+					\item implemente uma função para escrever na tela as informações (\textit{ID: (x, y, z)})  sobre um ponto\\
+void printPonto(Ponto p);
+				\end{itemize}
+			\end{alertblock}
+		\end{frame}
+		
+		
+	\section{Typedef}
+	\begin{frame}
+		\begin{center}
+			\structure{\large Typedef}
+		\end{center}
+	\end{frame} 
+		
+
+	\begin{frame}{Typedef}
+		Typedef permite criar um novo nome (um apelido) para um tipo específico:\\
+		typedef \exp[tipoOriginal] \exp[apelido];
+				\lstinputlisting{exemplo6.c}
+	\end{frame} 
+
+
+	\section{Ponteiro para struct}
+
+
+	\begin{frame}
+		\begin{center}
+			\structure{\large Ponteiro para struct}
+		\end{center}
+	\end{frame} 
+		
+
+	\begin{frame}{Ponteiro para struct}
+		Similar aos tipos primitivos:\\
+				\lstinputlisting{exemplo7.c}
+	\end{frame} 
+
+	\begin{frame}{Ponteiro para struct}
+		Operador ->:\\
+		(*id).campo pode ser substituido por id->campo\\
+				\lstinputlisting{exemplo8.c}
+	\end{frame} 
+
+\section{Enumerações}
+
+\begin{frame}{Enumerações em C}
+    \begin{itemize}
+        \item \textdf{Enumerações} (\texttt{enum}) são um tipo de dado que permite definir um conjunto de constantes nomeadas
+        \item Útil para melhorar a legibilidade do código e garantir valores válidos
+        \item Sintaxe:
+        \lstinputlisting{exemplo-enum1.c}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Exemplo: Dias da Semana}
+    \lstinputlisting{exemplo-enum2.c}
+    \begin{itemize}
+        \item Os valores são atribuídos automaticamente começando em 0
+        \item Podemos atribuir valores específicos: \texttt{SEG = 1, TER, QUA, ...}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Definindo um Tipo Booleano}
+    \begin{itemize}
+        \item C não tem um tipo booleano nativo (até C99)
+        \item Podemos criar usando \texttt{typedef} + \texttt{enum}:
+        \lstinputlisting{exemplo-bool.c}
+        \item Agora podemos usar \texttt{bool} como tipo e \texttt{true}/\texttt{false} como valores
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{alertblock}{\ding{46} Exercício 1: Tipo Booleano}
+        \begin{itemize}
+            \item Modifique a função \texttt{primo} do exercício anterior para usar o tipo \texttt{bool}
+            \item Crie o tipo \texttt{bool} usando \texttt{typedef} e \texttt{enum}
+            \item Altere o retorno da função para \texttt{bool} em vez de \texttt{int}
+            \item Teste com alguns valores para verificar se funciona corretamente
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}
+    \begin{alertblock}{\ding{46} Exercício 2: Sistema de Estados}
+        \begin{itemize}
+            \item Crie um \texttt{enum} para representar estados de um processo:
+            \begin{itemize}
+                \item \texttt{INICIAL}
+                \item \texttt{EXECUTANDO}
+                \item \texttt{PAUSADO}
+                \item \texttt{FINALIZADO}
+            \end{itemize}
+            \item Crie uma estrutura \texttt{Processo} com campos:
+            \begin{itemize}
+                \item \texttt{id} (int)
+                \item \texttt{estado} (tipo do enum criado)
+            \end{itemize}
+            \item Implemente uma função que recebe um \texttt{Processo} e imprime seu estado por extenso
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+\section{Preparação para Próxima Aula}
+
+\begin{frame}{Triplos Primos com Lista Ligada}
+    \begin{itemize}
+        \item Na versão otimizada, usamos um vetor para armazenar verificações de primos
+        \item Na próxima aula, implementaremos usando \textbf{lista ligada}
+        \item Vantagens:
+        \begin{itemize}
+            \item Estrutura dinâmica - não precisa realocar/deslocar elementos
+            \item Menos escritas na memória
+            \item Primeiro contato com estruturas de dados além de vetores
+        \end{itemize}
+        \item Usaremos \textbf{registros} para definir os nós da lista
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Estrutura do Nó}
+    \lstinputlisting{exemplo-lista.c}
+    \begin{itemize}
+        \item Cada nó armazena:
+        \begin{itemize}
+            \item Um número inteiro
+            \item Se é primo ou não
+            \item Ponteiro para o próximo nó
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\end{document}
+
