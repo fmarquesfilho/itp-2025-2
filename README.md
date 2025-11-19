@@ -388,26 +388,26 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 | Data | Dia | Atividade |
 |------|-----|-----------|
 | 10/11/25 | Segunda | **Lançamento:** Registros e Enumerações |
-| 12/11/25 | Quarta | **Lançamento:** Registros e Enumerações |
-| 14/11/25 | Sexta | Revisão e dúvidas: Registros e Enumerações |
+| 12/11/25 | Quarta | Não houve aula |
+| 14/11/25 | Sexta | **Lançamento:** Registros e Enumerações |
 
 ---
 
-### **Semana 14** - Recursão
+### **Semana 14** - Depuração, Gerenciamento de memória e Análise de Desempenho
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 17/11/25 | Segunda | **📅 Entrega da U2 até 23:59** - Projeto + Relatório + Listas (até Ponteiros e Alocação Dinâmica) |
-| 17/11/25 | Segunda | **Lançamento:** Recursão |
-| 19/11/25 | Quarta | **Lançamento:** Recursão |
-| 21/11/25 | Sexta | Revisão e dúvidas: Recursão |
+| 17/11/25 | Segunda | Não houve aula |
+| 19/11/25 | Quarta | Depuração, Gerenciamento de memória e Análise de Desempenho (1/2) |
+| 21/11/25 | Sexta | Feriado |
 
 ---
-### **Semana 15** - Arquivos
+### **Semana 15** - Recursão e Arquivos
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 24/11/25 | Segunda | **Lançamento:** Arquivos |
-| 26/11/25 | Quarta | **Lançamento:** Arquivos |
-| 28/11/25 | Sexta | Revisão e dúvidas: Arquivos |
+| 24/11/25 | Segunda | **📅 Entrega da U2 até 23:59** - Projeto + Relatório + Listas (até Ponteiros e Alocação Dinâmica) |
+| 24/11/25 | Segunda | Depuração, Gerenciamento de memória e Análise de Desempenho (2/2) |
+| 26/11/25 | Quarta | **Lançamento:** Recursão |
+| 28/11/25 | Sexta | **Lançamento:** Arquivos |
 
 ---
 
@@ -431,7 +431,8 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 
 ### Feriados que Afetam o Curso
 - **03/10/25** - Dia dos Mártires de Cunhaú e Uruaçu (Feriado Estadual) - **SEXTA-FEIRA** - Não haverá aula
-- **27/10/25** - Dia do Servidor Público (Suspensão de atividades na segunda-feira). 
+- **27/10/25** - Dia do Servidor Público (Suspensão de atividades na segunda-feira).
+- **21/11/25** - Dia de Nossa Senhora da Apresentação (Feriado Municipal em Natal)
 
 ## Observações Importantes
 
