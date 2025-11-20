@@ -72,13 +72,15 @@ int janela_get(Janela* j, int i) {
 void janela_deslizar(Janela* j, int novo_valor) {
     No* primeiro = j->inicio;
     j->inicio = primeiro->prox;
-    free(primeiro);
+    // vamos reaproveitar a memória do nó removido
+    //free(primeiro);
 
     if (j->meio->prox != NULL) {
         j->meio = j->meio->prox;
     }
     
-    No* novo = (No*)malloc(sizeof(No));
+    //No* novo = (No*)malloc(sizeof(No));
+    No* novo = primeiro; // reaproveita o nó removido
     novo->valor = novo_valor;
     novo->prox = NULL;
     j->fim->prox = novo;
