@@ -74,10 +74,7 @@ void janela_deslizar(Janela* j, int novo_valor) {
     j->inicio = primeiro->prox;
     free(primeiro);
 
-    // Atualiza o ponteiro do meio, caso tamanho seja 7
-    if (j->tamanho == 7) {
-        j->meio = j->meio->prox;
-    }
+    j->meio = j->meio->prox;
     
     No* novo = (No*)malloc(sizeof(No));
     novo->valor = novo_valor;
