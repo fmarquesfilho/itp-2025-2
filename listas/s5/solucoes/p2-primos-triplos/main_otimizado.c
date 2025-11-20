@@ -18,7 +18,7 @@ int main() {
         x++;
         janela_deslizar(janela, primo(x+6));
         
-    } while (x < (50000 - 6));
+    } while ( (x + TAMANHO_JANELA - 1) <= MAX );
     
     janela_destruir(janela);
     
