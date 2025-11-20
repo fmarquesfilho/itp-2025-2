@@ -1,7 +1,7 @@
 #ifndef PRIMO_H
 #define PRIMO_H
 
-#define MAX 200000 // valor máximo até onde buscar triplos de primos
+#define MAX 20000000 // valor máximo até onde buscar triplos de primos
 
 // Verifica se n é primo
 int primo(int n);
