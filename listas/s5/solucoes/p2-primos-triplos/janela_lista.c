@@ -74,7 +74,9 @@ void janela_deslizar(Janela* j, int novo_valor) {
     j->inicio = primeiro->prox;
     free(primeiro);
 
-    j->meio = j->meio->prox;
+    if (j->meio->prox != NULL) {
+        j->meio = j->meio->prox;
+    }
     
     No* novo = (No*)malloc(sizeof(No));
     novo->valor = novo_valor;
