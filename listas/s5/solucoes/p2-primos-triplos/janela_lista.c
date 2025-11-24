@@ -31,11 +31,10 @@ void janela_inicializar(Janela* j, int x_inicial) {
         
         if (j->inicio == NULL) {
             j->inicio = novo;
-            j->fim = novo;
         } else {
             j->fim->prox = novo;
-            j->fim = novo;
         }
+        j->fim = novo;
 
         // Atualiza o ponteiro do meio, caso tamanho seja 7
         if ( (i == 2) && (j->tamanho == 7) ) {
