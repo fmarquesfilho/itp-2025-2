@@ -27,7 +27,7 @@
 ---
 
 ### 📅 Unidade 2 - EM ANDAMENTO
-**Data limite:** 17/11/2025 às 23:59 (prazo adiado) 
+**Data limite:** 29/11/2025 às 23:59 (prazo adiado) 
 **📖 Instruções completas:** [Clique aqui](./leituras/entrega-u2/instrucoes-entrega-u2.md)
 
 #### O que deve ser entregue na Unidade 2:
@@ -404,10 +404,10 @@ Se você está começando um novo projeto ou expandindo o da U1, considere estas
 ### **Semana 15** - Recursão e Arquivos
 | Data | Dia | Atividade |
 |------|-----|-----------|
-| 24/11/25 | Segunda | **📅 Entrega da U2 até 23:59** - Projeto + Relatório + Listas (até Ponteiros e Alocação Dinâmica) |
 | 24/11/25 | Segunda | Depuração, Gerenciamento de memória e Análise de Desempenho (2/2) |
 | 26/11/25 | Quarta | **Lançamento:** Recursão |
 | 28/11/25 | Sexta | **Lançamento:** Arquivos |
+| 29/11/25 | Sãbado | **📅 Entrega da U2 até 23:59** - Projeto + Relatório + Listas (até Ponteiros e Alocação Dinâmica) |
 
 ---
 
