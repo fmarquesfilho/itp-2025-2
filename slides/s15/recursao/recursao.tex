@@ -1,0 +1,474 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\documentclass[portuguese,10pt,xcolor=table]{bredelebeamer}
+\setbeameroption{show notes}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{varwidth}
+\usepackage{listings} % Código de programas
+\usepackage{tikz}
+\usepackage{pifont}
+\usepackage{tikzsymbols}
+\usepackage[tikz]{bclogo}
+\usetikzlibrary{arrows,shapes}
+
+\usetikzlibrary{calc,decorations.pathmorphing,patterns}
+\pgfdeclaredecoration{penciline}{initial}{
+	\state{initial}[width=+\pgfdecoratedinputsegmentremainingdistance,
+	auto corner on length=1mm,]{
+		\pgfpathcurveto%
+		{% From
+			\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}
+			{\pgfdecorationsegmentamplitude}
+		}
+		{%  Control 1
+			\pgfmathrand
+			\pgfpointadd{\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}{0pt}}
+			{\pgfqpoint{-\pgfdecorationsegmentaspect
+				\pgfdecoratedinputsegmentremainingdistance}%
+				{\pgfmathresult\pgfdecorationsegmentamplitude}
+			}
+		}
+		{%TO 
+			\pgfpointadd{\pgfpointdecoratedinputsegmentlast}{\pgfpoint{1pt}{1pt}}
+		}
+	}
+	\state{final}{}
+}
+
+
+
+\everymath{\displaystyle}
+\tikzstyle{every picture}+=[remember picture,decoration=penciline]
+\DeclareTextFontCommand{\textdf}{\bfseries\color{blue!80}}
+\newcommand{\textef}[1]{\colorbox{orange!80}{\bfseries \tiny #1}}
+%\tikzstyle{every node}+=[decorate]
+%\tikzstyle{every path}+=[decorate]
+%\tikzstyle{na} = [baseline=-.5ex]
+
+\usepackage[T1]{fontenc}
+
+\def\lecturename{IMD0012 - Introdução às técnicas de programação}
+
+\title{\insertlecture}
+
+\author{Prof. Fernando Figueira\\(adaptado do material do Prof. Rafael Beserra Gomes)}
+
+\institute{UFRN}
+
+
+\lecture[]{Recursão}{}
+
+\date{}
+
+\def\exe[#1]{\color{gray}#1\color{black}}
+\def\exp[#1]{\color{gray}<\textit{#1}>\color{black}}
+\def\espaco{\color{gray}\hspace{0.2cm}\color{black}}
+\def\espaco{\color{blue}␣\color{black}}
+\def\inativo[#1]{\color{gray}#1\color{black}}
+
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\lstset{
+	language=C,
+	basicstyle=\footnotesize\ttfamily,
+	%basicstyle=\scriptsize\ttfamily,
+	keywordstyle=\footnotesize\bfseries\sffamily,
+	%keywordstyle=\scriptsize\bfseries\sffamily,
+	showstringspaces=false,
+	numbers=left,
+	numberstyle=\footnotesize,
+	stepnumber=1,
+	numbersep=5pt,
+	tabsize=4,
+	%backgroundcolor=\color{blue!05},
+	backgroundcolor=\color{gray!35},
+	showspaces=false,
+	showtabs=false,
+	stringstyle=\ttfamily\color{red!80!brown},
+	commentstyle=\ttfamily\color{blue!80},
+	keywordstyle=\bfseries\color{deepgreen},
+	escapeinside={\%*}{*)}
+	}
+	\renewcommand{\lstlistingname}{Código}
+	\begin{document}
+
+	\usebackgroundtemplate{%
+		\includegraphics[width=\paperwidth,height=\paperheight]{background2}
+	}
+	\begin{frame}
+		\maketitle
+		\begin{center}
+			\tiny
+			Material compilado em \today.\\
+			Licença desta apresentação:\\
+			\includegraphics[height=1.0cm]{by-sa.png}\\
+			http://creativecommons.org/licenses/
+		\end{center}
+	\end{frame}
+	\def\GN[#1]{\colorbox{gray!40}{#1}}
+	\def\RN[#1]{\colorbox{red!40}{#1}}
+	\def\BN[#1]{\colorbox{blue!40}{#1}}
+	\def\ON[#1]{\colorbox{orange!40}{#1}}
+	\def\WN[#1]{\colorbox{white!40}{#1}}
+
+	\section{Recursão}
+
+
+\begin{frame}
+	\begin{center}
+		\structure{\large Recursão}\\
+				\includegraphics[height=6.2cm]{recursao.png}
+	\end{center}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}{Recursão} 
+		Uma \textdf{recursão} ocorre quando algo é definido em função de si próprio.\\
+	\end{frame}
+	\begin{frame}{Recursão} 
+		\textdf{Nas artes:}\\
+				\includegraphics[height=6.2cm]{comics.jpg}
+	\end{frame}
+	\begin{frame}{Recursão} 
+		\textdf{Na natureza:}\\
+				\includegraphics[height=6.2cm]{brocolis.jpg}
+	\end{frame}
+	\begin{frame}{Recursão} 
+		\textdf{Na natureza:}\\
+				\includegraphics[height=6.2cm]{flor.jpg}\footnote{\tiny By Chiswick Chap - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=19619156}
+	\end{frame}
+
+	\begin{frame}{Recursão} 
+		\textdf{Na matemática:}\\
+				Fatorial
+				$$
+ n! = \begin{cases}
+	 1       & \quad \text{se } n = 0 \text{(caso base)}\\
+	 n \times (n-1)!  & \quad \text{se } n > 0\\
+\end{cases}
+				$$
+	\end{frame}
+
+	\begin{frame}{Recursão} 
+		\textdf{Na matemática:}\\
+				Sequência de Fibonacci:
+				$$
+ f_n = \begin{cases}
+	 1       & \quad \text{se } n = 1 \text{ou } n = 2 \text{(caso base)}\\
+f_{n-1} + f_{n-2}  & \quad \text{se } n > 2\\
+\end{cases}
+				$$
+	\end{frame}
+
+	\begin{frame}{Recursão} 
+		\textdf{Na matemática:}\\
+				\includegraphics[height=6.2cm]{triangulo.png}\footnote{\tiny By Beojan Stanislaus, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=8862246}
+	\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Implementação}
+
+
+\begin{frame}
+	\begin{center}
+		\structure{\large Implementação}
+	\end{center}
+\end{frame}
+
+	\begin{frame}
+		Podemos aplicar o conceito de \textdf{recursão} com uma função chamando a si.\\
+				\lstinputlisting{f.c}
+		\begin{itemize}
+			\item quando durante a execução de uma função (digamos $f_1$), ocorrer uma chamada à outra função (digamos $f_2$, seja a própria ou outra), a execução de $f_1$ é interrompida e retomada somente \textbf{após a conclusão} da chamada $f_2$
+			\item quando a execução da função é interrompida, as variáveis pertencentes à essa chamada são gravadas e recuperadas tão logo a execução seja retomada.
+		\end{itemize}
+	\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\structure{\large Veja com atenção o que ocorre quando uma função chama a si\\É fundamental para implementar a recursão.}
+	\end{center}
+\end{frame}
+
+	\begin{frame}
+				\lstinputlisting{f.c}
+		\begin{tikzpicture}
+			\tikzstyle{bloco}=[inner sep=4pt,fill=blue!20,opacity=0.8,rounded corners,scale=0.7]
+			\tikzstyle{explicabloco}=[inner sep=4pt,fill=black!10,opacity=0.8,rounded corners,scale=0.7,align=left]
+
+			\node[inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p1) {
+				\textbf{funcao(3):}\\
+				print 3\\
+				funcao(2)\\
+				\color{gray}print -3\color{black}\\
+			};
+
+			\path (p1.east)+(3.2,0.0) node [style=explicabloco] (b4) {
+				A chamada funcao(3) é\\interrompida até que\\funcao(2) finalize\\\textbf{Saída Padrão: 3}
+			};
+		\end{tikzpicture}
+	\end{frame}
+
+	\begin{frame}
+				\lstinputlisting{f.c}
+	\begin{tikzpicture}
+		\tikzstyle{bloco}=[inner sep=4pt,fill=blue!20,opacity=0.8,rounded corners,scale=0.7]
+		\tikzstyle{explicabloco}=[inner sep=4pt,fill=black!10,opacity=0.8,rounded corners,scale=0.7,align=left]
+
+		\node[inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p1) {
+			\textbf{funcao(3):}\\
+			print 3\\
+			funcao(2)\\
+			\color{gray}print -3\color{black}\\
+		};
+		
+		\path (p1.east)+(0.7,0.0) node [inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p2) {
+			\textbf{funcao(2):}\\
+			print 2\\
+			funcao(1)\\
+			\color{gray}print -2\color{black}\\
+		};
+		\path[->] (p1.east) edge [] (p2.west);
+		
+		\path (p2.east)+(3.2,0.0) node [style=explicabloco] (b4) {
+			A chamada funcao(2) é\\interrompida até que\\funcao(1) finalize\\\textbf{Saída Padrão: 3 2}
+		};
+		\path (p2.east)+(3.2,-1.7) node [style=explicabloco,fill=yellow!30] (b5) {
+		\textbf{Atenção:} cada chamada de função contém sua própria\\
+			cópia de parâmetros e variáveis locais\\
+			\textbf{Exemplo:} x = 3 em função(3), x = 2 em função(2)\\são x's distintos!
+		};
+	\end{tikzpicture}
+	\end{frame}
+
+	\begin{frame}
+				\lstinputlisting{f.c}
+	\begin{tikzpicture}
+		\tikzstyle{bloco}=[inner sep=4pt,fill=blue!20,opacity=0.8,rounded corners,scale=0.7]
+		\tikzstyle{explicabloco}=[inner sep=4pt,fill=black!10,opacity=0.8,rounded corners,scale=0.7,align=left]
+
+		\node[inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p1) {
+			\textbf{funcao(3):}\\
+			print 3\\
+			funcao(2)\\
+			\color{gray}print -3\color{black}\\
+		};
+		
+		\path (p1.east)+(0.7,0.0) node [inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p2) {
+			\textbf{funcao(2):}\\
+			print 2\\
+			funcao(1)\\
+			\color{gray}print -2\color{black}\\
+		};
+		\path[->] (p1.east) edge [] (p2.west);
+		
+		\path (p2.east)+(0.7,0.0) node [inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p3) {
+			\textbf{funcao(1):}\\
+			print 1\\
+			print -1
+		};
+		\path[->] (p2.east) edge [] (p3.west);
+		\path (p3.east)+(3.2,0.0) node [style=explicabloco] (b4) {
+			A chamada funcao(1)\\é finalizada sem\\chamadas recursivas\\funcao(2) é retomada\\\textbf{Saída Padrão: 3 2 1 -1}
+		};
+	\end{tikzpicture}
+	\end{frame}
+
+
+	\begin{frame}
+				\lstinputlisting{f.c}
+
+	\begin{tikzpicture}
+		\tikzstyle{bloco}=[inner sep=4pt,fill=blue!20,opacity=0.8,rounded corners,scale=0.7]
+		\tikzstyle{explicabloco}=[inner sep=4pt,fill=black!10,opacity=0.8,rounded corners,scale=0.7,align=left]
+
+		\node[inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p1) {
+			\textbf{funcao(3):}\\
+			print 3\\
+			funcao(2)\\
+			\color{gray}print -3\color{black}\\
+		};
+		
+		\path (p1.east)+(0.7,0.0) node [inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p2) {
+			\textbf{funcao(2):}\\
+			print 2\\
+			funcao(1)\\
+			print -2\\
+		};
+		\path[->] (p1.east) edge [] (p2.west);
+		
+		\path (p2.east)+(3.2,0.0) node [style=explicabloco] (b4) {
+			print -2 é executado\\finalizando agora funcao(2)\\funcao(3) é retomada\\\textbf{Saída Padrão: 3 2 1 -1 -2}
+		};
+	\end{tikzpicture}
+\end{frame}
+
+	\begin{frame}
+				\lstinputlisting{f.c}
+
+	\begin{tikzpicture}
+		\tikzstyle{bloco}=[inner sep=4pt,fill=blue!20,opacity=0.8,rounded corners,scale=0.7]
+		\tikzstyle{explicabloco}=[inner sep=4pt,fill=black!10,opacity=0.8,rounded corners,scale=0.7,align=left]
+
+		\node[inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p1) {
+			\textbf{funcao(3):}\\
+			print 3\\
+			funcao(2)\\
+			print -3\\
+		};
+		
+		\path (p1.east)+(3.2,0.0) node [style=explicabloco] (b4) {
+			print -3 é executado\\finalizando agora funcao(3)\\\textbf{Saída Padrão: 3 2 1 -1 -2 -3}
+		};
+	\end{tikzpicture}
+	\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\begin{center}
+		\structure{\large Exemplos}\\
+	\end{center}
+\end{frame}
+	
+	\begin{frame}
+		\textbf{Exemplo:} fatorial
+				$$
+ n! = \begin{cases}
+1       & \quad \text{se } n = 0\\
+	 n \times (n-1)!  & \quad \text{se } n > 0\\
+\end{cases}
+				$$
+				\lstinputlisting{fatorial.c}
+	\end{frame}
+	
+	\begin{frame}
+		\textbf{Exemplo:} fatorial\\
+		\color{red} - Professor, resolvi o mesmo problema com um for \dCooley\color{black}
+		\lstinputlisting{fatorial2.c}
+	\end{frame}
+
+
+	\begin{frame}
+		Pode resolver assim também! Mas há vários problemas em que o pensamento recursivo é essencial para a resolução, como os encontrados nos estudos em:
+		\begin{itemize}
+			\item backtracking
+			\item divisão e conquista
+			\item programação dinâmica (não confunda com alocação dinâmica)
+		\end{itemize}
+		São tópicos mais avançados que serão visto em momento oportuno no curso.
+	\end{frame}
+	
+	\begin{frame}
+		\textbf{Exemplo:} Fibonacci
+				$$
+ f_n = \begin{cases}
+1       & \quad \text{se } n = 1 \text{ou } n = 2\\
+f_{n-1} + f_{n-2}  & \quad \text{se } n > 2\\
+\end{cases}
+				$$
+				\lstinputlisting{fib.c}
+	\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\subsection{Subproblemas}
+
+		\begin{frame}
+	\begin{center}
+		\structure{\large Subproblemas}
+	\end{center}
+\end{frame}
+	\begin{frame}
+		\begin{itemize}
+			\item Geralmente utilizamos o conceito de recursão para resolver \textdf{problemas}
+			\item O \textdf{problema} pode ser resolvido em função de \textdf{subproblemas}, os quais são resolvidos recursivamente
+			\item \textdf{Caso base:} algum(ns) do(s) \textdf{subproblema(s)} não são resolvidos recursivamente
+			\item Usa-se esse conceito para resolver, por exemplo:
+				\begin{itemize}
+					\item ordenação
+					\item busca
+					\item vários problemas de grafos
+					\item exploração de um espaço solução
+					\item análise numérica
+				\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+
+	\begin{frame}
+		\begin{center}
+			\Large O que são \underline{subproblemas}
+		\end{center}
+	\end{frame}
+
+	\begin{frame}
+		\begin{itemize}
+			\item Um subproblema consiste em um mesmo problema, mas com parâmetros diferentes, geralmente representando uma instância menor do problema
+			\item Por exemplo: fatorial\\
+				fatorial(0) = 1 (\textdf{caso base})\\
+				fatorial(n) = fatorial(n-1)*n para n > 0
+			\item Por exemplo: sequência de Fibonacci (1, 1, 2, 3, 5, 8, 13, 21, ...)\\
+				fib(1) = 1 (\textdf{caso base})\\
+				fib(2) = 1 (\textdf{caso base})\\
+				fib(n) = fib(n-1) + fib(n-2) para n > 2\\
+				O cálculo do n-ésimo elemento de Fibonacci envolve a resolução de dois \textbf{subproblemas}: o (n-1)-ésimo e o (n-2)-ésimo elemento da sequência.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\begin{alertblock}{\ding{46} Exercício em sala}
+			Crie uma função \textbf{recursiva} para calcular:
+			$$\sum_{i=1}^{n} = 1 + 2 + ... + n$$
+
+			Sugestão para assinatura da função:\\\textit{int somatorio(int n);}
+
+		\end{alertblock}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{alertblock}{\ding{46} Exercício em sala}
+			Crie uma função \textbf{recursiva} para determinar se uma string é um palíndromo:
+
+			Sugestão para assinatura da função:\\\textit{int palindromo(char *s, int indiceInicial, int indiceFinal);}
+
+		\end{alertblock}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{alertblock}{\ding{46} Exercício em sala}
+			Crie uma função \textbf{recursiva} para determinar se um vetor de n inteiros está ordenado:
+
+			Sugestão para assinatura da função:\\\textit{int ordenado(int *v, int n);}
+		\end{alertblock}
+	\end{frame}
+
+	\begin{frame}
+		Sobreposição de subproblemas
+		\begin{itemize}
+			\item se um mesmo subproblema ocorre em várias etapas da resolução, então ocorre uma \textbf{sobreposição de subproblemas}
+			\item no exemplo da sequência de Fibonacci:\\
+				\includegraphics[height=3.0cm]{sobreposicao.png}
+			\item podemos otimizar usando a técnica chamada de \textbf{memoization}:
+				\begin{itemize}
+					\item sinaliza-se com um valor específico os subproblemas ainda não calculados
+					\item se já tiver sido calculado, recupera-se o valor
+					\item caso contrário, calcula-se e armazena-se o valor
+				\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+
+\end{document}
+

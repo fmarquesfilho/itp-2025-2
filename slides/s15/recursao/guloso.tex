@@ -1,0 +1,518 @@
+\documentclass{beamer}
+
+\usetheme{Berlin}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{beamerthemesplit}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\renewcommand\sfdefault{phv}
+\renewcommand\familydefault{\sfdefault}
+\usepackage{listings} % Código de programas
+\usepackage{tikz}
+\usepackage[tikz]{bclogo}
+\usetikzlibrary{arrows,shapes}
+
+\usetikzlibrary{calc,decorations.pathmorphing,patterns}
+\pgfdeclaredecoration{penciline}{initial}{
+	\state{initial}[width=+\pgfdecoratedinputsegmentremainingdistance,
+		auto corner on length=1mm,]{
+			\pgfpathcurveto%
+			{% From
+				\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}
+				{\pgfdecorationsegmentamplitude}
+			}
+			{%  Control 1
+				\pgfmathrand
+					\pgfpointadd{\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}{0pt}}
+				{\pgfqpoint{-\pgfdecorationsegmentaspect
+							   \pgfdecoratedinputsegmentremainingdistance}%
+							   {\pgfmathresult\pgfdecorationsegmentamplitude}
+				}
+			}
+			{%TO 
+				\pgfpointadd{\pgfpointdecoratedinputsegmentlast}{\pgfpoint{1pt}{1pt}}
+			}
+		}
+	\state{final}{}
+}
+
+	\tikzstyle{estilonode}=[anchor=north,inner sep=4pt,fill=blue!20,opacity=0.8,scale=0.82,shape=circle,draw]
+	\tikzstyle{nodenote}=[anchor=west,inner sep=5pt,fill=gray!20,opacity=0.8,scale=0.82,rounded corners,shape=rectangle,align=left]
+	\tikzstyle{explica}=[align=left,anchor=west,inner sep=4pt,fill=blue!30,opacity=0.8,rounded corners,scale=0.82,align=left]
+	\tikzstyle{propriedades}=[align=left,anchor=west,inner sep=4pt,fill=orange!30,opacity=0.8,rounded corners,scale=0.82,align=left]
+	\tikzstyle{nil}=[rectangle,rounded corners,white,scale=0.82,fill=black,inner sep=4pt,line width=2pt]
+	\tikzstyle{vertex}=[circle,fill=white,draw=black,minimum size=20pt,inner sep=0pt,scale=0.8]
+	\tikzstyle{selected vertex} = [vertex, fill=blue!30]
+	\tikzstyle{edge} = [draw,thick,-]
+	\tikzstyle{aresta} = [draw,thick,-]
+	\tikzstyle{weight} = [font=\small]
+	\tikzstyle{selected edge} = [draw,line width=4pt,-,blue!50]
+	\tikzstyle{ignored edge} = [draw,line width=4pt,-,black!20]
+	\tikzstyle{lnode}=[anchor=west,inner sep=3pt,fill=gray!50,shape=rectangle,draw]
+
+\everymath{\displaystyle}
+\tikzstyle{every picture}+=[remember picture,decoration=penciline]
+%\tikzstyle{every node}+=[decorate]
+%\tikzstyle{every path}+=[decorate]
+%\tikzstyle{na} = [baseline=-.5ex]
+
+
+\title[DIM0410 - Apresentação\;\;\insertpagenumber]
+{DIM0410 - Treinamento para Competições de Programação}
+		
+\author[]{}
+
+\institute{{\Large DIMAp/ECT UFRN}}
+
+\date{2016.2}
+
+\setbeamertemplate{headline}[tree]
+{
+}
+
+
+\def\exe[#1]{\color{gray}#1\color{black}}
+\def\exp[#1]{\color{gray}<\textit{#1}>\color{black}}
+\def\espaco{\color{gray}\hspace{0.2cm}\color{black}}
+\def\espaco{\color{blue}␣\color{black}}
+\def\inativo[#1]{\color{gray}#1\color{black}}
+
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\lstset{
+	language=Python,
+	basicstyle=\footnotesize\ttfamily,
+	%basicstyle=\scriptsize\ttfamily,
+	keywordstyle=\footnotesize\bfseries\sffamily,
+	%keywordstyle=\scriptsize\bfseries\sffamily,
+	showstringspaces=false,
+	numbers=left,
+	numberstyle=\footnotesize,
+	stepnumber=1,
+	numbersep=5pt,
+	tabsize=4,
+	%backgroundcolor=\color{blue!05},
+	backgroundcolor=\color{gray!35},
+	showspaces=false,
+	showtabs=false,
+	stringstyle=\ttfamily\color{red!80!brown},
+	commentstyle=\ttfamily\color{blue!80},
+	keywordstyle=\bfseries\color{deepgreen},
+	escapeinside={\%*}{*)}
+	}
+	\renewcommand{\lstlistingname}{Código}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+\begin{frame}
+	\begin{center}
+		\structure{\large Recursão (revisão)}
+	\end{center}
+\end{frame}
+
+
+	\begin{frame}{Recursão} 
+		Exemplo: o que acontece quando uma função se chama?
+		\lstinputlisting{codigo3.py}
+		\begin{itemize}
+			\item quando durante a execução de uma função (digamos $f_1$), ocorrer uma chamada à outra função (digamos $f_2$, seja a própria ou outra), a execução de $f_1$ é interrompida e retomada somente \textbf{após a conclusão} da chamada $f_2$
+			\item quando a execução da função é interrompida, as variáveis pertencentes à essa chamada são gravadas e recuperadas tão logo a execução seja retomada.
+		\end{itemize}
+	\end{frame}
+
+
+	\begin{frame}
+		\begin{tikzpicture}
+			\tikzstyle{bloco}=[inner sep=4pt,fill=blue!20,opacity=0.8,rounded corners,scale=0.7]
+			\tikzstyle{explicabloco}=[inner sep=4pt,fill=black!10,opacity=0.8,rounded corners,scale=0.7,align=left]
+
+			\node[inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p1) {
+				\textbf{funcao(3):}\\
+				print 3\\
+				funcao(2)\\
+				\color{gray}print -3\color{black}\\
+			};
+
+			\path (p1.east)+(3.2,0.0) node [style=explicabloco] (b4) {
+				A chamada funcao(3) é\\interrompida até que\\funcao(2) finalize\\\textbf{Saída: 3}
+			};
+		\end{tikzpicture}
+	\end{frame}
+
+	\begin{frame}
+	\begin{tikzpicture}
+		\tikzstyle{bloco}=[inner sep=4pt,fill=blue!20,opacity=0.8,rounded corners,scale=0.7]
+		\tikzstyle{explicabloco}=[inner sep=4pt,fill=black!10,opacity=0.8,rounded corners,scale=0.7,align=left]
+
+		\node[inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p1) {
+			\textbf{funcao(3):}\\
+			print 3\\
+			funcao(2)\\
+			\color{gray}print -3\color{black}\\
+		};
+		
+		\path (p1.east)+(0.7,0.0) node [inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p2) {
+			\textbf{funcao(2):}\\
+			print 2\\
+			funcao(1)\\
+			\color{gray}print -2\color{black}\\
+		};
+		\path[->] (p1.east) edge [] (p2.west);
+		
+		\path (p2.east)+(3.2,0.0) node [style=explicabloco] (b4) {
+			A chamada funcao(2) é\\interrompida até que\\funcao(1) finalize\\\textbf{Saída: 3 2}
+		};
+	\end{tikzpicture}
+	\end{frame}
+
+	\begin{frame}
+	\begin{tikzpicture}
+		\tikzstyle{bloco}=[inner sep=4pt,fill=blue!20,opacity=0.8,rounded corners,scale=0.7]
+		\tikzstyle{explicabloco}=[inner sep=4pt,fill=black!10,opacity=0.8,rounded corners,scale=0.7,align=left]
+
+		\node[inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p1) {
+			\textbf{funcao(3):}\\
+			print 3\\
+			funcao(2)\\
+			\color{gray}print -3\color{black}\\
+		};
+		
+		\path (p1.east)+(0.7,0.0) node [inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p2) {
+			\textbf{funcao(2):}\\
+			print 2\\
+			funcao(1)\\
+			\color{gray}print -2\color{black}\\
+		};
+		\path[->] (p1.east) edge [] (p2.west);
+		
+		\path (p2.east)+(0.7,0.0) node [inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p3) {
+			\textbf{funcao(1):}\\
+			print 1\\
+			print -1
+		};
+		\path[->] (p2.east) edge [] (p3.west);
+		\path (p3.east)+(3.2,0.0) node [style=explicabloco] (b4) {
+			A chamada funcao(1)\\é finalizada sem\\chamadas recursivas\\funcao(2) é retomada\\\textbf{Saída: 3 2 1 -1}
+		};
+	\end{tikzpicture}
+	\end{frame}
+
+
+	\begin{frame}
+
+	\begin{tikzpicture}
+		\tikzstyle{bloco}=[inner sep=4pt,fill=blue!20,opacity=0.8,rounded corners,scale=0.7]
+		\tikzstyle{explicabloco}=[inner sep=4pt,fill=black!10,opacity=0.8,rounded corners,scale=0.7,align=left]
+
+		\node[inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p1) {
+			\textbf{funcao(3):}\\
+			print 3\\
+			funcao(2)\\
+			\color{gray}print -3\color{black}\\
+		};
+		
+		\path (p1.east)+(0.7,0.0) node [inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p2) {
+			\textbf{funcao(2):}\\
+			print 2\\
+			funcao(1)\\
+			print -2\\
+		};
+		\path[->] (p1.east) edge [] (p2.west);
+		
+		\path (p2.east)+(3.2,0.0) node [style=explicabloco] (b4) {
+			print -2 é executado\\finalizando agora funcao(2)\\funcao(3) é retomada\\\textbf{Saída: 3 2 1 -1 -2}
+		};
+	\end{tikzpicture}
+\end{frame}
+
+	\begin{frame}
+
+	\begin{tikzpicture}
+		\tikzstyle{bloco}=[inner sep=4pt,fill=blue!20,opacity=0.8,rounded corners,scale=0.7]
+		\tikzstyle{explicabloco}=[inner sep=4pt,fill=black!10,opacity=0.8,rounded corners,scale=0.7,align=left]
+
+		\node[inner sep=4pt,fill=red!20,opacity=0.8,rounded corners,scale=0.7,anchor=west,align=left] (p1) {
+			\textbf{funcao(3):}\\
+			print 3\\
+			funcao(2)\\
+			print -3\\
+		};
+		
+		\path (p1.east)+(3.2,0.0) node [style=explicabloco] (b4) {
+			print -3 é executado\\finalizando agora funcao(3)\\\textbf{Saída: 3 2 1 -1 -2 -3}
+		};
+	\end{tikzpicture}
+	\end{frame}
+
+
+\begin{frame}
+	\begin{center}
+		\structure{\large Backtracking (revisão)}
+	\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Tarefas das Semanas Passadas}
+{
+	\begin{block}{Problemas de backtracking}
+	\begin{itemize}
+		\item UVa 574 - Sum It Up
+		\item UVa 193 - Graph Coloring
+		\item UVa 1262 - Password
+		\item UVa 524 - Prime Ring Problem
+	\end{itemize}
+	\end{block}
+	
+}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Algoritmos Gulosos}
+{
+	\begin{itemize}
+		\item Um algoritmo é dito guloso se ele faz uma escolha
+		localmente ótima a cada passo (e espera que isso leva a
+		uma solução ótima do problema geral).
+
+		\item Em alguns casos, o algoritmo guloso é simples e eficiente,
+		mas isso nem sempre é verdade.
+	\end{itemize}
+}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Algoritmos Gulosos}
+{
+	\begin{block}{Propriedades Necessárias para Usar uma Solução Gulosa}
+	\begin{enumerate}
+		\item O problema possui subestruturas ótimas: uma solução ótima para
+		o problema contém uma solução ótima para os subproblemas.
+
+		\item O problema tem a propriedade gulosa: fazer a escolha que parece
+		melhor a cada momento leva a uma solução ótima. Nunca é necessário
+		reconsiderar uma escolha.
+	\end{enumerate}
+	\end{block}
+}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Problema do Troco de Moedas}
+{
+	\begin{itemize}
+		\item O problema do troco de moedas (\textit{coin change})
+		pode ser enunciado da seguinte maneira:
+		\begin{itemize}
+			\item Dado um conjunto $S$ de moedas com $n$ moedas e um
+			valor $V$, deseja-se saber qual é o número mínimo de moedas
+			que podemos usar para alcançar $V$.
+		\end{itemize}
+
+		\item Podemos dar uma solução gulosa para esse problema?	
+	\end{itemize}
+}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Problema do Troca de Moedas}
+{
+\begin{block}{Exemplo 1}
+	\begin{itemize}
+		\item S = \{1, 5, 10, 25 \}
+		\item V = 42 
+	\end{itemize}
+\end{block}
+
+\begin{block}{Exemplo 2}
+	\begin{itemize}
+		\item S = \{1, 3, 4 \}
+		\item V = 6 
+	\end{itemize}
+\end{block}
+
+}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Problema da Maratona: UVa 12955 - Factorial}
+{
+	\begin{itemize}
+		\item Dado um inteiro positivo $N$, determine o menor
+		valor de $k$ tal que: $N = a_1! + a_2! + \cdots + a_k!$
+\begin{block}{Entrada}
+\begin{verbatim}
+10
+25
+\end{verbatim}
+\end{block}
+
+\begin{block}{Saída}
+\begin{verbatim}
+3
+2
+\end{verbatim}
+\end{block}
+	\end{itemize}
+}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{UVa 11264 - Coin Collector}
+{
+	\begin{itemize}
+		\item Algoritmo usado pelo banco para dinheiro
+		ao sultão:
+\begin{verbatim}
+saque (X) {
+  se (X == 0) retorne;
+  Seja Y a maior moeda que não excede X.
+  Dê ao comprador a moeda Y.
+  saque(X - Y);
+}
+\end{verbatim}
+		
+		\item O sultão quer maximizar o número de moedas
+		diferentes que receberá em um saque.
+	\end{itemize}		 
+}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{UVa 11264 - Coin Collector}
+{
+\small{
+	\begin{block}{Entrada}
+\begin{verbatim}
+2
+6
+1 2 4 8 16 32
+6
+1 3 6 8 15 20
+\end{verbatim}
+	\end{block}		 
+
+	\begin{block}{Saída}
+\begin{verbatim}
+6
+4
+\end{verbatim}
+	\end{block}
+}
+}
+\end{frame}
+
+
+
+	\begin{frame}{Algoritmo de Prim} 
+	
+	\begin{block}{Algoritmo de Prim}
+Encontra a árvore geradora mínima selecionando nas arestas de corte a de menor custo até que todos os\\nós estejam conectados. Utilize uma fila de prioridade mínima para selecionar a menor aresta do corte.
+					\end{block}
+					
+	\end{frame}
+	
+
+	\pgfdeclarelayer{background}
+	\pgfsetlayers{background,main}
+	
+	\begin{frame}{Arestas de corte} 
+	\begin{figure}
+	\begin{tikzpicture}[scale=1.0, auto,swap]
+		\foreach \pos/\name in {{(0,1)/a},{(2,0)/b}, {(2,2)/c}, {(2,4)/d},{(4,2)/e}, {(4,0)/f}, {(4,-2)/g},{(6,2)/h}, {(6,0)/i}, {(8,1)/j}}
+		\node[vertex] (\name) at \pos {$\name$};
+
+		\foreach \source/ \dest /\weight /\i in {a/c/7/1,a/b/4/2,b/f/3/3,b/c/7/4,c/d/1/5,c/e/3/6,c/f/5/7,d/e/2/8,e/f/2/9,e/h/9/10,f/i/10/11,f/g/12/12,h/i/4/13,h/j/5/14,i/j/8/15,d/h/6/16,i/g/4/17,g/b/2/18} {
+			\path[edge] (\source) -- node[weight,midway,anchor=mid,fill=white,circle,opacity=0.9,inner sep=1pt](dg\i) {$\weight$} (\dest);
+		}
+		\foreach \i/ \j in {1/4,4/7,6/7,8/6,10/8,11/10,17/11} {
+			\path[edge] (dg\i) edge[red,line width=3pt] (dg\j);
+		}
+		
+		\foreach \vertex in {a,b,g,f,e}
+		\path node[selected vertex] at (\vertex) {$\vertex$};
+
+		\begin{pgfonlayer}{background}
+		\foreach \source / \dest in {a/b,b/g,b/f,e/f}
+		\path[selected edge] (\source.center) -- (\dest.center);
+		\end{pgfonlayer}
+		
+	\end{tikzpicture}
+	\end{figure}
+	\end{frame}
+
+
+	\pgfdeclarelayer{background}
+	\pgfsetlayers{background,main}
+	\begin{frame}{Algoritmo de Prim} 
+	\begin{figure}
+	\begin{tikzpicture}[scale=1.0, auto,swap]
+		\foreach \pos/\name in {{(0,1)/a},{(2,0)/b}, {(2,2)/c}, {(2,4)/d},{(4,2)/e}, {(4,0)/f}, {(4,-2)/g},{(6,2)/h}, {(6,0)/i}, {(8,1)/j}}
+		\node[vertex] (\name) at \pos {$\name$};
+
+		\foreach \source/ \dest /\weight in {a/c/7,a/b/4,b/f/3,b/c/7,c/d/1,c/e/3,c/f/5,d/e/2,e/f/2,e/h/9,f/i/10,f/g/12,h/i/4,h/j/5,i/j/8,d/h/6,i/g/4,g/b/2}
+		\path[edge] (\source) -- node[weight,midway,anchor=mid,fill=white,circle,opacity=0.9,inner sep=1pt] {$\weight$} (\dest);
+		
+		\foreach \vertex / \fr in {a/1,b/2,g/3,f/4,e/5,d/6,c/7,i/8,h/9,j/10}
+		\path<\fr-> node[selected vertex] at (\vertex) {$\vertex$};
+
+		\begin{pgfonlayer}{background}
+		\pause
+		\foreach \source / \dest in {a/b,b/g,b/f,e/f,d/e,d/c,g/i,h/i,h/j}
+		\path<+->[selected edge] (\source.center) -- (\dest.center);
+		\end{pgfonlayer}
+		
+	\end{tikzpicture}
+	\end{figure}
+	\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Tarefas da Semana}
+{
+	\begin{block}{Até quinta-feira (13/10)}
+		\begin{itemize}
+			\item UVa 11264 - Coin Collector
+			\item UVa 410 - Station Balance
+			\item UVa 10382 - Watering Grass
+			\item UVa 11292 - Dragon of Loowater
+		\end{itemize}
+	\end{block}
+}
+\end{frame}
+
+\begin{frame}
+\frametitle{Prova}
+{
+	\begin{block}{Sobre a prova dia 14/10}
+		\begin{itemize}
+			\item Não é permitido consultar material online
+			\item É permitido consultar material impresso
+			\item A prova é em dupla
+			\item Assunto da prova:
+$Assunto = Ad-Hoc + Backtracking + Guloso$
+		\end{itemize}
+	\end{block}
+}
+\end{frame}
+   
+\end{document}
