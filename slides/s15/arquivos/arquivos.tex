@@ -1,0 +1,277 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\documentclass[portuguese,10pt,xcolor=table]{bredelebeamer}
+\setbeameroption{show notes}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{varwidth}
+\usepackage{listings} % Código de programas
+\usepackage{tikz}
+\usepackage{pifont}
+\usepackage[tikz]{bclogo}
+\usetikzlibrary{arrows,shapes}
+
+\usetikzlibrary{calc,decorations.pathmorphing,patterns}
+\pgfdeclaredecoration{penciline}{initial}{
+	\state{initial}[width=+\pgfdecoratedinputsegmentremainingdistance,
+	auto corner on length=1mm,]{
+		\pgfpathcurveto%
+		{% From
+			\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}
+			{\pgfdecorationsegmentamplitude}
+		}
+		{%  Control 1
+			\pgfmathrand
+			\pgfpointadd{\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}{0pt}}
+			{\pgfqpoint{-\pgfdecorationsegmentaspect
+				\pgfdecoratedinputsegmentremainingdistance}%
+				{\pgfmathresult\pgfdecorationsegmentamplitude}
+			}
+		}
+		{%TO 
+			\pgfpointadd{\pgfpointdecoratedinputsegmentlast}{\pgfpoint{1pt}{1pt}}
+		}
+	}
+	\state{final}{}
+}
+
+
+
+\everymath{\displaystyle}
+\tikzstyle{every picture}+=[remember picture,decoration=penciline]
+\DeclareTextFontCommand{\textdf}{\bfseries\color{blue!80}}
+%\tikzstyle{every node}+=[decorate]
+%\tikzstyle{every path}+=[decorate]
+%\tikzstyle{na} = [baseline=-.5ex]
+
+\usepackage[T1]{fontenc}
+
+\def\lecturename{DIM0118 - Introdução às técnicas de programação}
+
+\title{\insertlecture}
+
+\author{Prof. Fernando Figueira\\(adaptado do material do Prof. Rafael Beserra Gomes)}
+
+\institute{UFRN}
+
+\subject{Streams}
+
+\lecture[]{Streams}{}
+
+\date{}
+
+\def\exe[#1]{\color{gray}#1\color{black}}
+\def\exp[#1]{\color{gray}<\textit{#1}>\color{black}}
+\def\espaco{\color{gray}\hspace{0.2cm}\color{black}}
+\def\espaco{\color{blue}␣\color{black}}
+\def\inativo[#1]{\color{gray}#1\color{black}}
+
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\lstset{
+	language=C,
+	basicstyle=\footnotesize\ttfamily,
+	%basicstyle=\scriptsize\ttfamily,
+	keywordstyle=\footnotesize\bfseries\sffamily,
+	%keywordstyle=\scriptsize\bfseries\sffamily,
+	showstringspaces=false,
+	numbers=none,
+	numberstyle=\footnotesize,
+	stepnumber=1,
+	numbersep=5pt,
+	tabsize=4,
+	%backgroundcolor=\color{blue!05},
+	backgroundcolor=\color{gray!35},
+	showspaces=false,
+	showtabs=false,
+	stringstyle=\ttfamily\color{red!80!brown},
+	commentstyle=\ttfamily\color{blue!80},
+	keywordstyle=\bfseries\color{deepgreen},
+	escapeinside={\%*}{*)}
+	}
+	\renewcommand{\lstlistingname}{Código}
+	\begin{document}
+
+	\usebackgroundtemplate{%
+		\includegraphics[width=\paperwidth,height=\paperheight]{background2}
+	}
+	\begin{frame}
+		\maketitle
+		\begin{center}
+			\tiny
+			Material compilado em \today.\\
+			Licença desta apresentação:\\
+			\includegraphics[height=1.0cm]{by-nc-nd.png}\\
+			http://creativecommons.org/licenses/
+		\end{center}
+	\end{frame}
+	\def\GN[#1]{\colorbox{gray!40}{#1}}
+	\def\RN[#1]{\colorbox{red!40}{#1}}
+	\def\BN[#1]{\colorbox{blue!40}{#1}}
+	\def\ON[#1]{\colorbox{orange!40}{#1}}
+	\def\WN[#1]{\colorbox{white!40}{#1}}
+
+
+	\section{Streams em C}
+
+
+	\begin{frame}
+			C trata os recursos de entrada e saída dos dados como \textdf{streams} 
+				\begin{itemize}
+					\item arquivos
+					\item leitura pelo teclado
+					\item escrita no terminal
+				\end{itemize}
+				Um fluxo pode aceitar entrada de dados, saída de dados ou ambos.
+	\end{frame} 
+
+	\begin{frame}
+		\begin{itemize}
+			\item \textdf{stdio.h} (Standard Input/Output): funções para entrada e saída de dados
+			\item stdio.h define qualquer fluxo em uma variável do tipo \textdf{FILE} (crie como ponteiro)
+				\lstinputlisting{arquivo1.c}
+			\item há três fluxos padrão em C:
+				\begin{itemize}
+					\item entrada padrão: \textdf{stdin} (em geral, o teclado)
+					\item saída padrão: \textdf{stdout} (em geral, o terminal)
+					\item erro padrão: \textdf{stderr} (em geral, o terminal)
+				\end{itemize}
+		\end{itemize}
+	\end{frame} 
+
+	\begin{frame}
+			\includegraphics[height=7.0cm]{streams.png}
+		
+	\end{frame} 
+
+
+
+
+	\section{Definindo arquivo como stream}
+	\begin{frame}
+		\begin{center}
+			\structure{\large Definindo arquivo como stream}
+		\end{center}
+	\end{frame} 
+
+	\begin{frame}{Abrir um arquivo usando C}
+		\begin{itemize}
+			\item use a função \textit{fopen} (de stdio.h); são dois parâmetros:
+				\begin{enumerate}
+					\item nome do arquivo a ser aberto
+					\item modo: a forma como o arquivo vai ser usado
+				\end{enumerate}
+			\item retorna NULL se não for possível abrir (o ideal é testar!)
+	\item finalizando o uso, use a função \textit{fclose} passando o arquivo como parâmetro
+		\end{itemize}
+		\lstinputlisting{arquivo2.c}
+	\end{frame}
+
+	\begin{frame}{Posição no arquivo}
+		Quando um arquivo é aberto, o programa mantém uma \textdf{posição} (cursor) relativa ao início do arquivo:\\
+			\includegraphics[height=1.0cm]{cursor1.png}\\
+			\includegraphics[height=1.0cm]{cursor2.png}\\
+			\includegraphics[height=1.0cm]{cursor3.png}\\
+			O cursor avança à medida que os dados vão sendo lidos.
+	\end{frame} 
+
+	\begin{frame}{Modos de abertura}
+
+						\begin{tabular}{l*{6}{c}r}
+							Modo              		& r & w & r+ & w+\footnote{apaga o conteúdo no começo} & a \footnote{append, mantém a posição no arquivo sempre no fim}  & a+\footnote{funções para escrita alteram a posição para o fim do arquivo} \\
+							\hline
+							Se o arquivo não existe & erro & cria & erro & cria & cria & cria \\
+							Escreve?					& não & sim & sim & sim & sim & sim \\
+							Lê?							& sim & não & sim & sim & não  & sim\\
+						\end{tabular}
+
+	\end{frame}
+
+
+
+
+
+	\section{Funções para stream}
+
+	\begin{frame}
+		\begin{center}
+			\structure{\large Funções para stream}
+		\end{center}
+	\end{frame} 
+	\begin{frame}{Escrevendo no fluxo}
+		\begin{itemize}
+			\item use a função \textdf{fprintf}
+			\item o primeiro parâmetro refere-se à \textdf{stream}
+			\item os demais parâmetros são similares ao do \textdf{printf}
+			\item exemplo:
+				\lstinputlisting{arquivoEscrita.c}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{alertblock}{\ding{46} Exercício em sala}
+			Escreva um programa em C que leia dois inteiros \textbf{a} e \textbf{b} (assuma $a < b$). Depois o programa deve escrever em um arquivo numeros.txt os números entre \textbf{a} e \textbf{b}.
+		\end{alertblock}
+	\end{frame}
+
+
+	\begin{frame}{Lendo do fluxo}
+		\begin{itemize}
+			\item use a função \textdf{fscanf}
+			\item o primeiro parâmetro refere-se ao \textdf{stream}
+			\item os demais parâmetros são similares ao do \textdf{scanf}
+				\lstinputlisting{arquivoLeitura.c}
+			\item assim como scanf, retorna a quantidade de argumentos lidos com sucesso
+			\item retorna EOF (constante definida em stdio.h) ao chegar no final do stream
+				\lstinputlisting{arquivoLeitura2.c}
+		\end{itemize}
+	\end{frame}
+
+
+	\begin{frame}
+		\begin{alertblock}{\ding{46} Exercício em sala}
+			Escreva um programa em C que escreva na tela os números contidos no arquivo numeros.txt.
+		\end{alertblock}
+	\end{frame}
+
+	\begin{frame}{Reposicionando no arquivo}
+		\begin{itemize}
+			\item fseek(FILE *stream, long int offset, int origin)
+				\begin{itemize}
+					\item offset é dado em bytes
+					\item pode usar origin como:
+						\begin{itemize}
+					\item SEEK\_SET: começo do arquivo
+					\item SEEK\_CUR: posição atual no arquivo
+					\item SEEK\_END: final do arquivo
+						\end{itemize}
+				\end{itemize}
+			\item ftell: retorna a posição no arquivo em bytes
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Redirecionamento de streams}
+		\begin{exampleblock}{Redirecionamento da entrada}
+			./a.out < input.txt\\
+			Mudando o fluxo stdin do teclado para o arquivo input.txt
+		\end{exampleblock}
+		\begin{exampleblock}{Redirecionamento da saída}
+			./a.out > output.txt\\
+			Mudando o fluxo stdout do terminal para o arquivo output.txt
+		\end{exampleblock}
+		\begin{exampleblock}{Redirecionamento do erro}
+			./a.out 2> erros.txt\\
+			Mudando o fluxo stderr do terminal para o arquivo erros.txt
+		\end{exampleblock}
+		
+	\end{frame} 
+\end{document}
+
